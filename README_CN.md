@@ -27,6 +27,6 @@
 
 [![Contributors Chart](https://contrib.rocks/image?repo=PJ-568/568tools)](https://github.com/PJ-568/568tools/graphs/contributors)
 
-## Star历史
+## Star 历史
 
 ![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date)
