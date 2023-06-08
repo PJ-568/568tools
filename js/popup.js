@@ -30,7 +30,7 @@ function setSotreList(data){
 	sotreList.unshift(data);
 	localStorage.setItem('list',JSON.stringify(sotreList));
 }
-var _URL='https://Tools.pj568.eu.org/';
+var _URL='https://Tools.PJ568.eu.org/';
 function initData(){
 	var nav=getD('nav'),
 		list=getD('list'),
@@ -39,7 +39,7 @@ function initData(){
 		list_html='',
 		sotreList=localStorage.getItem('list');
 		// 初始化
-		list_html+=`<div class="item info"><h2>欢迎使用<img class="icon" src="./img/icon.svg" />&nbsp;568Tools&nbsp;在线工具箱</h2><div id="ad_line" style="margin: 0 10px;"></div><p>致力于创造并维护无需注册、下载和上传即可免费使用的静态在线工具环境。部分项目来源于开源项目，热门工具已被标记为浅蓝色。<a href="./data.json" target="_blank">点击查看</a>&nbsp;json&nbsp;数据。</p><p><strong>如果您有问题或建议，请不要吝啬您的<a rel="nofollow" target="_blank" href="./comment">留言反馈</a>，感谢使用及分享！</strong>本站欢迎<a rel="nofollow" target="_blank" href="./comment">提交您的页面</a>，本站将持续更新。</p><p>下载&nbsp;<strong>[568Tools&nbsp;工具箱]</strong>&nbsp;浏览器扩展插件或应用程序以供离线使用：<a rel="nofollow" target="_blank" href="https://chrome.google.com/webstore/detail/fly63%E5%B7%A5%E5%85%B7%E7%AE%B1/oicicpjppdafaknaepojmjpjoinimbel">谷歌 Chrome</a>、<a rel="nofollow" target="_blank" href="https://addons.mozilla.org/zh-CN/firefox/addon/fly63%E5%B7%A5%E5%85%B7%E7%AE%B1/">火狐 Firefox</a>、<a rel="nofollow" target="_blank" href="https://microsoftedge.microsoft.com/addons/detail/akpeonmkmdaifdnliibdoklpjcecdcnk">微软 Edge</a>、<a rel="nofollow" target="_blank" href="/lib/plug/flytool.crx">crx文件下载</a>。</p></div>`
+		list_html+=`<div class="item info"><h2>欢迎使用<img class="mainicon" src="./img/icon.svg" />&nbsp;568Tools&nbsp;在线工具箱</h2><div id="ad_line" style="margin: 0 10px;"></div><p>致力于创造并维护无需注册、下载和上传即可免费使用的静态在线工具环境。部分项目来源于开源项目，热门工具已被标记为浅蓝色。<a href="./data.json" target="_blank">点击查看</a>&nbsp;json&nbsp;数据。</p><p><strong>如果您有问题或建议，请不要吝啬您的<a rel="nofollow" target="_blank" href="./comment">留言反馈</a>，感谢使用及分享！</strong>本站欢迎<a rel="nofollow" target="_blank" href="./comment">提交您的页面</a>，本站将持续更新。</p><p>下载&nbsp;<strong>[568Tools&nbsp;工具箱]</strong>&nbsp;浏览器扩展插件或应用程序以供离线使用：<a rel="nofollow" target="_blank" href="https://chrome.google.com/webstore/detail/fly63%E5%B7%A5%E5%85%B7%E7%AE%B1/oicicpjppdafaknaepojmjpjoinimbel">谷歌 Chrome</a>、<a rel="nofollow" target="_blank" href="https://addons.mozilla.org/zh-CN/firefox/addon/fly63%E5%B7%A5%E5%85%B7%E7%AE%B1/">火狐 Firefox</a>、<a rel="nofollow" target="_blank" href="https://microsoftedge.microsoft.com/addons/detail/akpeonmkmdaifdnliibdoklpjcecdcnk">微软 Edge</a>、<a rel="nofollow" target="_blank" href="/lib/plug/flytool.crx">crx文件下载</a>。</p></div>`
 		// nav_html+=`<a class="menu_item_href" href="https://Tools.pj568.eu.org/">568Tools&nbsp;在线工具箱</a><a class="menu_item_href">|</a>`
 		// 初始化结束
 	if(!!sotreList){
