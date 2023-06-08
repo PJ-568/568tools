@@ -66,7 +66,7 @@ function initData(){
 	}
 	// 后补
 	nav_html+=`<a href="#0" target="_self">页内页</a>`
-	list_html+=`<div id="0" class="item"><h2>页内页</h2><div class="child"><iframe src="https://pj568.eu.org/Spinning_Bird/" class="page"></iframe></div></div><div class="item"><a class="ota" href="#">↑↑&nbsp;&nbsp;&nbsp;&nbsp;返回页顶&nbsp;&nbsp;&nbsp;&nbsp;↑↑</a></div>`
+	list_html+=`<div id="0" class="item"><h2>页内页</h2><div class="child"><iframe src="https://pj568.eu.org/Spinning_Bird/" class="page"></iframe><img class="stars" src="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date" /></div></div><div class="item"><a class="ota" href="#">↑↑&nbsp;&nbsp;&nbsp;&nbsp;返回页顶&nbsp;&nbsp;&nbsp;&nbsp;↑↑</a></div>`
 	// 后补结束
 	nav.innerHTML=nav_html;
 	list.innerHTML=list_html;
