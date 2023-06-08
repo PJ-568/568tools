@@ -98,6 +98,17 @@ body {
     flex-wrap: wrap;
 }
 
+.nav_content .item .child .incert {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 2px solid #0277BD;
+    border-radius: 6px;
+    background: #424242;
+    margin: 10px 0.8%;
+    box-shadow: 0.5rem 0.875rem 2.375rem rgb(39 44 49 / 6%), 0.0625rem 0.1875rem 0.5rem rgb(39 44 49 / 3%)
+}
+
 .nav_content .item .child a {
     float: left;
     color: #E0E0E0;
@@ -115,6 +126,11 @@ body {
     box-sizing: border-box;
     display: flex;
     align-items: center;
+}
+
+.nav_content .item .child .contri {
+    width: auto;
+    flex-wrap: wrap
 }
 
 .nav_content .item .child .red {
