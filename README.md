@@ -8,7 +8,7 @@
 
 ## 其他说明
 
-* `本项目和其内部的开源项目允许修改，但请保留原作者信息。确需去除，请联系作者，以免失去技术支持。`详情请参照[许可证](https://Tools.pj568.eu.org/license)。
+* `本项目和其使用的开源项目允许修改，但请保留原作者信息。确需去除，请联系作者，以免失去技术支持。`详情请参照[许可证](https://Tools.pj568.eu.org/license)。
 * 欢迎[提交页面或链接](https://Tools.pj568.eu.org/application)。
 * 项目基于[fly63在线工具箱](https://github.com/mydearcc/tools)，向他们表示诚挚的感谢！
 * 出现 BUG 请提出`Issue`，我会修复。
