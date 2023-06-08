@@ -1,6 +1,6 @@
 # <img height="30" style="margin: -3px 5px;" src="./img/icon.svg" />568Tools 在线工具箱
 
-简体中文|[English](https://github.com/PJ-568/568tools/blob/main/README.md)
+简体中文|[English](https://github.com/PJ-568/568tools/blob/main/README_EN.md)
 
 <img height="15" src="./img/icon.svg" /> 568Tools 在线工具箱是在线工具的集合。使用大部分工具无需注册、下载或上传到服务器。
 
