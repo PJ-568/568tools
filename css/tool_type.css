@@ -256,6 +256,11 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     font-size:15px;
 }
 
+.icon{
+    margin: -8px 5px;
+    height: 30px
+}
+
 .menu_item_href:hover{
     color:#fff;
 }
