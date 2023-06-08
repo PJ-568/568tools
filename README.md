@@ -1,8 +1,8 @@
 # <img height="30" style="margin: -3px 5px;" src="./img/icon.svg" />568Tools Online Toolbox
 
-[简体中文](https://github.com/PJ-568/568tools/blob/main/README.md)|English
+[简体中文](https://github.com/PJ-568/568tools/blob/main/README_CN.md)|English
 
-<img height="15" src="./img/icon.svg" />568Tools Online Toolbox is a collection of online tools. Using most tools do not require registration, download, or upload to a server.
+<img height="15" src="./img/icon.svg" /> 568Tools Online Toolbox is a collection of online tools. Using most tools do not require registration, download, or upload to a server.
 
 Features include: file Converter, encryption & decryption, webmaster tools, code development, life-related...
 
@@ -12,6 +12,14 @@ Features include: file Converter, encryption & decryption, webmaster tools, code
 * [Submit your own pages or links](https://Tools.pj568.eu.org/application) is welcomed.
 * This project is based on [fly63在线工具箱](https://github.com/mydearcc/tools) (fly63 Online Toolbox). We would like to express my sincere thanks to them!
 * If there is a BUG, please shoot an `Issue` and I will fix it.
+
+## To Do List
+- [ ] Fix Search, make it functional.
+- [ ] Multilingual support.
+- [ ] Build`license`page, make it be able to query license and address for all projects.
+- [ ] Build`comment`page, make it with no back end.
+- [ ] Build`application`page.
+- [ ] ...
 
 ## Contributors
 
