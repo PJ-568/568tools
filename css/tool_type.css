@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0
 }
 
 body {
@@ -256,7 +256,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     font-size:15px;
 }
 
-.icon{
+.mainicon{
     margin: -8px 5px;
     height: 30px
 }
