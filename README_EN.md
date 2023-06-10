@@ -17,7 +17,7 @@ Features include: file Converter, encryption & decryption, webmaster tools, code
 - [ ] Fix Search, make it functional.
 - [ ] Multilingual support.
 - [ ] Build`license`page, make it be able to query license and address for all projects.
-- [ ] Build`comment`page, make it with no back end.
+- [X] ~~Build`comment`page, make it with no back end.~~
 - [ ] Build`application`page.
 - [ ] ...
 
