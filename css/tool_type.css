@@ -1,6 +1,7 @@
 * {
     margin: 0;
-    padding: 0
+    padding: 0;
+    scroll-behavior: smooth
 }
 
 body {
@@ -14,13 +15,6 @@ body {
     min-width: 300px;
     width: 100%;
     -webkit-tap-highlight-color:transparent
-}
-
-.smbtn:hover {
-    border-color: #0277BD;
-    background: #01579B;
-    color: #FFF;
-    font-weight: bold;
 }
 
 .bg-img {
@@ -83,14 +77,14 @@ body {
 .github {
     float: right;
     margin-top: 8px;
-    margin-right: 15px;
+    margin-right: 15px
 }
 
 .github svg {
     display: inline-block;
     width: 26px;
     height: 26px;
-    fill: #E0E0E0;
+    fill: #E0E0E0
 }
 
 .nav_content .item .child {
