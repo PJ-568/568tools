@@ -125,6 +125,7 @@ order:1}
 .gsc-comments>.gsc-comment-box{
 border: 2px solid #0277BD;
 background: #424242;
+width: 100%;
 border-radius: 6px;
 margin-bottom:1rem;
 margin: 10px 0.8%;
