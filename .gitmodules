@@ -1,0 +1,4 @@
+[submodule "568tools"]
+	path = 568tools
+	url = https://github.com/PJ-568/568tools.git
+	branch = tools
