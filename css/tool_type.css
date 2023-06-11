@@ -38,19 +38,19 @@ body {
 .nav_content {
     /* width: 1280px; */
     width: 90%;
-    margin: 45px auto;
+    margin: 45px auto
 }
 
 .nav_content .item {
     min-width: 300px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 30px
 }
 
 .nav_content .item h2 {
     font-size: 20px;
     color: #E0E0E0;
-    margin: 12px;
+    margin: 12px
 }
 
 .nav_content .page{
@@ -89,7 +89,7 @@ body {
 
 .nav_content .item .child {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap
 }
 
 .nav_content .item .child .incert {
