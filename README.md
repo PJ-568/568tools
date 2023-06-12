@@ -1,4 +1,4 @@
-# <img height="30" style="margin: -3px 5px;" src="./img/icon.svg" />568Tools 在线工具箱
+# <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg" />568Tools 在线工具箱
 
 简体中文|[English](./README_EN.md)
 
@@ -19,6 +19,7 @@
 - [ ] 构建`关于`页面，能够查询所有项目的许可证和信息。
 - [X] ~~构建`留言反馈`页面，做到无后端。~~
 - [ ] 构建`提交页面`页面。
+- [ ] 添加右键菜单。
 - [ ] ……
 
 ## 贡献者们
