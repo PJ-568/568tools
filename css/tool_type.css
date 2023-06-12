@@ -365,3 +365,42 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     background: #424242;
     color: #ccc;
 }
+
+/* 右键菜单 */
+
+#rcb_menu{
+    display: none;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 150px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    z-index: 1100;
+    background-color: #f9f9f9;
+    box-shadow:0 0 10px #252423
+}
+#rcb_menu>li{
+    border-radius: 10px;
+    padding: 5px 10px 0 10px;
+    height: 30px
+}
+#rcb_menu>li:hover{
+    background-color: #252423;
+    color: #F7F6F2;
+    cursor: pointer
+}
+#rcb_menu>.hr_break{
+    padding: 0;
+    height: 1px;
+    background-color:#A2A2A2
+}
+#rcb_menu>.hr_break:hover{
+    background-color:#A2A2A2;
+    cursor: default
+}
+#rcb_menu>#rcb_t6{
+    display: none
+}

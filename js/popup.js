@@ -48,7 +48,7 @@ function initData(){
 		list_html+=`<div class="item"><h2>最近访问</h2><div class="child">`;
 		for(var i in sotreList){
 			var li = sotreList[i];
-			list_html+=`<a href="${li.url}" target="_self">${li.name}</a>`;
+			list_html+=`<a class="open-in-new-tab" href="${li.url}" target="_self">${li.name}</a>`;
 		}
 		list_html+=`</div></div>`;
 	}
@@ -60,7 +60,7 @@ function initData(){
 		list_html+=`<div id="${item.id}" class="item"><h2>${item.name}</h2><div class="child">`;
 		for(var j in item.list){
 			var li=item.list[j];
-			list_html+=`<a href="${li.url}"${li.hot==1 ? ' class="red" ' : ''}idx="${i}_${j}" target="_self" title="${li.name}">${li.name}</a>`;
+			list_html+=`<a href="${li.url}" class="${li.hot==1 ? 'red open-in-new-tab' : 'open-in-new-tab'}" idx="${i}_${j}" target="_self" title="${li.name}">${li.name}</a>`;
 		}
 		list_html+=`</div></div>`;
 	}
