@@ -19,7 +19,7 @@ Features include: file Converter, encryption & decryption, webmaster tools, code
 - [ ] Build`about`page, make it be able to query license and info for all projects.
 - [X] ~~Build`comment`page, make it without back end.~~
 - [ ] Build`application`page.
-- [ ] Add ContextMenu.
+- [ ] Fix`open-in-new-tab`in ContextMenu.
 - [ ] ...
 
 ## Contributors
