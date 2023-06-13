@@ -16,10 +16,12 @@ Features include: file Converter, encryption & decryption, webmaster tools, code
 ## To Do List
 - [ ] Fix Search, make it functional.
 - [ ] Multilingual support.
-- [ ] Build`about`page, make it be able to query license and info for all projects.
+- [X] ~~Build`about`page.~~
+  - [ ] Make it be able to query license and info for all projects.
 - [X] ~~Build`comment`page, make it without back end.~~
 - [ ] Build`application`page.
-- [ ] Fix`open-in-new-tab`in ContextMenu.
+- [ ] Make`open-in-new-tab`in ContextMenu functional.
+- [ ] Add`loading`.
 - [ ] ...
 
 ## Contributors
