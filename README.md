@@ -1,14 +1,14 @@
-# <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg" />568Tools 在线工具箱
+# <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg"/>568Tools 在线工具箱
 
 简体中文|[English](./README_EN.md)
 
-<img height="15" src="https://tools.PJ568.eu.org/img/icon.svg" /> 568Tools 在线工具箱是在线工具的集合。使用大部分工具无需注册、下载或上传到服务器。
+<img height="15" src="https://tools.PJ568.eu.org/img/icon.svg"/> 568Tools 在线工具箱是在线工具的集合。使用大部分工具无需注册、下载或上传到服务器。
 
 服务涵盖：文件转换、加密解密、站长工具、代码开发、生活相关等。
 
 ## 其他说明
 
-* `本项目和其使用的开源项目允许修改，但请保留原作者信息。确需去除，请联系作者，以免失去技术支持。`详情请参照[许可证](https://Tools.PJ568.eu.org/LICENSE)。
+* `本项目和其使用的开源项目允许修改，但请保留原作者信息。确需去除，请联系作者，以免失去技术支持。`详情请参照[许可证](https://Tools.PJ568.eu.org/about)。
 * 欢迎[提交页面或链接](https://Tools.pj568.eu.org/application)。
 * 项目基于[fly63在线工具箱](https://github.com/mydearcc/tools)，向他们表示诚挚的感谢！
 * 出现 BUG 请提出`Issue`，我会修复。
