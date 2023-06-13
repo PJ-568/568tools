@@ -24,7 +24,7 @@ document.body.addEventListener('click', function () {
 rightMenu.addEventListener('click', function (e) {
     switch (e.target.id) {
     case "rcb_t1":
-        window.location.href="temp.html";
+        window.location.href="https://Tools.PJ568.eu.org/";
         break;
     case "rcb_t2":
         window.location.href="#";

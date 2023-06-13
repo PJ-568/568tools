@@ -376,10 +376,10 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     list-style: none;
     width: 150px;
     box-sizing: border-box;
-    border: 1px solid #fff;
-    border-radius: 5px;
+    border: 2px solid #0277BD;
+    border-radius: 6px;
     z-index: 1100;
-    background-color: #f9f9f9;
+    background-color: #424242;
     box-shadow:0 0 10px #252423
 }
 #rcb_menu>li{
@@ -388,8 +388,8 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     height: 30px
 }
 #rcb_menu>li:hover{
-    background-color: #252423;
-    color: #F7F6F2;
+    background-color: #f9f9f9;
+    color: #252423;
     cursor: pointer
 }
 #rcb_menu>.hr_break{
