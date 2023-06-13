@@ -90,9 +90,8 @@
 main .pagination-loader-container{
 background-image:url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg)}
 
-
-
-/*! Custom CSS */.gsc-reactions-count{
+/*! Custom CSS */
+.gsc-reactions-count{
 color: #E0E0E0;
 border: 2px solid #0277BD;
 border-radius: 6px;
@@ -125,7 +124,7 @@ order:1}
 .gsc-comments>.gsc-comment-box{
 border: 2px solid #0277BD;
 background: #424242;
-width: 100%;
+width: 99%;
 border-radius: 6px;
 margin-bottom:1rem;
 margin: 10px 0.8%;
