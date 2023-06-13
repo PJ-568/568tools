@@ -62,8 +62,8 @@
 --color-canvas-overlay:#161b22;
 --color-canvas-inset:#15202b;
 --color-canvas-subtle:#253341;
---color-border-default:#E0E0E0;
---color-border-muted:#9E9E9E;
+--color-border-default:#9E9E9E;
+--color-border-muted:#212121;
 --color-neutral-muted:rgba(99,110,123,.4);
 --color-accent-fg:#539bf5;
 --color-accent-emphasis:#316dca;
@@ -80,9 +80,6 @@
 --color-primer-shadow-focus:0 0 0 3px #143d79;
 --color-scale-gray-7:#373e47;
 --color-scale-blue-8:#143d79;
-
---color-bg-tertiary:#424242;
---color-bg-tertiary:#212121;
 
   /*! Extensions from @primer/css/alerts/flash.scss */--color-social-reaction-bg-hover:var(--color-scale-gray-7);
 --color-social-reaction-bg-reacted-hover:var(--color-scale-blue-8)}
@@ -101,10 +98,8 @@ margin: 10px 0.8%;
 box-sizing: border-box;
 box-shadow: 0.5rem 0.875rem 2.375rem rgb(39 44 49 / 6%), 0.0625rem 0.1875rem 0.5rem rgb(39 44 49 / 3%);
 display:none}
-
 .gsc-timeline{
 flex-direction:column-reverse}
-
 .gsc-header{
 color: #E0E0E0;
 border: 2px solid #0277BD;
@@ -115,27 +110,26 @@ margin: 10px 0.8%;
 box-sizing: border-box;
 box-shadow: 0.5rem 0.875rem 2.375rem rgb(39 44 49 / 6%), 0.0625rem 0.1875rem 0.5rem rgb(39 44 49 / 3%);
 padding-bottom:1rem}
-
 .gsc-comments>.gsc-header{
 align-items: center;
 border: 2px solid #0277BD;
 order:1}
-
 .gsc-comments>.gsc-comment-box{
 border: 2px solid #0277BD;
-background: #424242;
+background: #848484;
 width: 99%;
 border-radius: 6px;
 margin-bottom:1rem;
 margin: 10px 0.8%;
 box-shadow: 0.5rem 0.875rem 2.375rem rgb(39 44 49 / 6%), 0.0625rem 0.1875rem 0.5rem rgb(39 44 49 / 3%);
 order:2}
-
+.gsc-comments>.gsc-comment-box>.gsc-comment-box-tabs{
+background: #424242}
+.gsc-comments>.gsc-comment-box>.gsc-comment-box-tabs>.color-bg-canvas{
+background: #424242}
 .gsc-comments>.gsc-timeline{
 order:3}
-
 .gsc-homepage-bg{
 background-color:#424242}
-
 main .gsc-loading-image{
 background-image:url(https://github.githubassets.com/images/mona-loading-dimmed.gif)}
