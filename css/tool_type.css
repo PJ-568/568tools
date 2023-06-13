@@ -382,13 +382,13 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     box-shadow:0 0 10px#252423
 }
 #rcb_menu>li{
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 5px 10px 0 10px;
     height: 30px
 }
 #rcb_menu>li:hover{
     background-color:#01579B;
-    color: #252423;
+    color: #FFF;
     cursor: pointer
 }
 #rcb_menu>.hr_break{

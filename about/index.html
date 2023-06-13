@@ -5,7 +5,7 @@
 		<title>关于&nbsp;568Tools&nbsp;在线工具箱</title>
 		<link rel="icon" type="image/svg+xml" href="https://tools.PJ568.eu.org/img/icon.svg">
 		<link rel="stylesheet" href="https://tools.pj568.eu.org/css/tool_type.css">
-		<script src="https://tools.pj568.eu.org/js/include.js"></script>
+		<script src="https://Tools.PJ568.eu.org/js/include.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/marked@3.0.0/marked.min.js"></script>
 	</head>
@@ -13,9 +13,9 @@
 		<div class="bg-img"></div>
 		<div id="list" class="nav_content">
 			<div class="item info">
-                <div style="padding: 0 20px;img{width:100%;}" id="content"></div>
+                <div style="padding: 0 20px" id="content"></div>
 				<h2 id="1">许可证</h2>
-				<embed style="color:#F5F5F5;width: 100%;height: 3900px;" type="text/html" src="../LICENSE">
+				<p style="color:#F5F5F5;max-width:800px;padding: 0 20px" id="lic"></p>
             </div>
 			<div class="item">
                 <h2>可选操作</h2>
@@ -25,21 +25,15 @@
 				</div>
             </div>
         </div>
-		<include src="https://tools.pj568.eu.org/header.html"></include>
-		<ul id="rcb_menu">
-			<li id="rcb_t1">🏠&nbsp;首页</li>
-			<li class="hr_break"></li>
-			<li id="rcb_t2">↑&nbsp;页顶</li>
-			<li id="rcb_t3">↩&nbsp;返回</li>
-			<li id="rcb_t4">↪&nbsp;前进</li>
-			<li id="rcb_t5">↻&nbsp;重载</li>
-			<li id="rcb_t6">🆕&nbsp;新标签页打开</li>
-		</ul>
+		<include src="https://Tools.PJ568.eu.org/header.html"></include>
+		<include src="https://Tools.PJ568.eu.org/contextmenu.html"></include>
 	</body>
     <script>
         $.get('https://tools.pj568.eu.org/README.md', function(response, status, xhr){
             $("#content").html(marked(response));
         });
+		$.get('https://tools.pj568.eu.org/LICENSE', function(response, status, xhr){
+            $("#lic").html(marked(response));
+        });
     </script>
 </html>
-<script src="https://tools.pj568.eu.org/js/contextmenu.js"></script>
