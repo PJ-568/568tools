@@ -39,8 +39,8 @@ rightMenu.addEventListener('click', function (e) {
         window.location.reload();
         break;
     case "rcb_t6":
-        if (e.target.closest('.open-in-new-tab')) {
-            window.open(e.target.closest('.open-in-new-tab').getAttribute('href'), '_blank');
+        if (e.target.closest('a')) {
+            window.open(e.target.closest('a').getAttribute('href'), '_blank');
         }
         break;
     default:

@@ -47,6 +47,10 @@ body {
     margin-bottom: 30px
 }
 
+.nav_content .item h1 {
+    color: #E0E0E0
+}
+
 .nav_content .item h2 {
     font-size: 20px;
     color: #E0E0E0;
@@ -114,16 +118,16 @@ body {
     border-radius: 6px;
     background: #424242;
     box-shadow: 0.5rem 0.875rem 2.375rem rgb(39 44 49 / 6%), 0.0625rem 0.1875rem 0.5rem rgb(39 44 49 / 3%);
-    width: 18.4%;
+    min-width: 18.4%;
     min-height: 62px;
     line-height: 20px;
     box-sizing: border-box;
     display: flex;
-    align-items: center;
+    align-items: center
 }
 
 .nav_content .item .child .contri {
-    width: auto;
+    min-width: 0;
     flex-wrap: wrap
 }
 
@@ -195,9 +199,9 @@ body {
 
 /* 目录条 */
 
-html,body {
+/* html,body {
     margin: 0 auto;
-}
+} */
 
 body{
     margin-top: 40px;
@@ -286,7 +290,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     font-size: 13px;
     padding: 10px;
     top: 40px;
-    left: 0;
+    left: -25px;
     z-index: 1000000;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     max-height: 720px;
@@ -320,7 +324,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     border: 2px solid #0277BD;
     position: relative;
     float: right;
-    width: 138px;
+    width: 10%;
     height: 26px;
     background: #424242;
     margin: 5px;

@@ -39,8 +39,7 @@ function initData(){
 		list_html='',
 		sotreList=localStorage.getItem('list');
 		// 初始化
-		list_html+=`<div class="item info"><h2>欢迎使用<img class="mainicon" src="./img/icon.svg" />&nbsp;568Tools&nbsp;在线工具箱</h2><div id="ad_line" style="margin: 0 10px;"></div><p>致力于创造并维护无需注册、下载和上传即可免费使用的静态在线工具环境。部分项目来源于开源项目，热门工具已被标记为浅蓝色。<a href="568tools/data.json" target="_blank">点击查看</a>&nbsp;json&nbsp;数据。</p><p><strong>如果您有问题或建议，请不要吝啬您的<a rel="nofollow" target="_blank" href="./comment">留言反馈</a>，感谢使用及分享！</strong>本站欢迎<a rel="nofollow" target="_blank" href="./comment">提交您的页面</a>，本站将持续更新。</p><p>下载&nbsp;<strong>[568Tools&nbsp;工具箱]</strong>&nbsp;浏览器扩展插件或应用程序以供离线使用：<a rel="nofollow" target="_blank" href="/568tools/app/568Tools_在线工具箱_First_Release.apk">安卓应用</a>。</p></div>`
-		// nav_html+=`<a class="menu_item_href" href="https://Tools.pj568.eu.org/">568Tools&nbsp;在线工具箱</a><a class="menu_item_href">|</a>`
+		list_html+=`<div class="item info"><h2>欢迎使用<img class="mainicon" src="./img/icon.svg" />&nbsp;568Tools&nbsp;在线工具箱</h2><div id="ad_line" style="margin: 0 10px;"></div><p>致力于创造并维护无需注册、下载和上传即可免费使用的静态在线工具环境。部分项目来源于开源项目，热门工具已被标记为浅蓝色。<a href="568tools/data.json" target="_blank">点击查看</a>&nbsp;json&nbsp;数据。</p><p><strong>如果您有问题或建议，请不要吝啬您的<a rel="nofollow" target="_blank" href="./comment">留言反馈</a>，感谢使用及分享！</strong>本站欢迎<a rel="nofollow" target="_blank" href="./application">提交您的页面</a>，本站将持续更新。</p><p>下载&nbsp;<strong>[568Tools&nbsp;工具箱]</strong>&nbsp;浏览器扩展插件或应用程序以供离线使用：<a rel="nofollow" target="_blank" href="/568tools/app/568Tools_在线工具箱_First_Release.apk">安卓应用</a>。</p></div>`
 		// 初始化结束
 	if(!!sotreList){
 		sotreList=JSON.parse(sotreList);
@@ -60,7 +59,7 @@ function initData(){
 		list_html+=`<div id="${item.id}" class="item"><h2>${item.name}</h2><div class="child">`;
 		for(var j in item.list){
 			var li=item.list[j];
-			list_html+=`<a href="${li.url}" class="${li.hot==1 ? 'red open-in-new-tab' : 'open-in-new-tab'}" idx="${i}_${j}" target="_self" title="${li.name}">${li.name}</a>`;
+			list_html+=`<a href="${li.url}"${li.hot==1 ? ' class="red" ' : ''}idx="${i}_${j}" target="_self" title="${li.name}">${li.name}</a>`;
 		}
 		list_html+=`</div></div>`;
 	}
