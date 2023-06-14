@@ -65,7 +65,7 @@ function initData(){
 	}
 	// 后补
 	nav_html+=`<a href="#0" target="_self">页内页</a><a href="#-1" target="_self">项目贡献者</a><a href="#-2" target="_self">Star&nbsp;历史</a>`
-	list_html+=`<div id="0" class="item"><h2>页内页</h2><div class="child"><iframe src="https://tools.pj568.eu.org/about/" class="page"></iframe></div></div><div id="-1" class="item"><h2>项目贡献者</h2><div class="child"><a class="contri" href="https://github.com/PJ-568/568tools/graphs/contributors" target="_blank"><img src="https://contrib.rocks/image?repo=PJ-568/568tools"/></a></div></div><div id="-2" class="item"><h2>Star&nbsp;历史</h2><div class="child"><img class="incert" src="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date"/></div></div><div class="item"><a class="ota" href="#">↑↑&nbsp;&nbsp;&nbsp;&nbsp;返回页顶&nbsp;&nbsp;&nbsp;&nbsp;↑↑</a></div>`
+	list_html+=`<div id="0" class="item"><h2>页内页</h2><div class="child"><iframe src="https://Tools.PJ568.eu.org/about/" class="page"></iframe><a href="https://Tools.PJ568.eu.org/incert/?link=" target="_self">进入页面</a></div></div><div id="-1" class="item"><h2>项目贡献者</h2><div class="child"><a class="contri" href="https://github.com/PJ-568/568tools/graphs/contributors" target="_blank"><img src="https://contrib.rocks/image?repo=PJ-568/568tools"/></a></div></div><div id="-2" class="item"><h2>Star&nbsp;历史</h2><div class="child"><img class="incert" src="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date"/></div></div><div class="item"><a class="ota" href="#">↑↑&nbsp;&nbsp;&nbsp;&nbsp;返回页顶&nbsp;&nbsp;&nbsp;&nbsp;↑↑</a></div>`
 	// 后补结束
 	nav.innerHTML=nav_html;
 	list.innerHTML=list_html;
