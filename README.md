@@ -1,4 +1,4 @@
-# <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg" />Tools
+# <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg"/>Tools
 
 > 简体中文 | [English](./README_EN.md)
 
@@ -6,7 +6,7 @@
 
 ## 📖其他说明
 
-[见主 README 文件](https://github.com/PJ-568/568tools#%E5%BE%85%E5%AE%8C%E6%88%90)
+[见主 README 文件](https://github.com/PJ-568/568tools/blob/main/README.md)
 
 ## 🏆贡献者们
 
