@@ -41,7 +41,7 @@ var classify = [{
 	"name": "软件模拟",
 	"list": [{
 		"name": "32&nbsp;位&nbsp;x86&nbsp;虚拟机",
-		"url": "/lib/tools/v86/",
+		"url": "/incert/?link=/lib/tools/v86/",
 		"hot": 0,
 		"img": ""
 	}]
