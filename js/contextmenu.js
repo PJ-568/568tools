@@ -6,8 +6,10 @@ function RightClickMenu(e) {
     rightMenu.style.display = 'block';
     if (e.target.closest('a')) {
         newTab.style.display = 'block';
+        if (document.write(location.href)=='https://tools.pj568.eu.org/') {document.querySelector('#rcb_t7').style.display = 'block'}
     } else {
         newTab.style.display = 'none';
+        document.querySelector('#rcb_t7').style.display = 'none';
     }
     let x = e.clientX, y = e.clientY,
     menuWidth = rightMenu.offsetWidth, menuHeight = rightMenu.offsetHeight,
@@ -20,7 +22,7 @@ function RightClickMenu(e) {
 document.body.addEventListener('click', function () {
     rightMenu.style.display = 'none';
 });
-// document.querySelector('#rcb_menu').addEventListener('click', function (e) {
+
 rightMenu.addEventListener('click', function (e) {
     switch (e.target.id) {
     case "rcb_t1":
@@ -40,7 +42,8 @@ rightMenu.addEventListener('click', function (e) {
         break;
     case "rcb_t6":
         if (e.target.closest('a')) {
-            window.open(e.target.closest('a').getAttribute('href'), '_blank');
+            var url = encodeURIComponent(e.target.closest('a').getAttribute('href'));
+            window.open(url);
         }
         break;
     default:
