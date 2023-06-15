@@ -116,7 +116,7 @@ border: 2px solid #0277BD;
 order:1}
 .gsc-comments>.gsc-comment-box{
 border: 2px solid #0277BD;
-background: #424242;
+background: #313131;
 color: #E0E0E0;
 width: 99%;
 border-radius: 6px;
@@ -126,7 +126,7 @@ box-shadow: 0.5rem 0.875rem 2.375rem rgb(39 44 49 / 6%), 0.0625rem 0.1875rem 0.5
 order:2}
 .gsc-comments>.gsc-comment-box>.gsc-comment-box-tabs{
 color: #E0E0E0;
-background: #545454}
+background: #424242}
 .gsc-comments>.gsc-timeline{
 order:3}
 .gsc-homepage-bg{
