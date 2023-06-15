@@ -31,7 +31,7 @@
     },
     {
         "name":"思维导图",
-        "url":"/incert/?link=lib/tools/mind-map/",
+        "url":"/incert/?link=/lib/tools/mind-map/",
         "type":"图像处理"
     },
     {

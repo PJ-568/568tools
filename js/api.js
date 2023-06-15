@@ -26,14 +26,14 @@ var classify = [{
 	"id": 2,
 	"name": "图像处理",
 	"list": [{
+		"name": "思维导图",
+		"url": "/incert/?link=/lib/tools/mind-map/",
+		"hot": 1,
+		"img": ""
+	}, {
 		"name": "字符生成图片",
 		"url": "/lib/tools/geopattern/",
 		"hot": 0,
-		"img": ""
-	}, {
-		"name": "思维导图",
-		"url": "/incert/?link=lib/tools/mind-map/",
-		"hot": 1,
 		"img": ""
 	}]
 }, {
