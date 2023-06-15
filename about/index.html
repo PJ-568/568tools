@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8"/>		
 		<title>关于&nbsp;568Tools&nbsp;在线工具箱</title>
-		<link rel="icon" type="image/svg+xml" href="https://tools.PJ568.eu.org/img/icon.svg">
-		<link rel="stylesheet" href="https://tools.pj568.eu.org/css/tool_type.css">
-		<script src="https://Tools.PJ568.eu.org/js/include.js"></script>
+		<link rel="icon" type="image/svg+xml" href="/img/icon.svg">
+		<link rel="stylesheet" href="/css/tool_type.css">
+		<script src="/js/include.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/marked@3.0.0/marked.min.js"></script>
 	</head>
@@ -20,12 +20,12 @@
 			<div class="item">
                 <h2>可选操作</h2>
 				<div class="child">
-					<a href="https://Tools.pj568.eu.org/">回到主页</a>
+					<a href="/">回到主页</a>
 					<a onclick="javascript:history.back(-1);">尝试返回</a>
 				</div>
             </div>
         </div>
-		<include src="https://Tools.PJ568.eu.org/header.html"></include>
+		<include src="/header.html"></include>
 		<ul id="rcb_menu">
 			<li id="rcb_t1">🏠&nbsp;首页</li>
 			<li class="hr_break"></li>
@@ -37,12 +37,12 @@
 		</ul>
 	</body>
     <script>
-        $.get('https://tools.pj568.eu.org/README.md', function(response, status, xhr){
+        $.get('/README.md', function(response, status, xhr){
             $("#content").html(marked(response));
         });
-		$.get('https://tools.pj568.eu.org/LICENSE', function(response, status, xhr){
+		$.get('/LICENSE', function(response, status, xhr){
             $("#lic").html(marked(response));
         });
     </script>
 </html>
-<script src="https://tools.pj568.eu.org/js/contextmenu.js"></script>
+<script src="/js/contextmenu.js"></script>
