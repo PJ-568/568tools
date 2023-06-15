@@ -21,22 +21,22 @@
     },
     {
         "name":"黑色全屏",
-        "url":"/568tools/tools/黑色全屏/",
+        "url":"/lib/tools/黑色全屏/",
         "type":"屏幕工具"
     },
     {
         "name":"字符生成图片",
-        "url":"/568tools/tools/geopattern/",
+        "url":"/lib/tools/geopattern/",
         "type":"图像处理"
     },
     {
         "name":"思维导图",
-        "url":"/incert/?link=568tools/tools/mind-map/",
+        "url":"/incert/?link=lib/tools/mind-map/",
         "type":"图像处理"
     },
     {
         "name":"32&nbsp;位&nbsp;x86&nbsp;虚拟机",
-        "url":"/568tools/tools/v86/",
+        "url":"/lib/tools/v86/",
         "type":"软件模拟"
     }
 ]

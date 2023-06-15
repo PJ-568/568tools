@@ -27,12 +27,12 @@ var classify = [{
 	"name": "图像处理",
 	"list": [{
 		"name": "字符生成图片",
-		"url": "/568tools/tools/geopattern/",
+		"url": "/lib/tools/geopattern/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "思维导图",
-		"url": "/incert/?link=568tools/tools/mind-map/",
+		"url": "/incert/?link=lib/tools/mind-map/",
 		"hot": 1,
 		"img": ""
 	}]
@@ -41,7 +41,7 @@ var classify = [{
 	"name": "软件模拟",
 	"list": [{
 		"name": "32&nbsp;位&nbsp;x86&nbsp;虚拟机",
-		"url": "/568tools/tools/v86/",
+		"url": "/lib/tools/v86/",
 		"hot": 0,
 		"img": ""
 	}]
@@ -50,7 +50,7 @@ var classify = [{
 	"name": "屏幕工具",
 	"list": [{
 		"name": "黑色全屏",
-		"url": "/568tools/tools/黑色全屏/",
+		"url": "/lib/tools/黑色全屏/",
 		"hot": 0,
 		"img": ""
 	}]
