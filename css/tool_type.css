@@ -191,7 +191,6 @@ body {
 
 .nav_content .info a {
     color: #90CAF9;
-    /* text-decoration: none; */
 }
 
 .nav_content .info a:hover {
@@ -199,10 +198,6 @@ body {
 }
 
 /* 目录条 */
-
-/* html,body {
-    margin: 0 auto;
-} */
 
 body{
     margin-top: 40px;
