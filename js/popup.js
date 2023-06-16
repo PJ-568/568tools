@@ -39,7 +39,7 @@ function initData(){
 		list_html='',
 		sotreList=localStorage.getItem('list');
 		// 初始化
-		list_html+=`<div class="item info"><h2>欢迎使用<img class="mainicon" src="./img/icon.svg"/>&nbsp;568Tools&nbsp;在线工具箱</h2><div id="ad_line" style="margin: 0 10px;"></div><p>致力于创造并维护无需注册、下载和上传即可免费使用的静态在线工具环境。部分项目来源于开源项目，热门工具已被标记为浅蓝色。<a href="lib/data.json" target="_blank">点击查看</a>&nbsp;json&nbsp;数据。</p><p><strong>如果您有问题或建议，请不要吝啬您的<a rel="nofollow" target="_blank" href="./comment">留言反馈</a>，感谢使用及分享！</strong>本站欢迎<a rel="nofollow" target="_blank" href="/application">提交您的页面</a>，本站将持续更新。如果喜欢网站可以去<a rel="nofollow" target="_blank" href="https://github.com/PJ-568/568tools">托管仓库</a>点一个⭐。</p><p>下载&nbsp;<strong>[568Tools&nbsp;工具箱]</strong>&nbsp;浏览器扩展插件或应用程序以供离线使用：<a rel="nofollow" target="_blank" href="/lib/app/568Tools_在线工具箱_First_Release.apk">安卓应用</a>。</p></div>`
+		list_html+=`<div class="item info"><h2>欢迎使用<img alt="Main_icon" class="mainicon" src="./img/icon.svg"/>&nbsp;568Tools&nbsp;在线工具箱</h2><div id="ad_line" style="margin: 0 10px;"></div><p>致力于创造并维护无需注册、下载和上传即可免费使用的静态在线工具环境。部分项目来源于开源项目，热门工具已被标记为浅蓝色。<a href="lib/data.json" target="_blank">点击查看</a>&nbsp;json&nbsp;数据。</p><p><strong>如果您有问题或建议，请不要吝啬您的<a rel="nofollow" target="_blank" href="./comment">留言反馈</a>，感谢使用及分享！</strong>本站欢迎<a rel="nofollow" target="_blank" href="/application">提交您的页面</a>，本站将持续更新。如果喜欢网站可以去<a rel="nofollow" target="_blank" href="https://github.com/PJ-568/568tools">托管仓库</a>点一个⭐。</p><p>下载&nbsp;<strong>[568Tools&nbsp;工具箱]</strong>&nbsp;浏览器扩展插件或应用程序以供离线使用：<a rel="nofollow" target="_blank" href="/lib/app/568Tools_在线工具箱_First_Release.apk">安卓应用</a>。</p></div>`
 		// 初始化结束
 	if(!!sotreList){
 		sotreList=JSON.parse(sotreList);
@@ -65,7 +65,7 @@ function initData(){
 	}
 	// 后补
 	nav_html+=`<a href="#0" target="_self">页内页</a><a href="#-1" target="_self">项目贡献者</a><a href="#-2" target="_self">Star&nbsp;历史</a>`
-	list_html+=`<div id="0" class="item"><h2>页内页</h2><div class="child"><iframe id="myFrame" src="/about/" class="page"></iframe><a style="cursor:pointer" onclick="openLink()" target="_self">进入页面</a></div></div><div id="-1" class="item"><h2>项目贡献者</h2><div class="child"><a class="contri" href="https://github.com/PJ-568/568tools/graphs/contributors" target="_blank"><img src="https://contrib.rocks/image?repo=PJ-568/568tools"/></a></div></div><div id="-2" class="item"><h2>Star&nbsp;历史</h2><div class="child"><img class="incert" src="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date"/></div></div><div class="item"><a class="ota" href="#">↑↑&nbsp;&nbsp;&nbsp;&nbsp;返回页顶&nbsp;&nbsp;&nbsp;&nbsp;↑↑</a></div>`
+	list_html+=`<div id="0" class="item"><h2>页内页</h2><div class="child"><iframe title="incert" id="myFrame" src="/about/" class="page"></iframe><a style="cursor:pointer" onclick="openLink()" target="_self">进入页面</a></div></div><div id="-1" class="item"><h2>项目贡献者</h2><div class="child"><a class="contri" href="https://github.com/PJ-568/568tools/graphs/contributors" target="_blank"><img alt="贡献者的头像图片" loading="lazy" src="https://contrib.rocks/image?repo=PJ-568/568tools"/>​</a></div></div><div id="-2" class="item"><h2>Star&nbsp;历史</h2><div class="child"><img alt="Star&nbsp;历史" loading="lazy" class="incert" src="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date"/></div></div><div class="item"><a class="ota" href="#">↑↑&nbsp;&nbsp;&nbsp;&nbsp;返回页顶&nbsp;&nbsp;&nbsp;&nbsp;↑↑</a></div>`
 	// 后补结束
 	nav.innerHTML=nav_html;
 	list.innerHTML=list_html;
