@@ -1,17 +1,17 @@
 window.addEventListener('contextmenu', RightClickMenu);
 const rightMenu = document.querySelector('#rcb_menu');
 const newTab = document.querySelector('#rcb_t6');
-const incertBtn = document.querySelector('#rcb_t7');
+// const incertBtn = document.querySelector('#rcb_t7');
 function RightClickMenu(e) {
     e.preventDefault();
     rightMenu.style.display = 'block';
     if (e.target.closest('a')) {
         newTab.style.display = 'block';
         // if (document.write(location.href) == 'https://tools.pj568.eu.org/') {incertBtn.style.display = 'block'}
-        incertBtn.style.display = 'block';
+        // incertBtn.style.display = 'block';
     } else {
         newTab.style.display = 'none';
-        incertBtn.style.display = 'none';
+        // incertBtn.style.display = 'none';
     }
     let x = e.clientX, y = e.clientY,
     menuWidth = rightMenu.offsetWidth, menuHeight = rightMenu.offsetHeight,
@@ -28,7 +28,7 @@ document.body.addEventListener('click', function () {
 rightMenu.addEventListener('click', function (e) {
     switch (e.target.id) {
     case "rcb_t1":
-        window.location.href="https://Tools.PJ568.eu.org/";
+        window.location.href="/";
         break;
     case "rcb_t2":
         window.location.href="#";

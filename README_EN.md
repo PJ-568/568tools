@@ -35,7 +35,7 @@
 - [X] ~~Build `comment` page, make it without back end.~~
 - [ ] Build `application` page.
 - [ ] Make `open-in-new-tab` in ContextMenu functional.
-- [ ] Add `loading` .
+- [X] Add `loading` .
 - [ ] ...
 
 ## 🏆Contributors
