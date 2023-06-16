@@ -6,7 +6,8 @@ function RightClickMenu(e) {
     rightMenu.style.display = 'block';
     if (e.target.closest('a')) {
         newTab.style.display = 'block';
-        if (document.write(location.href)=='https://tools.pj568.eu.org/') {document.querySelector('#rcb_t7').style.display = 'block'}
+        // if (document.write(location.href)=='https://tools.pj568.eu.org/') {document.querySelector('#rcb_t7').style.display = 'block'}
+        document.querySelector('#rcb_t7').style.display = 'block';
     } else {
         newTab.style.display = 'none';
         document.querySelector('#rcb_t7').style.display = 'none';
@@ -45,6 +46,9 @@ rightMenu.addEventListener('click', function (e) {
             var url = encodeURIComponent(e.target.closest('a').getAttribute('href'));
             window.open(url);
         }
+        break;
+    case "rcb_t7":
+        openBtnLink();
         break;
     default:
         console.error(e.target.id);
