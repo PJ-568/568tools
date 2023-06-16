@@ -2,8 +2,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<script src="/js/loading.js"></script>
 	<title>全屏黑色页面</title>
-	<link rel="icon" type="image/svg+xml" href="https://Tools.PJ568.eu.org/img/icon.svg">
+	<link rel="icon" type="image/svg+xml" href="/img/icon.svg">
 	<style type="text/css">
 
 		html, body {
@@ -93,12 +94,18 @@
 			color:#BDBDBD;
             background-color:#212121;
 		}
+		@import url(/css/tool_type.css);
 	</style>
 </head>
 <body>
+	<div id="loading">
+		<div id="loading_bg">
+			<div class="loader">正在加载</div>
+		</div>
+	</div>
 	<a id="back" onclick="javascript:history.go(-1);">尝试返回</a>
-	<a id="download" href="./index.html" download="黑色全屏.html">下载本页</a>
-	<a id="home" href="https://Tools.PJ568.eu.org/">返回主页</a>
+	<a id="download" href="index.html" download="黑色全屏.html">下载本页</a>
+	<a id="home" href="/">返回主页</a>
 	<div id="fullScreenBtn">进入全屏</div>
 	<div id="exitBtn">退出</div>
 </body>
