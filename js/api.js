@@ -21,6 +21,11 @@ var classify = [{
 		"url": "https://Chat.PJ568.eu.org/",
 		"hot": 0,
 		"img": ""
+	}, {
+		"name": "本站管理页面",
+		"url": "management",
+		"hot": 0,
+		"img": ""
 	}]
 }, {
 	"id": 2,

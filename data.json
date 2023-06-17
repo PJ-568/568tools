@@ -35,6 +35,11 @@
         "type":"图像处理"
     },
     {
+        "name":"本站管理页面",
+        "url":"/management/",
+        "type":"568服务"
+    },
+    {
         "name":"32&nbsp;位&nbsp;x86&nbsp;虚拟机",
         "url":"/lib/tools/v86/",
         "type":"软件模拟"
