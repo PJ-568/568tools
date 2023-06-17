@@ -1,6 +1,6 @@
 # <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg"/>Tools
 
-> 简体中文 | [English](./README_EN.md)
+> 🌏简体中文 | [English](./README_EN.md)
 
 此分支存储所有的在线工具。
 
