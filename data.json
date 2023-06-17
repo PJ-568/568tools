@@ -40,7 +40,12 @@
         "type":"568服务"
     },
     {
-        "name":"32&nbsp;位&nbsp;x86&nbsp;虚拟机",
+        "name":"狗屁不通文章生成器",
+        "url":"/incert/?link=/lib/tools/BullshitGenerator/",
+        "type":"文字工具"
+    },
+    {
+        "name":"在线&nbsp;x86&nbsp;虚拟机",
         "url":"/lib/tools/v86/",
         "type":"软件模拟"
     }

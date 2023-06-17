@@ -45,13 +45,22 @@ var classify = [{
 	"id": 3,
 	"name": "软件模拟",
 	"list": [{
-		"name": "32&nbsp;位&nbsp;x86&nbsp;虚拟机",
+		"name": "在线&nbsp;x86&nbsp;虚拟机",
 		"url": "/incert/?link=/lib/tools/v86/",
 		"hot": 0,
 		"img": ""
 	}]
 }, {
 	"id": 4,
+	"name": "文字工具",
+	"list": [{
+		"name": "狗屁不通文章生成器",
+		"url": "/incert/?link=/lib/tools/BullshitGenerator/",
+		"hot": 0,
+		"img": ""
+	}]
+}, {
+	"id": 5,
 	"name": "屏幕工具",
 	"list": [{
 		"name": "黑色全屏",
