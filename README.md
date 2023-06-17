@@ -2,7 +2,7 @@
     <img height="256" src='https://Tools.PJ568.eu.org/img/icon.svg' />
 </p>
 
-> 简体中文 | [English](./README_EN.md)
+> 🌏简体中文 | [English](./README_EN.md)
 
 # <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg"/>568Tools 在线工具箱
 
@@ -70,4 +70,4 @@
 
 ## 📄许可证
 
-本项目遵循 [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) 许可协议。如果想了解完整许可信息，请查阅 `LICENSE` 文件或访问[关于页面](https://Tools.PJ568.eu.org/about/#1).
+本项目遵循 [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) 许可协议。如果想了解完整许可信息，请查阅 `LICENSE` 文件或访问[关于页面](https://Tools.PJ568.eu.org/about/#1)。

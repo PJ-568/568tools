@@ -2,7 +2,7 @@
     <img height="256" src='https://Tools.PJ568.eu.org/img/icon.svg' />
 </p>
 
-> [简体中文](./README.md) | English
+> 🌏[简体中文](./README.md) | English
 
 # <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg"/>568Tools Online Toolbox
 
@@ -71,4 +71,4 @@ Every contributions to this project is welcomed.
 
 ## 📄License
 
-Licensed under the terms of [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). For full details about the license, check the `LICENSE` file or [About Page](https://Tools.PJ568.eu.org/about/#1).
+Licensed under the terms of [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). For full details about the license, please check the `LICENSE` file or [About Page](https://Tools.PJ568.eu.org/about/#1).
