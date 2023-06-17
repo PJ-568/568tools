@@ -49,9 +49,8 @@ rightMenu.addEventListener('click', function (e) {
             window.open(url);
         }
         break;
-    case "rcb_t7":
-        openBtnLink();
-        break;
+    // case "rcb_t7":
+    //     break;
     default:
         console.error(e.target.id);
         break;

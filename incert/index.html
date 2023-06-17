@@ -8,27 +8,7 @@
 		<link rel="icon" type="image/svg+xml" href="/img/icon.svg">
 		<link rel="stylesheet" href="/css/tool_type.css">
 		<script src="/js/include.js"></script>
-		<script>
-			// 获取 URL 参数
-			function getUrlParameter(name) {
-				name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-				var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-				var results = regex.exec(location.search);
-				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-			}
-			
-			// 替换 iframe 中的网页
-			function replaceIframeSource() {
-				var link = getUrlParameter('link');
-				if (link) {
-					var iframe = document.getElementById('myIframe');
-					iframe.src = link;
-				}
-			}
-			
-			// 页面加载完成时调用替换函数
-			window.onload = replaceIframeSource;
-		</script>
+		<script src="/js/incert.js"></script>
 	</head>
 	<body style="display:block;height:calc(100% - 41px)">
 		<div id="loading">
