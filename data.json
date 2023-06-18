@@ -41,7 +41,7 @@
     },
     {
         "name":"狗屁不通文章生成器",
-        "url":"/incert/?link=/lib/tools/BullshitGenerator/",
+        "url":"/lib/tools/BullshitGenerator/",
         "type":"文字工具"
     },
     {

@@ -64,7 +64,7 @@ var classify = [{
 	"name": "屏幕工具",
 	"list": [{
 		"name": "黑色全屏",
-		"url": "/lib/tools/黑色全屏/",
+		"url": "/incert/?link=/lib/tools/黑色全屏/",
 		"hot": 0,
 		"img": ""
 	}]
