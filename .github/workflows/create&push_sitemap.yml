@@ -34,3 +34,6 @@ jobs:
         git add sitemap.xml
         git commit -m "add sitemap.xml"
         git push
+
+    - name: Ping Google
+      run: curl https://www.google.com/ping?sitemap=https://Tools.PJ568.eu.org/sitemap.xml
