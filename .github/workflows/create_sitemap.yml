@@ -26,3 +26,11 @@ jobs:
         echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
         echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
         echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
+
+    - name: Push sitemap to repository
+      run: |
+        git config --global user.name "PJ569-bot"
+        git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
+        git add sitemap.xml
+        git commit -m "add sitemap.xml"
+        git push
