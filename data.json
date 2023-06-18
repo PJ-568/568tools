@@ -40,6 +40,11 @@
         "type":"568服务"
     },
     {
+        "name":"Rust 语言圣经（镜像）",
+        "url":"/lib/tools/rust-course/",
+        "type":"文档手册"
+    },
+    {
         "name":"狗屁不通文章生成器",
         "url":"/lib/tools/BullshitGenerator/",
         "type":"文字工具"

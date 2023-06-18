@@ -52,6 +52,15 @@ var classify = [{
 	}]
 }, {
 	"id": 4,
+	"name": "文档手册",
+	"list": [{
+		"name": "Rust 语言圣经（镜像）",
+		"url": "/incert/?link=/lib/tools/rust-course/",
+		"hot": 0,
+		"img": ""
+	}]
+}, {
+	"id": 5,
 	"name": "文字工具",
 	"list": [{
 		"name": "狗屁不通文章生成器",
@@ -60,7 +69,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 5,
+	"id": 6,
 	"name": "屏幕工具",
 	"list": [{
 		"name": "黑色全屏",
