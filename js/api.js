@@ -22,7 +22,7 @@ var classify = [{
 		"hot": 0,
 		"img": ""
 	}, {
-		"name": "本站管理页面",
+		"name": "本站后台管理页面",
 		"url": "management",
 		"hot": 0,
 		"img": ""
