@@ -22,7 +22,12 @@
     {
         "name":"黑色全屏",
         "url":"/lib/tools/黑色全屏/",
-        "type":"屏幕工具"
+        "type":"测试工具"
+    },
+    {
+        "name":"在线键盘鼠标测试",
+        "url":"/lib/tools/keyboard-mouse-tester/",
+        "type":"测试工具"
     },
     {
         "name":"字符生成图片",
@@ -42,6 +47,11 @@
     {
         "name":"Rust 语言圣经（镜像）",
         "url":"/lib/tools/rust-course/",
+        "type":"文档手册"
+    },
+    {
+        "name":"锈书（镜像）",
+        "url":"/lib/tools/rusty-book/",
         "type":"文档手册"
     },
     {

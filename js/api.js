@@ -43,11 +43,16 @@ var classify = [{
 	}]
 }, {
 	"id": 3,
-	"name": "软件模拟",
+	"name": "测试工具",
 	"list": [{
-		"name": "在线&nbsp;x86&nbsp;虚拟机",
-		"url": "/incert/?link=/lib/tools/v86/",
+		"name": "黑色全屏",
+		"url": "/incert/?link=/lib/tools/黑色全屏/",
 		"hot": 0,
+		"img": ""
+	}, {
+		"name": "在线键盘鼠标测试",
+		"url": "/incert/?link=/lib/tools/keyboard-mouse-tester/",
+		"hot": 1,
 		"img": ""
 	}]
 }, {
@@ -55,8 +60,13 @@ var classify = [{
 	"name": "文档手册",
 	"list": [{
 		"name": "Rust 语言圣经（镜像）",
-		"url": "/incert/?link=/lib/tools/rust-course/",
-		"hot": 0,
+		"url": "/lib/tools/rust-course/",
+		"hot": 1,
+		"img": ""
+	}, {
+		"name": "锈书（镜像）",
+		"url": "/lib/tools/rusty-book/",
+		"hot": 1,
 		"img": ""
 	}]
 }, {
@@ -70,10 +80,10 @@ var classify = [{
 	}]
 }, {
 	"id": 6,
-	"name": "屏幕工具",
+	"name": "软件模拟",
 	"list": [{
-		"name": "黑色全屏",
-		"url": "/incert/?link=/lib/tools/黑色全屏/",
+		"name": "在线&nbsp;x86&nbsp;虚拟机",
+		"url": "/incert/?link=/lib/tools/v86/",
 		"hot": 0,
 		"img": ""
 	}]
