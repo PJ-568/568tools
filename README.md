@@ -28,15 +28,15 @@
 
 ## ✅待完成
 
-- [ ] 适配搜索栏，使其能够正常使用。
-- [ ] 多语言支持。
-- [X] ~~构建`关于`页面；~~
-  - [ ] 做到能够查询所有项目的许可证和信息。
-- [X] ~~构建`留言反馈`页面，做到无后端。~~
-- [ ] 构建`提交页面`页面。
-- [ ] 修复右键菜单中的`在新标签页打开`按钮。
-- [X] ~~添加`加载`动画。~~
-- [ ] ……
+* [ ] 适配搜索栏，使其能够正常使用。
+* [ ] 多语言支持。
+* [X] ~~构建`关于`页面；~~
+  * [ ] 做到能够查询所有项目的许可证和信息。
+* [X] ~~构建`留言反馈`页面，做到无后端。~~
+* [ ] 构建`提交页面`页面。
+* [ ] 修复右键菜单中的`在新标签页打开`按钮。
+* [X] ~~添加`加载`动画。~~
+* [ ] ……
 
 ## 🏆贡献者们
 
@@ -50,24 +50,29 @@
 
 ### 参考
 
-- Fork 源码，下载到本地并运行项目；
-- 添加/修改代码；
-- <b style="color:red">⚠️对相关改动进行全面的自我测试⚠️</b>；
-- 确认无误后提交修改到 Github；
-- 提交 Pull Request；
+* Fork 源码，下载到本地并运行项目；
+* 添加/修改代码；
+* <b style="color:red">⚠️对相关改动进行全面的自我测试⚠️</b>；
+* 确认无误后提交修改到 Github；
+* 提交 Pull Request；
 
 ### 请注意
 
-- 单次 Pull Request 不应提交过多修改，请确保每次提交都针对特定的功能且务必说明本次改动的具体目的，例如：修复某 bug 、优化某方法 等，方便进行 Code Review；
-- 对于 bug 的修复，应该将本次 Pull Request 和相对应 bug 的 issue 关联起来，让别人知道该问题已经被修复；
-- 对于较大的新功能，你需要先提交 Issues，例如 “添加 XXX 功能”，确认该功能有被添加的必要后，再开始工作；
-- 对于一些主观的样式、交互逻辑调整：如颜色、图标的使用，某些预设配置的增减修改等，一般不予通过。但可以在 Discussions 中进行讨论；
-- 其他如简单的代码优化、文档修正等，只要修改合理都会被接受。
+* 单次 Pull Request 不应提交过多修改，请确保每次提交都针对特定的功能且务必说明本次改动的具体目的，例如：修复某 bug 、优化某方法 等，方便进行 Code Review；
+* 对于 bug 的修复，应该将本次 Pull Request 和相对应 bug 的 issue 关联起来，让别人知道该问题已经被修复；
+* 对于较大的新功能，你需要先提交 Issues，例如 “添加 XXX 功能”，确认该功能有被添加的必要后，再开始工作；
+* 对于一些主观的样式、交互逻辑调整：如颜色、图标的使用，某些预设配置的增减修改等，一般不予通过。但可以在 Discussions 中进行讨论；
 
-## ⭐Star 历史
+* 其他如简单的代码优化、文档修正等，只要修改合理都会被接受。
 
-![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date)
+## 🪴项目活动
+
+![Project Activity](https://repobeats.axiom.co/api/embed/0e0b27c01d4e9ff093fb3d03fedc74a300068f50.svg "Repobeats analytics image")
 
 ## 📄许可证
 
 本项目遵循 [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) 许可协议。如果想了解完整许可信息，请查阅 `LICENSE` 文件或访问[关于页面](https://Tools.PJ568.eu.org/about/#1)。
+
+## ⭐Star 历史
+
+![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date)

@@ -29,15 +29,15 @@
 
 ## ✅To Do List
 
-- [ ] Fix Search, make it functional.
-- [ ] Multilingual support.
-- [X] ~~Build `about` page.~~
-  - [ ] Make it be able to query license and info for all projects.
-- [X] ~~Build `comment` page, make it without back end.~~
-- [ ] Build `application` page.
-- [ ] Make `open-in-new-tab` in ContextMenu functional.
-- [X] ~~Add `loading` .~~
-- [ ] ...
+* [ ] Fix Search, make it functional.
+* [ ] Multilingual support.
+* [X] ~~Build `about` page.~~
+  * [ ] Make it be able to query license and info for all projects.
+* [X] ~~Build `comment` page, make it without back end.~~
+* [ ] Build `application` page.
+* [ ] Make `open-in-new-tab` in ContextMenu functional.
+* [X] ~~Add `loading` .~~
+* [ ] ...
 
 ## 🏆Contributors
 
@@ -51,24 +51,28 @@ Every contributions to this project is welcomed.
 
 ### Steps
 
-- Fork. Download and run the whole project locally.
-- Add or modify the project.
-- <b style="color:red">⚠️Conduct comprehensive tests on the relevant modifications.</b>
-- Confirm and submit the changes to Github.
-- Pull Requests.
+* Fork. Download and run the whole project locally.
+* Add or modify the project.
+* <b style="color:red">⚠️Conduct comprehensive tests on the relevant modifications.</b>
+* Confirm and submit the changes to Github.
+* Pull Requests.
 
 ### Things to Note
 
-- A pull request should not commit too many changes. Make sure that each commit is for a specific feature and that you specify the purpose of the change, for example: fixed XX bug, optimizing XX method, etc. All for the convenience of code review.
-- For bug fixes, you should associate your pull request with the issue of the corresponding bug to let others know that the problem has been fixed.
-- For greater new features, you should submit an Issues first, such as "Add XXX feature". Confirm that the feature is necessary to be added before starting work.
-- For subjective style and interaction logic adjustments, such as the use of colors and icons, as well as adding or modifying certain preset configurations, they are generally not approved. However, you can discuss them in the Discussions section.
-- For other tasks like simple code optimizations and document corrections, as long as the modifications are reasonable, they will be accepted.
+* A pull request should not commit too many changes. Make sure that each commit is for a specific feature and that you specify the purpose of the change, for example: fixed XX bug, optimizing XX method, etc. All for the convenience of code review.
+* For bug fixes, you should associate your pull request with the issue of the corresponding bug to let others know that the problem has been fixed.
+* For greater new features, you should submit an Issues first, such as "Add XXX feature". Confirm that the feature is necessary to be added before starting work.
+* For subjective style and interaction logic adjustments, such as the use of colors and icons, as well as adding or modifying certain preset configurations, they are generally not approved. However, you can discuss them in the Discussions section.
+* For other tasks like simple code optimizations and document corrections, as long as the modifications are reasonable, they will be accepted.
 
-## ⭐Star History
+## 🪴Project Activity
 
-![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date)
+![Project Activity](https://repobeats.axiom.co/api/embed/0e0b27c01d4e9ff093fb3d03fedc74a300068f50.svg "Repobeats analytics image")
 
 ## 📄License
 
 Licensed under the terms of [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). For full details about the license, please check the `LICENSE` file or [About Page](https://Tools.PJ568.eu.org/about/#1).
+
+## ⭐Star History
+
+![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date)
