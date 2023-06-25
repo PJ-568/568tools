@@ -55,6 +55,11 @@
         "type":"文档手册"
     },
     {
+        "name":"Judge0 IDE 在线代码编辑器",
+        "url":"/lib/tools/ide/",
+        "type":"文字工具"
+    },
+    {
         "name":"狗屁不通文章生成器",
         "url":"/lib/tools/BullshitGenerator/",
         "type":"文字工具"
