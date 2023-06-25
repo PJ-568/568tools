@@ -77,6 +77,11 @@ var classify = [{
 		"url": "/incert/?link=/lib/tools/BullshitGenerator/",
 		"hot": 0,
 		"img": ""
+	}, {
+		"name": "NKeditor 富文本编辑器",
+		"url": "/incert/?link=/lib/tools/NKeditor/",
+		"hot": 0,
+		"img": ""
 	}]
 }, {
 	"id": 6,
