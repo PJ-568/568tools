@@ -10,3 +10,7 @@
 	path = tools/keyboard-mouse-tester
 	url = https://github.com/shawon9324/keyboard-mouse-tester-webApp.git
 	branch = main
+[submodule "tools/ide"]
+	path = tools/ide
+	url = https://github.com/judge0/ide.git
+	branch = master
