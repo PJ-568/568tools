@@ -70,7 +70,6 @@ var classify = [{
 		"url": "/lib/tools/geopattern/",
 		"hot": 0,
 		"img": ""
-	}, {
 	}]
 }, {
 	"id": 3,
