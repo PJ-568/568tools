@@ -2,3 +2,7 @@
 	path = tools/rust-course
 	url = https://github.com/sunface/rust-course.git
 	branch = gh-pages
+[submodule "tools/rusty-book"]
+	path = tools/rusty-book
+	url = https://github.com/rustlang-cn/rusty-book.git
+	branch = gh-pages
