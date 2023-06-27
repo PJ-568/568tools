@@ -14,3 +14,7 @@
 	path = tools/ide
 	url = https://github.com/judge0/ide.git
 	branch = master
+[submodule "tools/mind-map"]
+	path = tools/mind-map
+	url = https://github.com/wanglin2/mind-map.git
+	branch = main
