@@ -1,0 +1,4 @@
+[submodule "tools/rust-course"]
+	path = tools/rust-course
+	url = https://github.com/sunface/rust-course.git
+	branch = gh-pages
