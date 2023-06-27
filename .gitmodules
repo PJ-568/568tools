@@ -6,3 +6,7 @@
 	path = tools/rusty-book
 	url = https://github.com/rustlang-cn/rusty-book.git
 	branch = gh-pages
+[submodule "tools/keyboard-mouse-tester"]
+	path = tools/keyboard-mouse-tester
+	url = https://github.com/shawon9324/keyboard-mouse-tester-webApp.git
+	branch = main
