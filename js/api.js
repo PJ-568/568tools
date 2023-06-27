@@ -37,27 +37,27 @@ var classify = [{
 		"img": ""
 	}, {
 		"name": "在线图片裁剪",
-		"url": "/lib/tools/webp2jpg-online/",
+		"url": "/incert/?link=/lib/tools/webp2jpg-online/",
 		"hot": 1,
 		"img": ""
 	}, {
 		"name": "多功能图片处理工具",
-		"url": "/lib/tools/webp2jpg-online/",
+		"url": "/incert/?link=/lib/tools/webp2jpg-online/",
 		"hot": 1,
 		"img": ""
 	}, {
 		"name": "在线图片格式转换",
-		"url": "/lib/tools/webp2jpg-online/",
+		"url": "/incert/?link=/lib/tools/webp2jpg-online/",
 		"hot": 1,
 		"img": ""
 	}, {
 		"name": "在线图片批量添加水印工具",
-		"url": "/lib/tools/webp2jpg-online/",
+		"url": "/incert/?link=/lib/tools/webp2jpg-online/",
 		"hot": 1,
 		"img": ""
 	}, {
 		"name": "在线批量重命名图片工具",
-		"url": "/lib/tools/webp2jpg-online/",
+		"url": "/incert/?link=/lib/tools/webp2jpg-online/",
 		"hot": 0,
 		"img": ""
 	}, {
