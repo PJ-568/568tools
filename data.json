@@ -35,8 +35,38 @@
         "type":"图像处理"
     },
     {
-        "name":"思维导图",
+        "name":"在线思维导图编辑器",
         "url":"/lib/tools/mind-map/",
+        "type":"图像处理"
+    },
+    {
+        "name":"多功能图像处理工具",
+        "url":"/lib/tools/webp2jpg-online/",
+        "type":"图像处理"
+    },
+    {
+        "name":"在线图片格式转换",
+        "url":"/lib/tools/webp2jpg-online/",
+        "type":"图像处理"
+    },
+    {
+        "name":"在线图片批量添加水印工具",
+        "url":"/lib/tools/webp2jpg-online/",
+        "type":"图像处理"
+    },
+    {
+        "name":"在线批量重命名图片工具",
+        "url":"/lib/tools/webp2jpg-online/",
+        "type":"图像处理"
+    },
+    {
+        "name":"在线图片裁剪",
+        "url":"/lib/tools/webp2jpg-online/",
+        "type":"图像处理"
+    },
+    {
+        "name":"在线拼接视频字幕截图",
+        "url":"/lib/tools/webp2jpg-online/splicing.html#/splicing",
         "type":"图像处理"
     },
     {

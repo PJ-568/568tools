@@ -31,15 +31,46 @@ var classify = [{
 	"id": 2,
 	"name": "图像处理",
 	"list": [{
-		"name": "思维导图",
+		"name": "在线思维导图编辑器",
 		"url": "/incert/?link=/lib/tools/mind-map/",
 		"hot": 1,
+		"img": ""
+	}, {
+		"name": "在线图片裁剪",
+		"url": "/lib/tools/webp2jpg-online/",
+		"hot": 1,
+		"img": ""
+	}, {
+		"name": "多功能图片处理工具",
+		"url": "/lib/tools/webp2jpg-online/",
+		"hot": 1,
+		"img": ""
+	}, {
+		"name": "在线图片格式转换",
+		"url": "/lib/tools/webp2jpg-online/",
+		"hot": 1,
+		"img": ""
+	}, {
+		"name": "在线图片批量添加水印工具",
+		"url": "/lib/tools/webp2jpg-online/",
+		"hot": 1,
+		"img": ""
+	}, {
+		"name": "在线批量重命名图片工具",
+		"url": "/lib/tools/webp2jpg-online/",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "在线拼接视频字幕截图",
+		"url": "/incert/?link=/lib/tools/webp2jpg-online/splicing.html#/splicing",
+		"hot": 0,
 		"img": ""
 	}, {
 		"name": "字符生成图片",
 		"url": "/lib/tools/geopattern/",
 		"hot": 0,
 		"img": ""
+	}, {
 	}]
 }, {
 	"id": 3,
