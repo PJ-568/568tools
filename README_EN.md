@@ -25,7 +25,7 @@
 
 ## 📖Infomation
 
-* `This project and the open source projects which are used are allowed to modify, as long as you retain the original author information. If you want to remove it, please contact the author or you may lose technical support.`Please refer to [license](https://Tools.PJ568.eu.org/about/#1).
+* `This project and the open source projects which are used are allowed to modify, as long as you retain the original author information. If you want to remove it, please contact the author or you may lose technical support.` Please refer to [license](https://Tools.PJ568.eu.org/about/#1).
 * [Submit your own pages or links](https://Tools.PJ568.eu.org/application) is welcomed.
 * This project is based on [fly63在线工具箱](https://github.com/mydearcc/tools) (fly63 Online Toolbox). We would like to express my sincere thanks to them!
 * If there is a BUG, please shoot an `Issue` and I will fix it.
