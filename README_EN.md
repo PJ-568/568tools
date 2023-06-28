@@ -10,6 +10,10 @@
 
 <a style="font-size:14px;margin:10px 0.8%;border:2px solid #0277BD;border-radius:6px;background:#424242;width:200px;min-height:62px;line-height:20px;box-sizing:border-box;display:flex;align-items:center" href="https://Tools.PJ568.eu.org/"><img height="15" src="https://tools.PJ568.eu.org/img/icon.svg"/> Click me to visit</a>
 
+## 🪴Project Activity
+
+![Project Activity](https://repobeats.axiom.co/api/embed/0e0b27c01d4e9ff093fb3d03fedc74a300068f50.svg "Repobeats analytics image")
+
 ## 📚Features
 
 * File Converter.
@@ -64,10 +68,6 @@ Every contributions to this project is welcomed.
 * For greater new features, you should submit an Issues first, such as "Add XXX feature". Confirm that the feature is necessary to be added before starting work.
 * For subjective style and interaction logic adjustments, such as the use of colors and icons, as well as adding or modifying certain preset configurations, they are generally not approved. However, you can discuss them in the Discussions section.
 * For other tasks like simple code optimizations and document corrections, as long as the modifications are reasonable, they will be accepted.
-
-## 🪴Project Activity
-
-![Project Activity](https://repobeats.axiom.co/api/embed/0e0b27c01d4e9ff093fb3d03fedc74a300068f50.svg "Repobeats analytics image")
 
 ## 📄License
 

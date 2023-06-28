@@ -10,6 +10,10 @@
 
 <a style="font-size:14px;margin:10px 0.8%;border:2px solid #0277BD;border-radius:6px;background:#424242;width:200px;min-height:62px;line-height:20px;box-sizing:border-box;display:flex;align-items:center" href="https://Tools.PJ568.eu.org/"><img height="15" src="https://tools.PJ568.eu.org/img/icon.svg"/> 点击访问</a>
 
+## 🪴项目活动
+
+![Project Activity](https://repobeats.axiom.co/api/embed/0e0b27c01d4e9ff093fb3d03fedc74a300068f50.svg "Repobeats analytics image")
+
 ## 📚服务涵盖
 
 * 文件转换；
@@ -64,10 +68,6 @@
 * 对于一些主观的样式、交互逻辑调整：如颜色、图标的使用，某些预设配置的增减修改等，一般不予通过。但可以在 Discussions 中进行讨论；
 
 * 其他如简单的代码优化、文档修正等，只要修改合理都会被接受。
-
-## 🪴项目活动
-
-![Project Activity](https://repobeats.axiom.co/api/embed/0e0b27c01d4e9ff093fb3d03fedc74a300068f50.svg "Repobeats analytics image")
 
 ## 📄许可证
 
