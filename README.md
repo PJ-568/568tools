@@ -6,7 +6,7 @@
 
 ## 📖其他说明
 
-[见主 README 文件](https://github.com/PJ-568/568tools/blob/main/README.md)
+[见主 README 文件](../README.md)
 
 ## 🏆贡献者们
 

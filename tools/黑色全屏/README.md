@@ -4,6 +4,8 @@
 
 > 🌏简体中文 | [English](./README_EN.md)
 
+> 🗃️[Github](https://github.com/PJ-568/Black_screen) | [Gitee](https://gitee.com/PJ-568/Black_screen)
+
 # <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg"/>黑色全屏
 
 * 一个能显示全屏黑色的HTML文件。
