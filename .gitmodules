@@ -21,3 +21,6 @@
 [submodule "tools/webp2jpg-online"]
 	path = tools/webp2jpg-online
 	url = https://github.com/renzhezhilu/webp2jpg-online.git
+[submodule "tools/黑色全屏"]
+	path = tools/黑色全屏
+	url = https://github.com/PJ-568/Blcak_screen.git
