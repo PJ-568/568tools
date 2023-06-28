@@ -6,7 +6,7 @@
 
 # <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg"/>Black_screen
 
-* A html file which displays dark_screen.
+* An html file which displays dark screen.
 
 <a style="font-size:14px;margin:10px 0.8%;border:2px solid #0277BD;border-radius:6px;background:#424242;width:200px;min-height:62px;line-height:20px;box-sizing:border-box;display:flex;align-items:center" href="https://tools.pj568.eu.org/incert/?link=/lib/tools/%E9%BB%91%E8%89%B2%E5%85%A8%E5%B1%8F/">Click me to visit</a>
 
@@ -16,7 +16,7 @@
 
 ## 📚Feature
 
-* Display dark_screen.
+* Display dark screen.
 * ...
 
 ## 📖Infomation
