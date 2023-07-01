@@ -35,6 +35,11 @@
         "type":"图像处理"
     },
     {
+        "name":"字符图像编辑",
+        "url":"/lib/tools/图像处理/",
+        "type":"图像处理"
+    },
+    {
         "name":"在线思维导图编辑器",
         "url":"/lib/tools/mind-map/",
         "type":"图像处理"

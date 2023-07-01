@@ -36,6 +36,11 @@ var classify = [{
 		"hot": 1,
 		"img": ""
 	}, {
+		"name": "在线图像编辑",
+		"url": "/incert/?link=/lib/tools/图像处理/",
+		"hot": 1,
+		"img": ""
+	}, {
 		"name": "在线图片裁剪",
 		"url": "/incert/?link=/lib/tools/webp2jpg-online/",
 		"hot": 1,

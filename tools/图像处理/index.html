@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ImageEditor Demo</title>
+  <link type="text/css" href="tui-color-picker.css" rel="stylesheet">
+  <link rel="stylesheet" href="tui-image-editor.css">
+  <style>
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="tui-image-editor-container"></div>
+  <!-- 依赖的第三方库 -->
+  <script type="text/javascript" src="fabric.js"></script>
+  <!-- 一些工具函数 -->
+  <script type="text/javascript" src="tui-code-snippet.min.js"></script>
+  <!-- 颜色选择 -->
+  <script type="text/javascript" src="tui-color-picker.js"></script>
+  <!-- 文件下载的库 -->
+  <script type="text/javascript" src="FileSaver.min.js"></script> 
+  <!-- 核心库 -->
+  <script src="tui-image-editor.js"></script>
+  <script>
+    var imageEditor = new tui.ImageEditor('#tui-image-editor-container', {
+      includeUI: {
+        initMenu: 'filter',
+        menuBarPosition: 'left'
+      },
+      cssMaxWidth: 700,
+      cssMaxHeight: 500,
+      usageStatistics: false
+    });
+    window.onresize = function () {
+      imageEditor.ui.resizeEditor();
+    }
+  </script>
+</body>
+
+</html>
