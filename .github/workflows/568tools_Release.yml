@@ -1,0 +1,42 @@
+name: Release & Merge
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!release'
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: clone
+        run: |
+          mkdir tree
+          git clone https://github.com/PJ-568/568tools.git -b assets tree/assets
+          git clone https://github.com/PJ-568/568tools.git -b main tree/main
+          git clone https://github.com/PJ-568/568tools.git -b release tree/release
+          echo '检查 tree/assets：'
+          ls tree/assets
+          echo '检查 tree/main：'
+          ls tree/main
+          echo '检查 tree/release：'
+          ls tree/release
+
+      - name: merge
+        run: |
+          rm -r tree/release/*
+          echo '检查 tree/release：'
+          ls tree/release
+          cp -u tree/assets/* tree/release/
+          cp -u tree/main/* tree/release/
+
+      - name: push
+        run: |
+          cd tree/release
+          git config --global user.name "PJ569-bot"
+          git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
+          git add -A
+          git commit -m '自动 Release'
+          git push
