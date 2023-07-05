@@ -14,14 +14,14 @@ jobs:
       - name: Clone
         run: |
           echo '创建 tree/：'
-          mkdir /home/runner/work/568tools/568tools/tree
+          mkdir /home/runner/tree
           echo '克隆 三个分支：'
-          git clone https://github.com/PJ-568/568tools.git -b assets /home/runner/work/568tools/568tools/tree/assets
-          git clone https://github.com/PJ-568/568tools.git -b main /home/runner/work/568tools/568tools/tree/main
+          git clone https://github.com/PJ-568/568tools.git -b assets /home/runner/tree/assets
+          git clone https://github.com/PJ-568/568tools.git -b main /home/runner/tree/main
           echo '检查 tree/assets：'
-          ls /home/runner/work/568tools/568tools/tree/assets
+          ls /home/runner/tree/assets
           echo '检查 tree/main：'
-          ls /home/runner/work/568tools/568tools/tree/main
+          ls /home/runner/tree/main
       
       - name: Checkout release branch
         uses: actions/checkout@v3
@@ -35,9 +35,9 @@ jobs:
           echo '检查 release：'
           ls
           echo '复制 tree/assets/* 到 release/：'
-          cp -v -u -r /home/runner/work/568tools/568tools/tree/assets/* .
+          cp -v -u -r /home/runner/tree/assets/* .
           echo '复制 tree/main/* 到 tree/release/：'
-          cp -v -u -r /home/runner/work/568tools/568tools/tree/main/* .
+          cp -v -u -r /home/runner/tree/main/* .
 
       - name: Generate the sitemap
         id: sitemap
