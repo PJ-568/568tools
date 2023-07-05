@@ -9,8 +9,8 @@ on:
 jobs:
   Release:
     runs-on: ubuntu-latest
+    
     steps:
-
       - name: clone
         run: |
           echo '创建 tree/：'
@@ -18,29 +18,30 @@ jobs:
           echo '克隆 三个分支：'
           git clone https://github.com/PJ-568/568tools.git -b assets tree/assets
           git clone https://github.com/PJ-568/568tools.git -b main tree/main
-          git clone https://github.com/PJ-568/568tools.git -b release tree/release
           echo '检查 tree/assets：'
           ls tree/assets
           echo '检查 tree/main：'
           ls tree/main
-          echo '检查 tree/release：'
-          ls tree/release
+      
+      - name: Checkout release branch
+        uses: actions/checkout@v3
+        with:
+          ref: release
 
       - name: merge
         run: |
-          echo '清空 tree/release：'
-          rm -r tree/release/*
-          echo '检查 tree/release：'
-          ls tree/release
-          echo '复制 tree/assets/* 到 tree/release/：'
-          cp -v -u -r tree/assets/* tree/release/
+          echo '清空 release：'
+          rm -r ./*
+          echo '检查 release：'
+          ls
+          echo '复制 tree/assets/* 到 release/：'
+          cp -v -u -r ../tree/assets/* .
           echo '复制 tree/main/* 到 tree/release/：'
-          cp -v -u -r tree/main/* tree/release/
+          cp -v -u -r ../tree/main/* .
 
       - name: push
         run: |
-          cd tree/release
-          git config --global user.name "PJ568"
+          git config --global user.name "PJ569-bot"
           git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
           git add -A
           git commit -m '自动 Release'
