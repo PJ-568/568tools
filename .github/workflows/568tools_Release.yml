@@ -29,8 +29,8 @@ jobs:
           rm -r tree/release/*
           echo '检查 tree/release：'
           ls tree/release
-          cp -u tree/assets/* tree/release/
-          cp -u tree/main/* tree/release/
+          cp -v -u -r tree/assets/* tree/release/
+          cp -v -u -r tree/main/* tree/release/
 
       - name: push
         run: |
