@@ -1,4 +1,4 @@
-name: Release & Merge
+name: Release
 
 on:
   push:
@@ -9,34 +9,55 @@ on:
 jobs:
   Release:
     runs-on: ubuntu-latest
+    
     steps:
-
-      - name: clone
+      - name: Clone
         run: |
-          mkdir tree
-          git clone https://github.com/PJ-568/568tools.git -b assets tree/assets
-          git clone https://github.com/PJ-568/568tools.git -b main tree/main
-          git clone https://github.com/PJ-568/568tools.git -b release tree/release
+          echo '创建 tree/：'
+          mkdir /home/runner/work/568tools/568tools/tree
+          echo '克隆 三个分支：'
+          git clone https://github.com/PJ-568/568tools.git -b assets /home/runner/work/568tools/568tools/tree/assets
+          git clone https://github.com/PJ-568/568tools.git -b main /home/runner/work/568tools/568tools/tree/main
           echo '检查 tree/assets：'
-          ls tree/assets
+          ls /home/runner/work/568tools/568tools/tree/assets
           echo '检查 tree/main：'
-          ls tree/main
-          echo '检查 tree/release：'
-          ls tree/release
+          ls /home/runner/work/568tools/568tools/tree/main
+      
+      - name: Checkout release branch
+        uses: actions/checkout@v3
+        with:
+          ref: release
 
-      - name: merge
+      - name: Merge
         run: |
-          rm -r tree/release/*
-          echo '检查 tree/release：'
-          ls tree/release
-          cp -u tree/assets/* tree/release/
-          cp -u tree/main/* tree/release/
+          echo '清空 release：'
+          rm -r ./*
+          echo '检查 release：'
+          ls
+          echo '复制 tree/assets/* 到 release/：'
+          cp -v -u -r /home/runner/work/568tools/568tools/tree/assets/* .
+          echo '复制 tree/main/* 到 tree/release/：'
+          cp -v -u -r /home/runner/work/568tools/568tools/tree/main/* .
 
-      - name: push
+      - name: Generate the sitemap
+        id: sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://tools.pj568.eu.org/
+
+      - name: Output sitemap stats
         run: |
-          cd tree/release
+          echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
+          echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
+          echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
+
+      - name: Push
+        run: |
           git config --global user.name "PJ569-bot"
           git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
           git add -A
           git commit -m '自动 Release'
           git push
+
+      - name: Ping Google
+        run: curl https://www.google.com/ping?sitemap=https://Tools.PJ568.eu.org/sitemap.xml
