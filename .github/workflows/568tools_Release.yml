@@ -40,8 +40,8 @@ jobs:
       - name: push
         run: |
           cd tree/release
-          # git config --global user.name "PJ569-bot"
-          # git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
+          git config --global user.name "PJ568"
+          git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
           git add -A
           git commit -m '自动 Release'
           git push
