@@ -182,6 +182,12 @@ body {
     font-size: 20px;
 }
 
+.nav_content .info h3 {
+    margin: 10px;
+    color: #E0E0E0;
+    font-size: 18px;
+}
+
 .nav_content .info p {
     margin: 10px;
     color: #E0E0E0;
