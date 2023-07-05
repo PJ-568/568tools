@@ -13,15 +13,16 @@ jobs:
     steps:
       - name: clone
         run: |
+          pwd
           echo '创建 tree/：'
           mkdir tree
           echo '克隆 三个分支：'
-          git clone https://github.com/PJ-568/568tools.git -b assets tree/assets
-          git clone https://github.com/PJ-568/568tools.git -b main tree/main
+          git clone https://github.com/PJ-568/568tools.git -b assets /home/runner/tree/assets
+          git clone https://github.com/PJ-568/568tools.git -b main /home/runner/tree/main
           echo '检查 tree/assets：'
-          ls tree/assets
+          ls /home/runner/tree/assets
           echo '检查 tree/main：'
-          ls tree/main
+          ls /home/runner/tree/main
       
       - name: Checkout release branch
         uses: actions/checkout@v3
