@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="568Tools 在线工具箱的后台管理界面。">
+		<script src="/js/loading.js"></script>
+		<title>568Tools&nbsp;|&nbsp;服务器后台</title>
+		<link rel="icon" type="image/svg+xml" href="/img/icon.svg">
+		<link rel="stylesheet" href="/css/tool_type.css">
+		<script src="/js/include.js"></script>
+		<script src="/lib/tools/v86/build/libv86.js"></script>
+	</head>
+	<script>
+	"use strict";
+
+	window.onload = function()
+	{
+		var emulator = window.emulator = new V86Starter({
+			wasm_path: "/lib/tools/v86/build/v86.wasm",
+			memory_size: 256 * 1024 * 1024,
+			vga_memory_size: 4 * 1024 * 1024,
+			screen_container: document.getElementById("screen_container"),
+			bios: {
+				url: "/lib/tools/v86/bios/seabios.bin",
+			},
+			vga_bios: {
+				url: "/lib/tools/v86/bios/vgabios.bin",
+			},
+			fda: {
+				url: "/management/images/freebsd_state.bin.zst",
+			},
+			// initial_state: {
+			// 	url: "/management/images/568state.bin",
+			// },
+			autostart: true,
+		});
+	}
+	</script>
+	<body>
+		<div id="loading">
+			<div id="loading_bg">
+				<div class="loader">正在加载</div>
+			</div>
+		</div>
+		<div class="bg-img"></div>
+		<div id="list" class="nav_content">
+			<div class="item info">
+                <h2><img alt="Main_icon" class="mainicon" src="/img/icon.svg" />&nbsp;568Tools&nbsp;|&nbsp;控制台</h2>
+				<div id="screen_container">
+					<div style="white-space: pre; font: 14px monospace; line-height: 14px"></div>
+					<canvas style="display: none"></canvas>
+				</div>
+            </div>
+            <div class="item">
+                <h2>控制</h2>
+				<div class="child">
+					<a href="/">控制选项一</a>
+					<a href="#">控制选项二</a>
+					<a style="cursor:pointer" onclick="javascript:history.back(-1);">控制选项三</a>
+				</div>
+            </div>
+			<div class="item">
+                <h2>可选操作</h2>
+				<div class="child">
+					<a href="/">回到主页</a>
+					<a href="#">回到页顶</a>
+					<a style="cursor:pointer" onclick="javascript:history.back(-1);">尝试返回</a>
+				</div>
+            </div>
+        </div>
+		<include src="/header.html"></include>
+		<ul id="rcb_menu">
+			<li id="rcb_t1">🏠&nbsp;首页</li>
+			<li class="hr_break"></li>
+			<li id="rcb_t2">↑&nbsp;页顶</li>
+			<li id="rcb_t3">↩&nbsp;返回</li>
+			<li id="rcb_t4">↪&nbsp;前进</li>
+			<li id="rcb_t5">↻&nbsp;重载</li>
+			<li id="rcb_t6">🆕&nbsp;新标签页打开</li>
+		</ul>
+	</body>
+</html>
+<script src="/js/contextmenu.js"></script>
