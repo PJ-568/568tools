@@ -39,6 +39,7 @@ jobs:
           echo '复制 tree/main/* 到 release/：'
           cp -v -u -r /home/runner/tree/main/* .
           echo '添加 lib 子模块到 release/lib/：'
+          rm -r ./lib/
           git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
 
       - name: Generate the sitemap
