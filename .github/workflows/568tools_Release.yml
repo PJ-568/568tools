@@ -36,8 +36,10 @@ jobs:
           ls
           echo '复制 tree/assets/* 到 release/：'
           cp -v -u -r /home/runner/tree/assets/* .
-          echo '复制 tree/main/* 到 tree/release/：'
+          echo '复制 tree/main/* 到 release/：'
           cp -v -u -r /home/runner/tree/main/* .
+          echo '添加 lib 子模块到 release/lib/：'
+          git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
 
       - name: Generate the sitemap
         id: sitemap
