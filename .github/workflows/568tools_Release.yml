@@ -35,9 +35,9 @@ jobs:
           echo '检查 release：'
           ls
           echo '复制 tree/assets/* 到 release/：'
-          cp -v -u -r ../tree/assets/* .
+          cp -v -u -r /home/runner/tree/assets/* .
           echo '复制 tree/main/* 到 tree/release/：'
-          cp -v -u -r ../tree/main/* .
+          cp -v -u -r /home/runner/tree/main/* .
 
       - name: push
         run: |
