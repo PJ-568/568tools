@@ -1,0 +1,4 @@
+[submodule "lib"]
+	path = lib
+	url = https://github.com/PJ-568/568tools.git
+	branch = tools
