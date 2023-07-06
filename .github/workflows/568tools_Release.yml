@@ -34,18 +34,14 @@ jobs:
           rm -r ./*
           echo '检查 release：'
           ls
-          echo '复制 tree/assets/* 到 release/：'
-          cp -v -u -r /home/runner/tree/assets/* .
-          echo '复制 tree/main/* 到 release/：'
-          cp -v -u -r /home/runner/tree/main/* .
+          echo '移动 tree/assets/* 到 release/：'
+          mv -v -u -r /home/runner/tree/assets/* .
+          echo '移动 tree/main/* 到 release/：'
+          mv -v -u -r /home/runner/tree/main/* .
           echo '添加 lib 子模块到 release/lib/：'
           rm -r ./lib/
           git rm --cached lib
           git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
-
-      - name: Brotli compress the html, css and js files in repository
-        id: brotli
-        uses: Charlesworth/compress-action@1.0.0
 
       - name: Generate the sitemap
         id: sitemap
