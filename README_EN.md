@@ -40,7 +40,7 @@
 * [X] ~~Build `about` page.~~
   * [ ] Make it be able to query license and info for all projects.
 * [X] ~~Build `comment` page, make it without back end.~~
-* [ ] Build `application` page.
+* [X] ~~Build `application` page.~~
 * [ ] Make `open-in-new-tab` in ContextMenu functional.
 * [X] ~~Add `loading` .~~
 * [ ] ...
