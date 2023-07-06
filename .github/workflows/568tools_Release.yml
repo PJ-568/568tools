@@ -43,6 +43,10 @@ jobs:
           git rm --cached lib
           git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
 
+      - name: Brotli compress the html, css and js files in repository
+        id: brotli
+        uses: charlesworth/compress-action@1.0
+
       - name: Generate the sitemap
         id: sitemap
         uses: cicirello/generate-sitemap@v1
