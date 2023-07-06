@@ -9,8 +9,8 @@
 		<link rel="icon" type="image/svg+xml" href="/img/icon.svg">
 		<link rel="stylesheet" href="/css/tool_type.css">
 		<script src="/js/include.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/marked@3.0.0/marked.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/marked@3.0.0/marked.min.js"></script>
 	</head>
 	<body>
 		<div id="loading">
@@ -21,19 +21,19 @@
 		<div class="bg-img"></div>
 		<div id="list" class="nav_content">
 			<div class="item info">
-                <div style="padding:0 20px;max-width:800px" id="content"></div>
+				<div style="padding:0 20px;max-width:800px" id="content"></div>
 				<h1 id="1">许可证</h1>
 				<p style="color:#F5F5F5;padding:0 20px;max-width:800px" id="lic"></p>
-            </div>
+			</div>
 			<div class="item">
-                <h2>可选操作</h2>
+				<h2>可选操作</h2>
 				<div class="child">
 					<a href="/">回到主页</a>
 					<a href="#">回到页顶</a>
 					<a style="cursor:pointer" onclick="javascript:history.back(-1);">尝试返回</a>
 				</div>
-            </div>
-        </div>
+			</div>
+		</div>
 		<include src="/header.html"></include>
 		<ul id="rcb_menu">
 			<li id="rcb_t1">🏠&nbsp;首页</li>
@@ -45,14 +45,14 @@
 			<li id="rcb_t6">🆕&nbsp;新标签页打开</li>
 		</ul>
 	</body>
-    <script>
-        $.get('/README.md', function(response, status, xhr){
-            $("#content").html(marked(response));
-        });
+	<script>
+		$.get('/README.md', function(response, status, xhr){
+			$("#content").html(marked(response));
+		});
 		$.get('/LICENSE', function(response, status, xhr){
-            $("#lic").html(marked(response));
-        });
-    </script>
+			$("#lic").html(marked(response));
+		});
+	</script>
 </html>
 <script src="/js/contextmenu.js"></script>
 <script src="/js/push_to_baidu.js"></script>
