@@ -87,6 +87,15 @@ var classify = [{
 	}]
 }, {
 	"id": 4,
+	"name": "游戏美术",
+	"list": [{
+		"name": "通用 LPC 角色生成器",
+		"url": "/incert/?link=/lib/tools/Universal-LPC-Spritesheet-Character-Generator/",
+		"hot": 0,
+		"img": ""
+	}]
+}, {
+	"id": 5,
 	"name": "测试工具",
 	"list": [{
 		"name": "黑色全屏",
@@ -100,7 +109,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 5,
+	"id": 6,
 	"name": "文档手册",
 	"list": [{
 		"name": "Rust 语言圣经（镜像）",
@@ -114,7 +123,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 6,
+	"id": 7,
 	"name": "文字工具",
 	"list": [{
 		"name": "狗屁不通文章生成器",
@@ -128,7 +137,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 7,
+	"id": 8,
 	"name": "软件模拟",
 	"list": [{
 		"name": "在线&nbsp;x86&nbsp;虚拟机",

@@ -25,6 +25,11 @@
         "type":"测试工具"
     },
     {
+        "name":"通用 LPC 角色生成器",
+        "url":"/lib/tools/Universal-LPC-Spritesheet-Character-Generator/",
+        "type":"游戏美术"
+    },
+    {
         "name":"在线键盘鼠标测试",
         "url":"/lib/tools/keyboard-mouse-tester/",
         "type":"测试工具"

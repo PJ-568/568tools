@@ -23,4 +23,9 @@
 	url = https://github.com/renzhezhilu/webp2jpg-online.git
 [submodule "tools/黑色全屏"]
 	path = tools/黑色全屏
-	url = https://github.com/PJ-568/Blcak_screen.git
+	url = https://github.com/PJ-568/Black_screen.git
+	branch = min
+[submodule "tools/Universal-LPC-Spritesheet-Character-Generator"]
+	path = tools/Universal-LPC-Spritesheet-Character-Generator
+	url = https://github.com/sanderfrenken/Universal-LPC-Spritesheet-Character-Generator.git
+	branch = master
