@@ -42,6 +42,11 @@ jobs:
           rm -r ./lib/
           git rm --cached lib
           git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
+          
+      - name: HTML/CSS/JS Minifier
+        uses: docker://devatherock/minify-js:2.0.0
+        with:
+          add_suffix: false     # Optional
 
       - name: Generate the sitemap
         id: sitemap
