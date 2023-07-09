@@ -124,6 +124,35 @@ var classify = [{
 	}]
 }, {
 	"id": 7,
+	"name": "公共库",
+	"list": [{
+		"name": "Staticfile CDN",
+		"url": "https://www.staticfile.org/",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "cdnjs",
+		"url": "https://cdnjs.com/",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "jsDelivr",
+		"url": "https://www.jsdelivr.com/",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "微软 CDN",
+		"url": "https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "jQuery CDN",
+		"url": "https://releases.jquery.com/",
+		"hot": 0,
+		"img": ""
+	}]
+}, {
+	"id": 8,
 	"name": "文字工具",
 	"list": [{
 		"name": "狗屁不通文章生成器",
@@ -137,7 +166,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 8,
+	"id": 9,
 	"name": "软件模拟",
 	"list": [{
 		"name": "在线&nbsp;x86&nbsp;虚拟机",
