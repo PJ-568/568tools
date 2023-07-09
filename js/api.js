@@ -37,7 +37,7 @@ var classify = [{
 		"img": ""
 	}, {
 		"name": "在线图像编辑",
-		"url": "/incert/?link=/lib/tools/图像处理/",
+		"url": "/incert/?link=/lib/tools/PP/",
 		"hot": 1,
 		"img": ""
 	}, {
@@ -99,7 +99,7 @@ var classify = [{
 	"name": "测试工具",
 	"list": [{
 		"name": "黑色全屏",
-		"url": "/incert/?link=/lib/tools/黑色全屏/",
+		"url": "/incert/?link=/lib/tools/Black_screen/",
 		"hot": 0,
 		"img": ""
 	}, {

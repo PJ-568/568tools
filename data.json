@@ -21,7 +21,7 @@
     },
     {
         "name":"黑色全屏",
-        "url":"/lib/tools/黑色全屏/",
+        "url":"/lib/tools/Black_screen/",
         "type":"测试工具"
     },
     {
@@ -41,7 +41,7 @@
     },
     {
         "name":"字符图像编辑",
-        "url":"/lib/tools/图像处理/",
+        "url":"/lib/tools/PP/",
         "type":"图像处理"
     },
     {
