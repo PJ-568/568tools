@@ -29,3 +29,11 @@
 	path = tools/Black_screen
 	url = https://github.com/PJ-568/Black_screen.git
 	branch = min
+[submodule "tools/Base64"]
+	path = tools/Base64
+	url = https://github.com/SFantasy/Base64.git
+	branch = gh-pages
+[submodule "tools/Base64_converter"]
+	path = tools/Base64_converter
+	url = https://github.com/rossy/base64.git
+	branch = gh-pages
