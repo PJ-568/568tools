@@ -166,6 +166,7 @@ body {
 
 .nav_content .info {
     background: #424242;
+    overflow: hidden;
     border-radius: 8px;
     padding: 5px 0;
     margin: 0 10px;
@@ -213,19 +214,19 @@ body{
 ::-webkit-scrollbar{
     width: 6px;
     height: 6px;
-    background-color:#F5F5F5;
+    background-color:#F5F5F5
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #c1c1c1;
+    background-color: #c1c1c1
 }
 
 ins.adsbygoogle[data-ad-status="unfilled"]{
-    display: none !important;
+    display: none !important
 }
 
 .el-message{
-    z-index: 999992 !important;
+    z-index: 999992 !important
 }
 
 .nav_menu{
@@ -247,7 +248,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     float: left;
     position: relative;
     line-height: 40px;
-    padding: 0 .8%;
+    padding: 0 .7%;
     cursor: pointer;
     margin: 0 5px;
     color: #F5F5F5;
@@ -261,7 +262,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
 }
 
 .menu_item_href:hover{
-    color:#fff;
+    color:#fff
 }
 
 .nav_menu .menu_item::after{
@@ -273,15 +274,15 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     vertical-align: middle;
     border-top: 4px dashed;
     border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
+    border-left: 4px solid transparent
 }
 
 .nav_menu .menu_item_active {
-    background: #0077B3;
+    background: #0077B3
 }
 
 .nav_menu .menu_item:hover .menu_child,.nav_menu .menu_item_active .menu_child{
-    display: block !important;
+    display: block !important
 }
 
 .nav_menu .menu_item .menu_child,.nav_menu .search_box .search_val{
@@ -448,7 +449,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
   background: #0277BD;
   position: absolute;
   -webkit-animation: load .7s infinite alternate ease-in-out;
-  animation: load .7s infinite alternate ease-in-out;
+  animation: load .7s infinite alternate ease-in-out
 }
 .loader::before {
   top: 0;
@@ -470,7 +471,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
   100% {
     left: 235px;
     height: 30px;
-    width: 15px;
+    width: 15px
   }
 }
 
