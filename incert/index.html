@@ -10,7 +10,11 @@
 		<link rel="stylesheet" href="/css/tool_type.css">
 		<script src="/js/include.js"></script>
 	</head>
-	<body style="padding-top:42px;display:block;height:calc(100% - 42px)">
+	<style>
+		@media screen and (max-width: 1024px) {body{padding-top:42px;display:block;height:calc(100% - 42px)}}
+		@media screen and (min-width: 1024px) {body{display:block;height:calc(100% - 42px)}}
+	</style>
+	<body>
 		<div id="loading">
 			<div id="loading_bg">
 				<div class="loader">正在加载</div>
