@@ -98,6 +98,11 @@ var classify = [{
 		"url": "/incert/?link=/lib/tools/ide/",
 		"hot": 0,
 		"img": ""
+	}, {
+		"name": "colorBlock 我的世界粒子效果代码生成",
+		"url": "/incert/?link=/lib/tools/colorBlock/",
+		"hot": 0,
+		"img": ""
 	}]
 }, {
 	"id": 5,

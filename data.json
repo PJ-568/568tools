@@ -35,6 +35,11 @@
         "type":"加密解密"
     },
     {
+        "name":"colorBlock 我的世界粒子效果代码生成",
+        "url":"/lib/tools/colorBlock/",
+        "type":"加密解密"
+    },
+    {
         "name":"通用 LPC 角色生成器",
         "url":"/lib/tools/Universal-LPC-Spritesheet-Character-Generator/",
         "type":"游戏美术"

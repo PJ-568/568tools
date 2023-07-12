@@ -1,0 +1,144 @@
+.particle_color_board {
+	width: 300px;
+	height: 360px;
+	background-color: #f0f0f0;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 20%;
+	left: 8%;
+	pointer-events: none;
+	opacity: 0;
+	transform: scale(0.5);
+	border-radius: 8px;
+	z-index: 999;
+}
+
+.particle_color_board .column {
+	color: #3d3d3d;
+	font-size: 12px;
+	line-height: 30px;
+	padding-left: 2%;
+	background-color: #ffffff;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.particle_color_board_close {
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	float: right;
+	font-size: 20px;
+	transition: 200ms;
+	font-weight: 300;
+	user-select: none;
+	border-top-right-radius: 8px;
+}
+
+.particle_color_board_close:hover {
+	background-color: #ff0000;
+	color: #fff;
+}
+
+.particle_color_save,
+.particle_color_cancel {
+	width: 60px;
+	transition: 300ms;
+	border: solid 1px #bdbdbd;
+	position: absolute;
+}
+
+.particle_color_board .particle_color_save {
+	border: solid 1px #00aaff;
+}
+
+.particle_color_save {
+	bottom: 10px;
+	right: 80px;
+}
+
+.particle_color_cancel {
+	bottom: 10px;
+	right: 10px;
+}
+
+
+.particle_color_save:hover,
+.particle_color_cancel:hover {
+	background-color: rgba(0, 170, 255, .2);
+	border: solid 1px #00aaff;
+}
+
+.rbga_input_wrap {
+	width: auto;
+	height: auto;
+	/* border: solid 1px red; */
+	float: left;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+
+.rbga_range_wrap {
+	float: left;
+	/* border: solid 1px red; */
+	margin-left: 35px;
+	margin-top: 5px;
+}
+
+.rbga_range_wrap input {
+	width: 170px;
+	float: left;
+}
+
+.rbga_input_float {
+	float: left;
+	margin-left: 22px;
+	/* border:solid 1px red;	 */
+}
+
+
+.rbga_span {
+	width: 100%;
+	font-size: 13px;
+	color: #afafaf;
+	/* border: solid 1px red; */
+	float: left;
+	line-height: 20px;
+	text-align: center;
+}
+
+.rbga_range_span {
+	height: 20px;
+	float: left;
+	font-size: 12px;
+	color: #818181;
+}
+
+#alpha_show {
+	float: left;
+	font-size: 12px;
+	color: #818181;
+	line-height: 18px;
+	padding-left: 5px;
+}
+
+.rbga_displayed {
+	width: 50px;
+	text-align: center;
+	background-color: transparent;
+}
+
+#td_cpt {
+	display: none;
+}
+
+
+.colorBtn {
+	width: 27px;
+	height: 20px;
+	border: dashed 2px transparent;
+	float: left;
+	margin: 5px;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
