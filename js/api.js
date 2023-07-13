@@ -143,6 +143,29 @@ var classify = [{
 	}]
 }, {
 	"id": 8,
+	"name": "软件模拟",
+	"list": [{
+		"name": "在线&nbsp;x86&nbsp;虚拟机",
+		"url": "/incert/?link=/lib/tools/v86/",
+		"hot": 0,
+		"img": ""
+	}]
+}, {
+	"id": 9,
+	"name": "文字工具",
+	"list": [{
+		"name": "狗屁不通文章生成器",
+		"url": "/incert/?link=/lib/tools/BullshitGenerator/",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "NKeditor 富文本编辑器",
+		"url": "/incert/?link=/lib/tools/NKeditor/",
+		"hot": 0,
+		"img": ""
+	}]
+}, {
+	"id": 10,
 	"name": "公共库",
 	"list": [{
 		"name": "Staticfile CDN",
@@ -171,25 +194,46 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 9,
-	"name": "文字工具",
+	"id": 11,
+	"name": "站长平台",
 	"list": [{
-		"name": "狗屁不通文章生成器",
-		"url": "/incert/?link=/lib/tools/BullshitGenerator/",
+		"name": "Bing 站长平台",
+		"url": "https://www.bing.com/webmasters/home",
 		"hot": 0,
 		"img": ""
 	}, {
-		"name": "NKeditor 富文本编辑器",
-		"url": "/incert/?link=/lib/tools/NKeditor/",
+		"name": "百度站长平台",
+		"url": "https://ziyuan.baidu.com/site/index#/",
 		"hot": 0,
 		"img": ""
-	}]
-}, {
-	"id": 10,
-	"name": "软件模拟",
-	"list": [{
-		"name": "在线&nbsp;x86&nbsp;虚拟机",
-		"url": "/incert/?link=/lib/tools/v86/",
+	}, {
+		"name": "搜狗站长平台",
+		"url": "https://zhanzhang.sogou.com/index.php/dashboard/index",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "360 站长平台",
+		"url": "https://zhanzhang.so.com/sitetool/site_manage",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "神马站长平台",
+		"url": "https://zhanzhang.sm.cn/open/detialPage",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "头条搜索站长平台",
+		"url": "https://zhanzhang.toutiao.com/page/inner/site/manage",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "Yandex 站长平台",
+		"url": "https://webmaster.yandex.com/",
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "谷歌站长平台",
+		"url": "https://search.google.com/search-console",
 		"hot": 0,
 		"img": ""
 	}]
