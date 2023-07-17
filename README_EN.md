@@ -4,7 +4,7 @@
 
 > 🌏[简体中文](./README.md) | English
 
-> 🗃️[Github](https://github.com/PJ-568/568tools) | [Gitee](https://gitee.com/PJ-568/568tools)
+> 🗃️[Github](https://github.com/PJ-568/568tools) | [Gitee](https://gitee.com/PJ-568/568tools) | [GitLab](https://gitlab.com/PJ-568/568tools/)
 
 # <img height="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg"/>568Tools Online Toolbox
 
