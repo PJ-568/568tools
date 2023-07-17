@@ -6,7 +6,7 @@ This branch stores all online tools.
 
 ## 📖Infomation
 
-[See in Main README](../README_EN.md)
+[See in Main README](https://tools.pj568.eu.org/README_EN.md)
 
 ## 🏆Contributors
 
