@@ -31,6 +31,11 @@ var classify = [{
 	"id": 2,
 	"name": "图像处理",
 	"list": [{
+		"name": "在线 PS 编辑图像",
+		"url": "/incert/?link=/lib/tools/Open-Photopea/",
+		"hot": 1,
+		"img": ""
+	}, {
 		"name": "在线思维导图编辑器",
 		"url": "/incert/?link=/lib/tools/mind-map/",
 		"hot": 1,
