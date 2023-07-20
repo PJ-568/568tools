@@ -32,7 +32,7 @@ var classify = [{
 	"name": "图像处理",
 	"list": [{
 		"name": "在线 PS 编辑图像",
-		"url": "/incert/?link=/lib/tools/Open-Photopea/",
+		"url": "/lib/tools/Open-Photopea/",
 		"hot": 1,
 		"img": ""
 	}, {
