@@ -1,5 +1,5 @@
 <p align="center">
-    <img height="256" src='https://Tools.PJ568.eu.org/img/icon.svg' />
+    <img height="256" src='https://Tools.PJ568.eu.org/img/icon.svg'/>
 </p>
 
 > 🌏简体中文 | [English](./README_EN.md)
