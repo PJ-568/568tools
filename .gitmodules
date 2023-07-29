@@ -37,3 +37,7 @@
 	path = tools/Base64_converter
 	url = https://github.com/rossy/base64.git
 	branch = gh-pages
+[submodule "tools/Hamud_Book"]
+	path = tools/Hamud_Book
+	url = https://github.com/Hamud-Lang/Hamud_Book.git
+	branch = gh-pages

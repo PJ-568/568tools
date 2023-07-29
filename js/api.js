@@ -22,6 +22,11 @@ var classify = [{
 		"hot": 0,
 		"img": ""
 	}, {
+		"name": "哈姆语言之书",
+		"url": "https://Hamud.PJ568.eu.org/",
+		"hot": 0,
+		"img": ""
+	}, {
 		"name": "本站后台管理页面",
 		"url": "management",
 		"hot": 0,
@@ -143,7 +148,12 @@ var classify = [{
 	}, {
 		"name": "锈书（镜像）",
 		"url": "/lib/tools/rusty-book/",
-		"hot": 1,
+		"hot": 0,
+		"img": ""
+	}, {
+		"name": "哈姆语言之书（镜像）",
+		"url": "/lib/tools/Hamud_Book/",
+		"hot": 0,
 		"img": ""
 	}]
 }, {

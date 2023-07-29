@@ -20,6 +20,11 @@
         "type":"568服务"
     },
     {
+        "name":"哈姆语言之书",
+        "url":"https://Hamud.pj568.eu.org/",
+        "type":"568服务"
+    },
+    {
         "name":"黑色全屏",
         "url":"/lib/tools/Black_screen/",
         "type":"测试工具"
@@ -107,6 +112,11 @@
     {
         "name":"Rust 语言圣经（镜像）",
         "url":"/lib/tools/rust-course/",
+        "type":"文档手册"
+    },
+    {
+        "name":"哈姆语言之书（镜像）",
+        "url":"/lib/tools/Hamud_Book/",
         "type":"文档手册"
     },
     {
