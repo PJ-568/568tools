@@ -210,6 +210,15 @@ var classify = [{
 	}]
 }, {
 	"id": 11,
+	"name": "站外工具",
+	"list": [{
+		"name": "测试你在 Cloudflare 的声誉",
+		"url": "https://cf.qn.md/",
+		"hot": 0,
+		"img": ""
+	}]
+}, {
+	"id": 12,
 	"name": "站长平台",
 	"list": [{
 		"name": "Bing 站长平台",
