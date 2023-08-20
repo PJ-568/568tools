@@ -1,0 +1,1 @@
+!function(){var e=window.location.href,t=document.referrer;if(!/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi.test(e)){var r="https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif";t?(r+="?r="+encodeURIComponent(document.referrer),e&&(r+="&l="+e)):e&&(r+="?l="+e),(new Image).src=r}}(window);
