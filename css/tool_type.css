@@ -204,7 +204,14 @@ body {
     color: #00B0FF;
 }
 
-/* 目录条 */
+/* 顶栏 */
+
+@media screen and (max-width: 768px) {.hi{display:none}.github{display:none}}
+@media screen and (min-width: 768px) {.hi{display:block}.github{display:block}}
+
+.hi {
+    float:right
+}
 
 body{
     margin-top: 40px;
@@ -328,6 +335,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{
     position: relative;
     float: right;
     width: 10%;
+    min-width: 80px;
     height: 26px;
     background: #424242;
     margin: 5px;
