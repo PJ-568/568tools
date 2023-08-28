@@ -46,6 +46,11 @@ var classify = [{
 		"hot": 1,
 		"img": ""
 	}, {
+		"name": "在线 DICOM 查看器",
+		"url": "/incert/?link=/lib/tools/dwv/demo/stable/viewer.html",
+		"hot": 0,
+		"img": ""
+	}, {
 		"name": "在线图像编辑",
 		"url": "/incert/?link=/lib/tools/PP/",
 		"hot": 1,

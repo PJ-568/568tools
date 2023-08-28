@@ -60,6 +60,11 @@
         "type":"图像处理"
     },
     {
+        "name":"在线 DICOM 查看器",
+        "url":"/lib/tools/dwv/demo/stable/viewer.html",
+        "type":"图像处理"
+    },
+    {
         "name":"在线 PS 编辑图像",
         "url":"/lib/tools/Open-Photopea/",
         "type":"图像处理"

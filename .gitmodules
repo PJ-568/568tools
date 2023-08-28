@@ -41,3 +41,7 @@
 	path = tools/Hamud_Book
 	url = https://github.com/Hamud-Lang/Hamud_Book.git
 	branch = gh-pages
+[submodule "tools/dwv"]
+	path = tools/dwv
+	url = https://github.com/ivmartel/dwv.git
+	branch = gh-pages
