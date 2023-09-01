@@ -160,6 +160,11 @@ var classify = [{
 		"url": "/lib/tools/Hamud_Book/",
 		"hot": 0,
 		"img": ""
+	}, {
+		"name": "核污染水的真相（镜像）",
+		"url": "/lib/tools/FactsAboutNuc-pollutedWater/",
+		"hot": 1,
+		"img": ""
 	}]
 }, {
 	"id": 8,
@@ -220,6 +225,11 @@ var classify = [{
 		"name": "测试你在 Cloudflare 的声誉",
 		"url": "https://cf.qn.md/",
 		"hot": 0,
+		"img": ""
+	}, {
+		"name": "反对核污染水排放",
+		"url": "https://Nuc.PJ568.eu.org/",
+		"hot": 1,
 		"img": ""
 	}]
 }, {

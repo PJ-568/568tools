@@ -45,3 +45,7 @@
 	path = tools/dwv
 	url = https://github.com/ivmartel/dwv.git
 	branch = gh-pages
+[submodule "tools/FactsAboutNuc-pollutedWater"]
+	path = tools/FactsAboutNuc-pollutedWater
+	url = https://github.com/SaveSeaFromNuc-pollutedWater/FactsAboutNuc-pollutedWater.git
+	branch = release
