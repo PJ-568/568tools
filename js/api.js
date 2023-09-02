@@ -231,6 +231,11 @@ var classify = [{
 		"url": "https://Nuc.PJ568.eu.org/",
 		"hot": 1,
 		"img": ""
+	}, {
+		"name": "必应每日壁纸 API",
+		"url": "https://bing.shangzhenyang.com/",
+		"hot": 0,
+		"img": ""
 	}]
 }, {
 	"id": 12,
