@@ -140,8 +140,8 @@
         "type":"文字工具"
     },
     {
-        "name":"NKeditor 富文本编辑器",
-        "url":"/lib/tools/NKeditor/",
+        "name":"wangEditor 富文本编辑器",
+        "url":"/lib/tools/wangEditor/",
         "type":"文字工具"
     },
     {

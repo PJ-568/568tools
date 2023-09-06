@@ -184,8 +184,8 @@ var classify = [{
 		"hot": 0,
 		"img": ""
 	}, {
-		"name": "NKeditor 富文本编辑器",
-		"url": "/incert/?link=/lib/tools/NKeditor/",
+		"name": "wangEditor 富文本编辑器",
+		"url": "/incert/?link=/lib/tools/wangEditor/",
 		"hot": 0,
 		"img": ""
 	}]
