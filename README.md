@@ -72,10 +72,49 @@
 
 * 其他如简单的代码优化、文档修正等，只要修改合理都会被接受。
 
+## ⭐Star 历史
+
+![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date)
+
 ## 📄许可证
 
 本项目遵循 [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) 许可协议。如果想了解完整许可信息，请查阅 `LICENSE` 文件或访问[关于页面](https://Tools.PJ568.eu.org/about/#1)。
 
-## ⭐Star 历史
+### 🗃️附加许可证
 
-![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date)
+* Base64：[MIT license](https://mit-license.org)；
+  * [Github](//github.com/SFantasy/Base64)；
+* Black_screen：[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)；
+  * [Github](//github.com/PJ-568/Black_screen/LICENSE)、[Gitee](//gitee.com//PJ-568/Black_screen/LICENSE)；
+* translate：[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)；
+  * [Github](https://github.com/xnx3/translate/blob/master/LICENSE)、[Gitee](https://gitee.com/mail_osc/translate/blob/master/LICENSE)；
+* giscus：[MIT license](https://mit-license.org)；
+  * [Github](https://github.com/giscus/giscus/blob/main/LICENSE)；
+* BullshitGenerator：[Anti-996 License 1.0](https://github.com/kattgu7/Anti-996-License)；
+  * [Github](https://github.com/menzi11/BullshitGenerator)；
+* DWV：[GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html)；
+  * [Github](https://github.com/ivmartel/dwv/license.txt)；
+* FactsAboutNuc-pollutedWater：[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)；
+  * [Github](https://github.com/SaveSeaFromNuc-pollutedWater/FactsAboutNuc-pollutedWater/LICENSE)；
+* geopattern：[MIT license](https://mit-license.org)；
+  * [Github](https://github.com/jasonlong/geo_pattern/license.txt)；
+* Hamud_Book：[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)；
+  * [Github](https://github.com/Hamud-Lang/Hamud_Book/LICENSE)、[Gitee](https://gitee.com/Hamud-Lang/Hamud_Book/LICENSE)；
+* ide：[MIT license](https://mit-license.org)；
+  * [Github](https://github.com/judge0/ide/blob/master/LICENSE)；
+* keyboard-mouse-tester-webApp；
+  * [Github](https://github.com/shawon9324/keyboard-mouse-tester-webApp/LICENSE)；
+* mind-map：[MIT license](https://mit-license.org)；
+  * [Github](https://github.com/wanglin2/mind-map/LICENSE)；
+* rust-course；
+  * [Github](https://github.com/sunface/rust-course/)；
+* rusty-book：[CC-BY-4.0 license](https://freedomdefined.org/Licenses/CC-BY-4.0)；
+  * [Github](https://github.com/rustlang-cn/rusty-book//LICENSE)；
+* Universal-LPC-Spritesheet-Character-Generator：[GPL-3.0 license](http://www.apache.org/licenses/LICENSE-2.0)；
+  * [Github](https://github.com/basxto/Universal-Spritesheet-Character-Generator/LICENSE)；
+* v86：[BSD-2-Clause license](https://opensource.org/license/bsd-2-clause/)；
+  * [Github](https://github.com/copy/v86/blob/master/LICENSE)；
+* wangEditor：[MIT license](https://mit-license.org)；
+  * [Github](https://github.com/wangeditor-team/wangEditor/blob/master/LICENSE)；
+* webp2jpg-online：[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)；
+  * [Github](https://github.com/renzhezhilu/webp2jpg-online/blob/master/LICENSE)。
