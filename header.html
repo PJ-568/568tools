@@ -13,6 +13,31 @@
 	<a class="menu_item_href" href="/application">提交页面</a>
 	<a class="menu_item_href" href="/?link=/lib/Sponsor.html">捐赠</a>
 	<a class="menu_item_href" href="/about">关于</a>
+	<script src="https://res.zvo.cn/translate/translate.js"></script>
+			<script>
+				try{
+					translate.listener.start();
+					translate.language.setLocal('chinese_simplified');
+					translate.setAutoDiscriminateLocalLanguage();
+					translate.language.setUrlParamControl();
+				}
+				catch(e){console.log(e);}
+				translate.setUseVersion2();
+				translate.ignore.class.push('notTranslate');
+				translate.execute();
+			</script>
+			<style>
+				.translateSelectLanguage{
+					z-index:1000001;
+					width:100%;
+					height:100%;
+					opacity:0;
+					cursor:pointer;
+					position:absolute;
+					left:0
+				}
+			</style>
+			<a id="translate" class="menu_item_href"><text>语言🌐</text></a>
 	<div class="search_box"><input class="search_in" id="keyword" maxlength="18" placeholder="请键入关键词">
 			<div id="searchContent"></div>
 			<svg t="1626534436665" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4200" width="64" height="64">
