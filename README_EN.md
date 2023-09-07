@@ -36,7 +36,7 @@
 ## ✅To Do List
 
 * [ ] Fix Search, make it functional.
-* [ ] Multilingual support.
+* [X] ~~Multilingual support.~~
 * [X] ~~Build `about` page.~~
   * [ ] Make it be able to query license and info for all projects.
 * [X] ~~Build `comment` page, make it without back end.~~
