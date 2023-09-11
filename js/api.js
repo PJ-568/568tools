@@ -31,6 +31,11 @@ var classify = [{
 		"url": "management",
 		"hot": 0,
 		"img": ""
+	}, {
+		"name": "网站状态",
+		"url": "https://status.pj568.eu.org/",
+		"hot": 0,
+		"img": ""
 	}]
 }, {
 	"id": 2,
