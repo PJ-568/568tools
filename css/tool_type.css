@@ -164,6 +164,27 @@ body {
     font-weight: bold;
 }
 
+.nav_content .item .foo {
+    align-items: center;
+    margin: 10px 0.8%;
+    box-shadow: 0.5rem 0.875rem 2.375rem rgb(39 44 49 / 6%), 0.0625rem 0.1875rem 0.5rem rgb(39 44 49 / 3%);
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    color: #E0E0E0;
+    text-decoration: none;
+    background: #424242;
+    border: 2px solid #0277BD;
+    border-radius: 6px
+}
+
+.nav_content .item .foo:hover {
+    border-color: #0277BD;
+    background: #01579B;
+    color: #FFF;
+    font-weight: bold;
+}
+
 .nav_content .info {
     background: #424242;
     overflow: hidden;
