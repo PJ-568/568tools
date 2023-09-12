@@ -227,8 +227,8 @@ body {
 
 /* 顶栏 */
 
-@media screen and (max-width: 768px) {.hi{display:none}.github{display:none}}
-@media screen and (min-width: 768px) {.hi{display:block}.github{display:block}}
+@media screen and (max-width: 830px) {.hi{display:none}.github{display:none}}
+@media screen and (min-width: 830px) {.hi{display:block}.github{display:block}}
 
 .hi {
     float:right
