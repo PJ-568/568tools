@@ -17,8 +17,8 @@ var classify = [{
 		"hot": 1,
 		"img": ""
 	}, {
-		"name": "Chat.pj568.eu.org",
-		"url": "https://Chat.PJ568.eu.org/",
+		"name": "CloseAI.pj568.eu.org",
+		"url": "https://CloseAI.pj568.eu.org/",
 		"hot": 0,
 		"img": ""
 	}, {
