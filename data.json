@@ -20,6 +20,11 @@
         "type":"568服务"
     },
     {
+        "name":"在线运行 RWKV 模型",
+        "url":"/lib/tools/rwkv-v4-web/",
+        "type":"人工智能"
+    },
+    {
         "name":"黑色全屏",
         "url":"/lib/tools/Black_screen/",
         "type":"测试工具"
