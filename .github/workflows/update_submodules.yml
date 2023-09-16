@@ -3,7 +3,7 @@ name: Update Submodules
 on:
   push:
     branches:
-      - lib
+      - tools
 
 jobs:
   update-submodules:
