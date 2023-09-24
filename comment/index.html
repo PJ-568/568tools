@@ -5,12 +5,13 @@
 		<meta property="og:title" content="568Tools&nbsp;|&nbsp;Comment" />
 		<meta name="description" content="568Tools 在线工具箱的评论界面。">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="https://res.zvo.cn/translate/translate.js"></script>
+		<script src="//res.zvo.cn/translate/translate.js"></script>
 		<script src="../js/loading.js"></script>
 		<title>568Tools&nbsp;|&nbsp;Comment</title>
 		<link rel="icon" type="image/svg+xml" href="../img/icon.svg">
 		<link rel="stylesheet" href="../css/tool_type.css">
 		<script src="../js/include.js"></script>
+		<script src="../js/giscus.js"></script>
 	</head>
 	<body>
 		<div id="loading">
@@ -21,26 +22,11 @@
 		<div class="bg-img"></div>
 		<div id="list" class="nav_content">
 			<div class="item info">
-				<h2><img alt="Main_icon" class="mainicon" src="/img/icon.svg" />&nbsp;568Tools&nbsp;|&nbsp;Comment&nbsp;评论区</h2>
+				<h2><img alt="Main_icon" class="mainicon" src="../img/icon.svg" />&nbsp;568Tools&nbsp;|&nbsp;Comment&nbsp;评论区</h2>
 				<p>欢迎各位反馈和讨论！请不要吝啬您的<a rel="nofollow" target="_blank" href=".">留言反馈</a>，感谢使用及分享！</p>
 			</div>
 			<div class="item"><h2>评论</h2>
-			<script src="https://giscus.app/client.js"
-				data-repo="PJ-568/568tools"
-				data-repo-id="R_kgDOJer3gw"
-				data-category="Announcements"
-				data-category-id="DIC_kwDOJer3g84CXG0D"
-				data-mapping="og:title"
-				data-strict="1"
-				data-reactions-enabled="1"
-				data-emit-metadata="0"
-				data-input-position="top"
-				data-theme="https://tools.pj568.eu.org/css/568_comment.css"
-				data-lang="zh-CN"
-				crossorigin="anonymous"
-				async>
-			</script>
-			</div>
+				<div id="giscus-container"></div>
 			<div class="item">
 				<h2>可选操作</h2>
 				<div class="child">
@@ -49,7 +35,7 @@
 					<a style="cursor:pointer" onclick="javascript:history.back(-1);">尝试返回</a>
 				</div>
 			</div>
-			<include src="/footer.html"></include>
+			<include src="../footer.html"></include>
 		</div>
 		<include src="../header.html"></include>
 		<ul id="rcb_menu">
