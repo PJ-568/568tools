@@ -3,25 +3,25 @@ var lang = translate.language.getCurrent();
 var giscus_lang = "zh-CN";
 switch (lang) {
 	case "chinese_traditional":
-		giscus_lang = "zh-TW"
+		giscus_lang = "zh-TW";
 		break;
 	case "english":
-		giscus_lang = "en"
+		giscus_lang = "en";
 		break;
 	case "spanish":
-		giscus_lang = "es"
+		giscus_lang = "es";
 		break;
 	case "japanese":
-		giscus_lang = "ja"
+		giscus_lang = "ja";
 		break;
 	case "korean":
-		giscus_lang = "ko"
+		giscus_lang = "ko";
 		break;
 	case "french":
-		giscus_lang = "fr"
+		giscus_lang = "fr";
 		break;
 	case "arabic":
-		giscus_lang = "ar"
+		giscus_lang = "ar";
 		break;
 	default:
 		giscus_lang = "zh-CN";
