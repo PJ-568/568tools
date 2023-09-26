@@ -49,3 +49,6 @@
 	path = tools/FactsAboutNuc-pollutedWater
 	url = https://github.com/SaveSeaFromNuc-pollutedWater/FactsAboutNuc-pollutedWater.git
 	branch = release
+[submodule "tools/rwkv-v4-web"]
+	path = tools/rwkv-v4-web
+	url = https://github.com/josephrocca/rwkv-v4-web.git
