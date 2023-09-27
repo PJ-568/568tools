@@ -42,7 +42,7 @@ var classify = [{
 	"name": "人工智能",
 	"list": [{
 		"name": "在线运行 RWKV 模型",
-		"url": "/incert/?link=/lib/tools/rwkv-v4-web/",
+		"url": "/incert/?link=/lib/tools/rwkv-v4-web/demo/",
 		"hot": 0,
 		"img": ""
 	}]

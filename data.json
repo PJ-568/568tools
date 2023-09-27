@@ -21,7 +21,7 @@
     },
     {
         "name":"在线运行 RWKV 模型",
-        "url":"/lib/tools/rwkv-v4-web/",
+        "url":"/lib/tools/rwkv-v4-web/demo/",
         "type":"人工智能"
     },
     {
