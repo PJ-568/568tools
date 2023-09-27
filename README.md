@@ -114,6 +114,8 @@
   * [Github](https://github.com/basxto/Universal-Spritesheet-Character-Generator/LICENSE)；
 * v86：[BSD-2-Clause license](https://opensource.org/license/bsd-2-clause/)；
   * [Github](https://github.com/copy/v86/blob/master/LICENSE)；
+* rwkv-v4-web：[MIT license](https://mit-license.org)；
+  * [Github](https://github.com/josephrocca/rwkv-v4-web/blob/main/LICENSE)；
 * wangEditor：[MIT license](https://mit-license.org)；
   * [Github](https://github.com/wangeditor-team/wangEditor/blob/master/LICENSE)；
 * webp2jpg-online：[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)；
