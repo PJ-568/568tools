@@ -255,7 +255,7 @@ var classify = [{
 	"id": 13,
 	"name": "站长平台",
 	"list": [{
-		"name": "Bing 站长平台",
+		"name": "必应站长平台",
 		"url": "https://www.bing.com/webmasters/home",
 		"hot": 0,
 		"img": ""
