@@ -60,13 +60,19 @@ jobs:
           echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
           echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
 
-      - name: Push
-        run: |
-          git config --global user.name "PJ569-bot"
-          git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
-          git add -A
-          git commit -m '自动 Release'
-          git push
+      # Deploy
+      - uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: release # The branch the action should deploy to.
+          folder: . # The folder the action should deploy.
+
+      # - name: Push
+      #   run: |
+      #     git config --global user.name "PJ569-bot"
+      #     git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
+      #     git add -A
+      #     git commit -m '自动 Release'
+      #     git push
 
       - name: Ping Google
         run: curl https://www.google.com/ping?sitemap=https://Tools.PJ568.eu.org/sitemap.xml
