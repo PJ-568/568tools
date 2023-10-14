@@ -39,6 +39,15 @@ var classify = [{
 	}]
 }, {
 	"id": 2,
+	"name": "在线转换",
+	"list": [{
+		"name": "下载 Github 单文件或文件夹",
+		"url": "/incert/?link=/lib/tools/github-directory-downloader/",
+		"hot": 0,
+		"img": ""
+	}]
+}, {
+	"id": 3,
 	"name": "人工智能",
 	"list": [{
 		"name": "在线运行 RWKV 模型",
@@ -47,7 +56,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 3,
+	"id": 4,
 	"name": "图像处理",
 	"list": [{
 		"name": "在线 PS 编辑图像",
@@ -106,7 +115,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 4,
+	"id": 5,
 	"name": "加密解密",
 	"list": [{
 		"name": "在线 Base64 加解密",
@@ -120,7 +129,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 5,
+	"id": 6,
 	"name": "代码工具",
 	"list": [{
 		"name": "Judge0 IDE 在线代码编辑器",
@@ -134,7 +143,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 6,
+	"id": 7,
 	"name": "游戏美术",
 	"list": [{
 		"name": "通用 LPC 角色生成器",
@@ -143,7 +152,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 7,
+	"id": 8,
 	"name": "测试工具",
 	"list": [{
 		"name": "黑色全屏",
@@ -157,7 +166,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 8,
+	"id": 9,
 	"name": "文档手册",
 	"list": [{
 		"name": "Rust 语言圣经（镜像）",
@@ -181,7 +190,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 9,
+	"id": 10,
 	"name": "软件模拟",
 	"list": [{
 		"name": "在线&nbsp;x86&nbsp;虚拟机",
@@ -190,7 +199,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 10,
+	"id": 11,
 	"name": "文字工具",
 	"list": [{
 		"name": "狗屁不通文章生成器",
@@ -204,7 +213,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 11,
+	"id": 12,
 	"name": "公共库",
 	"list": [{
 		"name": "Staticfile CDN",
@@ -233,7 +242,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 12,
+	"id": 13,
 	"name": "站外工具",
 	"list": [{
 		"name": "测试你在 Cloudflare 的声誉",
@@ -252,7 +261,7 @@ var classify = [{
 		"img": ""
 	}]
 }, {
-	"id": 13,
+	"id": 14,
 	"name": "站长平台",
 	"list": [{
 		"name": "必应站长平台",

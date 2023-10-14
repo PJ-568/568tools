@@ -52,3 +52,6 @@
 [submodule "tools/rwkv-v4-web"]
 	path = tools/rwkv-v4-web
 	url = https://github.com/josephrocca/rwkv-v4-web.git
+[submodule "tools/github-directory-downloader"]
+	path = tools/github-directory-downloader
+	url = https://github.com/Momo707577045/github-directory-downloader

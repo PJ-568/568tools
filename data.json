@@ -115,6 +115,11 @@
         "type":"568服务"
     },
     {
+        "name":"下载 Github 单文件或文件夹",
+        "url":"/lib/tools/github-directory-downloader/",
+        "type":"在线转换"
+    },
+    {
         "name":"Rust 语言圣经（镜像）",
         "url":"/lib/tools/rust-course/",
         "type":"文档手册"
