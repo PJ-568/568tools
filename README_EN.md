@@ -73,7 +73,13 @@ Every contributions to this project is welcomed.
 
 ## ⭐Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date)
+<a href="https://star-history.com/#PJ-568/568tools&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date" />
+  </picture>
+</a>
 
 ## 📄License
 
