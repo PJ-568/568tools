@@ -74,7 +74,13 @@
 
 ## ⭐Star 历史
 
-![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date)
+<a href="https://star-history.com/#PJ-568/568tools&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=PJ-568/568tools&type=Date" />
+  </picture>
+</a>
 
 ## 📄许可证
 
@@ -99,7 +105,7 @@
 * geopattern：[MIT license](https://mit-license.org)；
   * [Github](https://github.com/jasonlong/geo_pattern/license.txt)；
 * Hamud_Book：[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)；
-  * [Github](https://github.com/Hamud-Lang/Hamud_Book/LICENSE)、[Gitee](https://gitee.com/Hamud-Lang/Hamud_Book/LICENSE)；
+  * [Github](https://github.com/PJ-568/568tools/LICENSE)、[Gitee](https://gitee.com/PJ-568/568tools/LICENSE)；
 * ide：[MIT license](https://mit-license.org)；
   * [Github](https://github.com/judge0/ide/blob/master/LICENSE)；
 * keyboard-mouse-tester-webApp；
