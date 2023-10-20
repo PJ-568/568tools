@@ -24,6 +24,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: main
+          submodules: recursive
 
       - name: Merge
         run: |
@@ -55,22 +56,22 @@ jobs:
           branch: release # The branch the action should deploy to.
           folder: . # The folder the action should deploy.
 
-      - name: Checkout release branch
-        uses: actions/checkout@v3
-        with:
-          ref: release
+      # - name: Checkout release branch
+      #   uses: actions/checkout@v3
+      #   with:
+      #     ref: release
 
-      - name: Update tool lib
-        run: |
-          rm -r ./lib/
-          git config --global user.name "PJ569-bot"
-          git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
-          git submodule update
-          # git rm --cached lib
-          # git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
-          # git add ./lib/
-          git commit -m '库更新'
-          git push
+      # - name: Update tool lib
+      #   run: |
+      #     rm -r ./lib/
+      #     git config --global user.name "PJ569-bot"
+      #     git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
+      #     git submodule update
+      #     # git rm --cached lib
+      #     # git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
+      #     # git add ./lib/
+      #     git commit -m '库更新'
+      #     git push
 
       - name: Ping Google
         run: curl https://www.google.com/ping?sitemap=https://Tools.PJ568.eu.org/sitemap.xml
