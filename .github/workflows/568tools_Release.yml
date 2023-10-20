@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Clone
+      - name: Clone assets branch
         run: |
           echo '创建 tree/：'
           mkdir /home/runner/tree
@@ -21,17 +21,15 @@ jobs:
           ls /home/runner/tree/assets
       
       - name: Checkout main branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: main
           submodules: recursive
 
-      - name: Merge
+      - name: Merge main with assets
         run: |
           echo '复制 tree/assets/* 到 .：'
           cp -v -u -r /home/runner/tree/assets/* .
-          rm -r ./lib/
-          git rm --cached lib
           
       - name: HTML/CSS/JS Minifier
         uses: docker://devatherock/minify-js:2.0.0
@@ -50,8 +48,8 @@ jobs:
           echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
           echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
 
-      # Deploy
-      - uses: JamesIves/github-pages-deploy-action@4.1.7
+      - name: Deploy as pages
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: release # The branch the action should deploy to.
           folder: . # The folder the action should deploy.
