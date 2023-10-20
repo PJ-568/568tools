@@ -17,31 +17,18 @@ jobs:
           mkdir /home/runner/tree
           echo '克隆 三个分支：'
           git clone https://github.com/PJ-568/568tools.git -b assets /home/runner/tree/assets
-          git clone https://github.com/PJ-568/568tools.git -b main /home/runner/tree/main
           echo '检查 tree/assets：'
           ls /home/runner/tree/assets
-          echo '检查 tree/main：'
-          ls /home/runner/tree/main
       
-      - name: Checkout release branch
+      - name: Checkout main branch
         uses: actions/checkout@v3
         with:
-          ref: release
+          ref: main
 
       - name: Merge
         run: |
-          echo '清空 release：'
-          rm -r ./*
-          echo '检查 release：'
-          ls
-          echo '复制 tree/assets/* 到 release/：'
+          echo '复制 tree/assets/* 到 .：'
           cp -v -u -r /home/runner/tree/assets/* .
-          echo '复制 tree/main/* 到 release/：'
-          cp -v -u -r /home/runner/tree/main/* .
-          echo '添加 lib 子模块到 release/lib/：'
-          rm -r ./lib/
-          git rm --cached lib
-          git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
           
       - name: HTML/CSS/JS Minifier
         uses: docker://devatherock/minify-js:2.0.0
