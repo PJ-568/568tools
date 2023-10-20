@@ -31,7 +31,6 @@ jobs:
           cp -v -u -r /home/runner/tree/assets/* .
           rm -r ./lib/
           git rm --cached lib
-          git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
           
       - name: HTML/CSS/JS Minifier
         uses: docker://devatherock/minify-js:2.0.0
@@ -56,13 +55,22 @@ jobs:
           branch: release # The branch the action should deploy to.
           folder: . # The folder the action should deploy.
 
-      # - name: Push
-      #   run: |
-      #     git config --global user.name "PJ569-bot"
-      #     git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
-      #     git add -A
-      #     git commit -m '自动 Release'
-      #     git push
+      - name: Checkout release branch
+        uses: actions/checkout@v3
+        with:
+          ref: release
+
+      - name: Update tool lib
+        run: |
+          rm -r ./lib/
+          git config --global user.name "PJ569-bot"
+          git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
+          git submodule update
+          # git rm --cached lib
+          # git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
+          # git add ./lib/
+          git commit -m '库更新'
+          git push
 
       - name: Ping Google
         run: curl https://www.google.com/ping?sitemap=https://Tools.PJ568.eu.org/sitemap.xml
