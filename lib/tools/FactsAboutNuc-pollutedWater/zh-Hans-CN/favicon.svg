@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256"
+   height="256"
+   viewBox="0 0 67.733332 67.733333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="SaveSeaFromNuc-pollutedWater.svg"
+   inkscape:export-filename="SaveSeaFromNuc-pollutedWater-192.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title134">SaveSeaFromNuc-pollutedWater</title>
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.7562398"
+     inkscape:cx="92.527228"
+     inkscape:cy="124.41353"
+     inkscape:window-width="1440"
+     inkscape:window-height="878"
+     inkscape:window-x="-6"
+     inkscape:window-y="1073"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1187">
+      <stop
+         style="stop-color:#b3b3b3;stop-opacity:1;"
+         offset="0"
+         id="stop1183" />
+      <stop
+         style="stop-color:#656565;stop-opacity:1;"
+         offset="1"
+         id="stop1185" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1756">
+      <stop
+         style="stop-color:#00ff23;stop-opacity:1;"
+         offset="0"
+         id="stop1752" />
+      <stop
+         style="stop-color:#00ffb3;stop-opacity:1;"
+         offset="0.40129867"
+         id="stop1824" />
+      <stop
+         style="stop-color:#00ffff;stop-opacity:0.5;"
+         offset="1"
+         id="stop1754" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1633"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1575"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <rect
+       x="-60.925621"
+       y="-31.886306"
+       width="70.516811"
+       height="64.873111"
+       id="rect1346" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1756"
+       id="radialGradient1826"
+       cx="29.817039"
+       cy="46.654137"
+       fx="29.817039"
+       fy="46.654137"
+       r="29.364981"
+       gradientTransform="matrix(0.14760229,0.9890468,-1.0004227,0.14930001,78.731426,6.2526935)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1187"
+       id="linearGradient1189"
+       x1="18.018236"
+       y1="24.074449"
+       x2="24.368236"
+       y2="24.074449"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-3.1750007)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1187"
+       id="linearGradient1224"
+       gradientUnits="userSpaceOnUse"
+       x1="18.018236"
+       y1="24.074449"
+       x2="24.368236"
+       y2="24.074449"
+       gradientTransform="matrix(0.66666668,0,0,0.75000004,14.472743,4.9602761)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1187"
+       id="linearGradient1260"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.66666668,0,0,0.75000004,22.939409,5.4894412)"
+       x1="18.018236"
+       y1="24.074449"
+       x2="24.368236"
+       y2="24.074449" />
+  </defs>
+  <g
+     inkscape:label="始终反对核污染水排海"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.0849023,-2.9077819)"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:url(#linearGradient1189);fill-opacity:1;stroke-width:0.236293"
+       id="rect411"
+       width="6.3499999"
+       height="8.4666662"
+       x="18.018236"
+       y="16.666115"
+       rx="2.4782493"
+       ry="1.1264915"
+       inkscape:label="储水罐" />
+    <rect
+       style="display:inline;fill:url(#linearGradient1224);fill-opacity:1;stroke-width:0.167084"
+       id="rect411-7"
+       width="4.2333331"
+       height="6.3499999"
+       x="26.484901"
+       y="19.841116"
+       rx="1.6521662"
+       ry="0.84486872"
+       inkscape:label="储水罐" />
+    <rect
+       style="display:inline;fill:url(#linearGradient1260);fill-opacity:1;stroke-width:0.167084"
+       id="rect411-7-0"
+       width="4.2333331"
+       height="6.3499999"
+       x="34.951569"
+       y="20.370281"
+       rx="1.6521662"
+       ry="0.84486872"
+       inkscape:label="储水罐" />
+    <path
+       id="path416"
+       style="display:inline;fill:#bc002d;fill-opacity:1;stroke-width:0.264583"
+       inkscape:label="外周"
+       d="m 34.951569,7.1411152 a 25.4,25.4 0 0 0 -25.4,25.3999998 25.4,25.4 0 0 0 25.4,25.4 25.4,25.4 0 0 0 25.4,-25.4 25.4,25.4 0 0 0 -25.4,-25.3999998 z m 0,4.2333328 A 21.166666,21.166666 0 0 1 56.118236,32.541115 21.166666,21.166666 0 0 1 34.951569,53.707782 21.166666,21.166666 0 0 1 13.784902,32.541115 21.166666,21.166666 0 0 1 34.951569,11.374448 Z"
+       sodipodi:insensitive="true" />
+    <path
+       id="rect1086"
+       style="display:inline;fill:#999999;fill-opacity:1;stroke-width:0.264583"
+       inkscape:label="管道"
+       d="m 15.553787,24.074448 a 21.166666,21.166666 0 0 0 -0.622185,1.593702 21.166666,21.166666 0 0 0 -0.499194,1.6769 21.166666,21.166666 0 0 0 -0.358634,1.71204 21.166666,21.166666 0 0 0 -0.216525,1.736328 21.166666,21.166666 0 0 0 -0.07235,1.747697 21.166666,21.166666 0 0 0 0.07235,1.747697 21.166666,21.166666 0 0 0 0.216525,1.736328 21.166666,21.166666 0 0 0 0.358634,1.71204 21.166666,21.166666 0 0 0 0.499194,1.676901 21.166666,21.166666 0 0 0 0.636137,1.629358 21.166666,21.166666 0 0 0 0.768429,1.571997 21.166666,21.166666 0 0 0 0.895552,1.50275 21.166666,21.166666 0 0 0 1.016476,1.423686 21.166666,21.166666 0 0 0 1.13068,1.334802 21.166666,21.166666 0 0 0 1.237134,1.237134 21.166666,21.166666 0 0 0 1.334802,1.13068 21.166666,21.166666 0 0 0 0.321944,0.22996 h 21.14548 v -25.4 z"
+       sodipodi:insensitive="true" />
+    <rect
+       style="display:inline;fill:#4d4d4d;fill-opacity:1;stroke-width:0.132291"
+       id="rect1086-8"
+       width="8.4666662"
+       height="25.4"
+       x="34.951569"
+       y="24.074448"
+       inkscape:label="管道口"
+       sodipodi:insensitive="true" />
+    <rect
+       style="display:inline;fill:#bc002d;fill-opacity:1;stroke-width:0.264583"
+       id="rect379"
+       width="4.2333331"
+       height="43.127083"
+       x="45.457245"
+       y="-23.259081"
+       inkscape:label="条"
+       transform="rotate(45)"
+       sodipodi:insensitive="true" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,34.38999,35.191815)"
+       id="text1344"
+       style="font-size:28px;font-family:'Smiley Sans';-inkscape-font-specification:'Smiley Sans';white-space:pre;shape-inside:url(#rect1346);fill:#ffff00;fill-opacity:1"
+       inkscape:label="辐射图标"
+       sodipodi:insensitive="true"><tspan
+         x="-60.925781"
+         y="-6.5790264"
+         id="tspan796">☢️</tspan></text>
+    <path
+       id="path1573"
+       style="fill:url(#radialGradient1826);fill-opacity:1;stroke-width:0.264583"
+       inkscape:label="积水"
+       d="m 36.604181,41.337477 c -0.639979,0 -1.188074,0.04157 -1.652612,0.178801 v 6.957715 c 0.124687,0.181698 0.152783,0.350322 0.180867,0.518831 0.05022,0.301309 0.100488,0.60284 0,1.054716 -0.04386,0.197216 -0.116204,0.423035 -0.175699,0.717269 -1.180966,0.328104 -2.260092,0.676452 -3.13831,1.014925 -2.410578,0.929058 -3.314667,1.782909 -5.14749,2.159558 -1.832822,0.376649 -4.594462,0.276016 -6.904488,-0.376721 -2.310025,-0.652737 -4.168017,-1.857938 -6.22701,-2.25981 -2.058993,-0.401872 -4.3192439,-1.19e-4 -5.3237058,1.104842 -1.0044619,1.10496 -0.7529513,2.912872 -0.074931,4.670516 0.6780205,1.757644 1.782882,3.464773 2.5864058,4.544425 0.803523,1.079653 1.305495,1.53178 2.485636,2.084111 1.180141,0.55233 3.038112,1.204996 5.850289,1.43092 2.812177,0.225924 6.578278,0.02495 8.888346,0.301274 2.310069,0.276325 3.164054,1.029622 6.754627,1.531689 3.590573,0.502067 9.917598,0.753566 13.307198,0.527617 3.3896,-0.22595 3.841787,-0.929079 4.79609,-1.230416 0.954303,-0.301338 2.41063,-0.201113 3.741373,-0.276469 1.330744,-0.07536 2.535926,-0.326579 2.862358,-0.853695 0.326432,-0.527116 -0.225837,-1.330364 -0.953947,-1.857768 -0.72811,-0.527403 -1.632429,-0.778504 -1.029911,-1.305863 0.602518,-0.527359 2.711625,-1.330866 4.494299,-2.510958 1.782674,-1.180092 3.239106,-2.736742 3.917074,-4.243152 0.677967,-1.50641 0.577574,-2.962754 -0.401526,-4.268473 -0.979101,-1.305719 -2.83735,-2.460631 -4.544942,-1.958537 -1.707593,0.502094 -3.264104,2.661183 -4.921147,2.96261 -1.657043,0.301427 -3.414376,-1.254867 -5.74952,-2.083594 -0.711707,-0.25258 -1.478094,-0.436882 -2.29495,-0.559139 -0.160979,-0.371356 -0.226866,-0.782917 -0.291972,-1.173572 -0.100432,-0.602614 -0.200383,-1.154911 -0.476457,-1.581815 -0.276074,-0.426905 -0.728033,-0.728275 -0.979268,-1.230416 -0.251236,-0.50214 -0.301509,-1.205063 -0.677995,-1.757515 -0.376486,-0.552454 -1.079542,-0.954417 -1.631942,-1.255738 -0.552398,-0.301319 -0.974143,-0.512136 -2.043803,-0.657841 -1.06966,-0.145705 -2.82773,-0.245879 -4.23385,-0.296106 -0.351529,-0.01256 -0.680714,-0.02222 -0.989087,-0.02222 z"
+       sodipodi:insensitive="true" />
+  </g>
+  <metadata
+     id="metadata132">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+        <dc:title>SaveSeaFromNuc-pollutedWater</dc:title>
+        <dc:date>2023-08-29</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>PJ568</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:prohibits
+           rdf:resource="http://creativecommons.org/ns#CommercialUse" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

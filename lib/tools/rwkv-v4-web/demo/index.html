@@ -1,0 +1,133 @@
+<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width"><title>RWKV-v4 Web Demo</title><script src=github-pages-coop-coep-workaround.js></script><script src=sample.js></script><script src=code.js></script><h1>RWKV-v4 Web Demo</h1><p>See <a href=https://github.com/josephrocca/rwkv-v4-web target=_blank>the Github repo</a> for more details about this demo. The inference speed numbers are just for my laptop using <b>Chrome</b> - consider them as relative numbers at most, since performance obviously varies by device. Note that opening the browser console/DevTools <a href=https://github.com/microsoft/onnxruntime/issues/14692 target=_blank>currently slows down inference</a>, even after you close it.<hr><div id=modelChoiceEl><div style=max-width:750px>Choose a model:</div><table id=modelTableEl><tr style=font-weight:700><td>Name<td>Params<td>File size<td>Inference speed<td>Notes<tr><td>rwkv-4-pile-169m.onnx<td>169m<td>679 MB<td>~32 tokens/sec<td>-<td><button onclick='modelUrlInputEl.value="https://huggingface.co/rocca/rwkv-4-pile-web/resolve/main/169m/rwkv-4-pile-169m.onnx",modelNumLayersEl.value="12",modelEmbedDimEl.value="768",backendEl.value="wasm",loadBtnEl.click()'>load</button><td><button onclick='modelUrlInputEl.value="http://localhost:8080/rwkv-4-pile-169m.onnx",modelNumLayersEl.value="12",modelEmbedDimEl.value="768",backendEl.value="wasm",loadBtnEl.click()'>load local copy</button><tr><td>rwkv-4-pile-169m-uint8.onnx<td>169m<td>171 MB<td>~12 tokens/sec<td>uint8 quantized - smaller but slower<td><button onclick='modelUrlInputEl.value="https://huggingface.co/rocca/rwkv-4-pile-web/resolve/main/169m/rwkv-4-pile-169m-uint8.onnx",modelNumLayersEl.value="12",modelEmbedDimEl.value="768",backendEl.value="wasm",loadBtnEl.click()'>load</button><td><button onclick='modelUrlInputEl.value="http://localhost:8080/rwkv-4-pile-169m-uint8.onnx",modelNumLayersEl.value="12",modelEmbedDimEl.value="768",backendEl.value="wasm",loadBtnEl.click()'>load local copy</button><tr><td>rwkv-4-pile-169m-webgl.onnx<td>169m<td>680 MB<td>~16 tokens/sec<td><a href=https://github.com/BlinkDL/RWKV-LM/issues/7#issuecomment-1225906768 target=_blank>webgl-compatible</a><td><button onclick='modelUrlInputEl.value="https://huggingface.co/rocca/rwkv-4-pile-web/resolve/main/169m/rwkv-4-pile-169m-webgl.onnx",modelNumLayersEl.value="12",modelEmbedDimEl.value="768",backendEl.value="webgl",loadBtnEl.click()'>load</button><td><button onclick='modelUrlInputEl.value="http://localhost:8080/rwkv-4-pile-169m-webgl.onnx",modelNumLayersEl.value="12",modelEmbedDimEl.value="768",backendEl.value="webgl",loadBtnEl.click()'>load local copy</button><tr style=opacity:.3><td>rwkv-4-pile-430m.onnx<td>430m<td>1.73 GB<td>?<td style=color:red>"RuntimeError: Aborted()" - too big to init<td><button onclick='modelUrlInputEl.value="https://huggingface.co/rocca/rwkv-4-pile-web/resolve/main/430m/rwkv-4-pile-430m.onnx",modelNumLayersEl.value="24",modelEmbedDimEl.value="1024",backendEl.value="wasm",loadBtnEl.click()'>load</button><td><button onclick='modelUrlInputEl.value="http://localhost:8080/rwkv-4-pile-430m.onnx",modelNumLayersEl.value="24",modelEmbedDimEl.value="1024",backendEl.value="wasm",loadBtnEl.click()'>load local copy</button><tr><td>rwkv-4-pile-430m.with_runtime_opt.ort<td>430m<td>1.73 GB<td>~12 tokens/sec<td>ORT format<td><button onclick='modelUrlInputEl.value="https://huggingface.co/rocca/rwkv-4-pile-web/resolve/main/430m/rwkv-4-pile-430m.with_runtime_opt.ort",modelNumLayersEl.value="24",modelEmbedDimEl.value="1024",backendEl.value="wasm",loadBtnEl.click()'>load</button><td><button onclick='modelUrlInputEl.value="http://localhost:8080/rwkv-4-pile-430m.with_runtime_opt.ort",modelNumLayersEl.value="24",modelEmbedDimEl.value="1024",backendEl.value="wasm",loadBtnEl.click()'>load local copy</button><tr><td>rwkv-4-pile-430m-uint8.onnx<td>430m<td>434 MB<td>~4 tokens/sec<td>uint8 quantized - smaller but slower<td><button onclick='modelUrlInputEl.value="https://huggingface.co/rocca/rwkv-4-pile-web/resolve/main/430m/rwkv-4-pile-430m-uint8.onnx",modelNumLayersEl.value="24",modelEmbedDimEl.value="1024",backendEl.value="wasm",loadBtnEl.click()'>load</button><td><button onclick='modelUrlInputEl.value="http://localhost:8080/rwkv-4-pile-430m-uint8.onnx",modelNumLayersEl.value="24",modelEmbedDimEl.value="1024",backendEl.value="wasm",loadBtnEl.click()'>load local copy</button><tr><td>rwkv-4-pile-430m-webgl.onnx<td>430m<td>1.73 GB<td>~10 tokens/sec<td><a href=https://github.com/BlinkDL/RWKV-LM/issues/7#issuecomment-1225906768 target=_blank>webgl-compatible</a><td><button onclick='modelUrlInputEl.value="https://huggingface.co/rocca/rwkv-4-pile-web/resolve/main/430m/rwkv-4-pile-430m-webgl.onnx",modelNumLayersEl.value="24",modelEmbedDimEl.value="1024",backendEl.value="webgl",loadBtnEl.click()'>load</button><td><button onclick='modelUrlInputEl.value="http://localhost:8080/rwkv-4-pile-430m-webgl.onnx",modelNumLayersEl.value="24",modelEmbedDimEl.value="1024",backendEl.value="webgl",loadBtnEl.click()'>load local copy</button></table><style>#modelTableEl{border-collapse:collapse;margin-top:1rem}#modelTableEl td,#modelTableEl th{border:1px solid grey}</style><div style=max-width:750px;margin-top:1rem>You can also load a custom model using a Hugging Face model URL. The URL must be a <u>direct</u> link to the model file. I.e. it must contain <b>/resolve/</b>, not /blob/ and must end in <i>.onnx</i> or <i>.ort</i></div><div style=background:#d3d3d3;padding:.5rem;width:fit-content><div><input id=modelUrlInputEl style=width:700px value=https://huggingface.co/rocca/rwkv-4-pile-web/resolve/main/169m/rwkv-4-pile-169m-uint8.onnx></div><div>Num Layers: <input id=modelNumLayersEl style=width:30px value=12></div><div>Embed Dim: <input id=modelEmbedDimEl style=width:30px value=768></div><div>Backend: <select id=backendEl><option value=wasm>wasm<option value=webgl>webgl (buggy)</select></div><button id=loadBtnEl onclick=resolveLoadClick()>load custom model</button></div></div><div id=loadingMessageEl style=display:none><div id=loadingStatusEl>Loading...</div><progress id=downloadProgressEl></progress></div><div id=inputAreaEl style=display:none><div id=modelInfoDisplayEl style=opacity:.5></div><div style=display:flex;gap:10px><select id=exampleSelectorEl onchange="promptInputEl.value=this.value" style=display:block><option default value="The capital of Australia is Canberra.
+The capital of France is Paris.
+The capital of Peru is">country capitals<option value="7*3=21
+21+2=23
+1+2*4=9
+7*2+31=">basic math<option value="QUESTION: The house is empty. Two people talk into the house. One person walks out, but then walks back in. A dog walks into the house. A person walks out of the house. How many people are in the house?
+ANSWER: Let's think step by step. First,">word problem<option value="Jamie: Hey, did you hear the news?
+Sam: No, what happened?
+Jamie: They're finally trialling gene drives to combat malaria in Nigeria!
+Sam:">chat<option value="dog --> fur --> soft --> teddy --> bear --> mammal --> taxonomy --> hierarchy --> king --> medieval -->">relationship chain</select> <select id=samplingSelectorEl onchange='samplingSelectorEl.value=this.value,multinomialOptions.style.display="multinomial"===this.value?"contents":"none"' style=display:block><option default value=multinomial>Multinomial sampling<option value=greedy>Greedy</select><div id=multinomialOptions><div title="Value close to 0 makes the model more predictable. Above 1 boosts the chance of a more random output">Temperature:<input id=tempEl value=0.5 style=width:60px></div><div title="The closer to 1, the more we will ignore tokens with low value from the model">Top p:<input id=topPEl value=0.8 style=width:60px></div></div><div title="0 means no penalty. Any higher number counts against the model (try a value of 1 to start)">Repetition penalty:<input id=repPenaltyEl value=0 style=width:60px></div></div><div style=display:flex;width:100%;gap:20px><textarea id=promptInputEl style=width:50%;height:250px></textarea><div id=htmloutput style=width:50%;white-space:pre-wrap></div></div><script>promptInputEl.value=exampleSelectorEl.querySelectorAll("option")[0].value,multinomialOptions.style.display="contents"</script><div>Num output tokens (including prompt): <input id=numTokensToGenInputEl type=number value=128 style=width:60px> <span id=progressDisplayEl></span> <span id=tokensPerSecDisplayEl style=opacity:.6></span></div><button id=generateButtonEl>generate text</button><div id=errorMessageEl style=display:block;color:red></div></div><script src=https://cdn.jsdelivr.net/pyodide/v0.21.0a2/full/pyodide.js></script><script src=https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/ort.js></script><script type=module>await new Promise(r => window.resolveLoadClick=r); // wait for load button click
+
+    let onnxModelUrl = modelUrlInputEl.value;
+    let n_layer = Number(modelNumLayersEl.value);
+    let n_embd = Number(modelEmbedDimEl.value);
+		let backend = backendEl.value;
+    
+    modelInfoDisplayEl.innerHTML = `<b>url:</b>${onnxModelUrl} <b>n_layer:</b>${n_layer} <b>n_embd:</b>${n_embd} <b>backend:</b>${backend}`;
+    
+    modelChoiceEl.style.display = "none";
+    loadingMessageEl.style.display = "";
+    errorMessageEl.innerHTML = "";
+    await pyodideInit();
+
+    function downloadBlobWithProgress(url, onProgress) {
+      return new Promise((res, rej) => {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function(e) {
+          if ((xhr.status >= 200 && xhr.status < 300) || (xhr.status === 0 /* Loaded from local file */)) {
+            res(new Blob([this.response]));
+          } else if(xhr.status === 404 && url.startsWith('http://localhost')) {
+            rej(`Model not found locally.  Please download and place in the demo/ folder.  Make sure you are running on port 8080`);
+          } else {
+            console.log('onload: Loading model error', xhr, e);
+            rej(`Loading model error: ${xhr.status}: ${xhr.statusText}`);
+          }
+        };
+        xhr.onprogress = onProgress;
+        xhr.onerror = function(e){
+          console.log('onerror: Loading model error', xhr, e);
+          if (xhr.status === 0 && !xhr.statusText) {
+            // There's no information to show
+            // https://bugs.chromium.org/p/chromium/issues/detail?id=118096
+            rej('Failed to load the model from Hugging Face. Might be related to a problem on their end.  Please try waiting a bit and then trying again, or use local copy (see README).')
+          } else {
+            rej(`Loading model error: ${xhr.status}: ${xhr.statusText}`);
+          }
+        }
+        xhr.send();
+      });
+    }
+    let session;
+    try {
+      let onnxModelBlob = await downloadBlobWithProgress(onnxModelUrl, function(e) {
+        let ratio = e.loaded / e.total;
+        downloadProgressEl.value = ratio;
+        loadingStatusEl.innerHTML = "Downloading..." + Math.round(ratio*e.total/1e6)+" MB";
+      });
+      if (!onnxModelBlob) {
+        throw new Error("Failed to download model");
+      }
+      loadingStatusEl.innerHTML = "Initializing...";
+      session = await createOrtSession(onnxModelBlob, new URL(onnxModelUrl).pathname.endsWith(".ort"), backend, n_layer, n_embd);
+    } catch (e) {
+      const errStr = `Failed to load ONNX model: ${e}.`;
+      console.log(errStr);
+      errorMessageEl.innerHTML=errStr;
+      console.error(e);
+    }   
+    inputAreaEl.style.display = "";
+    loadingMessageEl.style.display = "none";
+    
+    const abortSignal = { cancelled: false }; 
+    async function stop() {
+      abortSignal.cancelled = true;
+    }
+    async function generate() {
+      abortSignal.cancelled = false;
+      generateButtonEl.disabled = false;
+      generateButtonEl.innerHTML = "Stop";
+      generateButtonEl.onclick = stop;
+      generateButtonEl.style.color = "red";
+      
+      tokensPerSecDisplayEl.innerHTMl = "";
+      htmloutput.innerHTML = "";
+	    
+      let promptText = promptInputEl.value;
+      let numTokensToGenerate = Number(numTokensToGenInputEl.value);
+
+      const promptTextLen = promptText.length;
+      
+      function streamingCallback({token, other_tokens, status, i, outOf, tokensPerSec}) {
+        if(status === "Output" || status === "Reading prompt") {
+          progressDisplayEl.innerHTML = `${status} Progress: ${i}/${outOf}`;
+          tokensPerSecDisplayEl.innerHTML = '';
+        } else if (status === "Finished") {
+          progressDisplayEl.innerHTML = '';
+          tokensPerSecDisplayEl.innerHTML = `(${tokensPerSec.toFixed(2)} tokens/sec)`;
+        }
+        if(token) {
+          let text = tokensToText([token]);
+          const ol = other_tokens ? other_tokens.length : 0;
+          htmloutput.innerHTML += `<span style="color:${status === "Output" ? "blue" : "green"};${ol ? 'text-decoration: underline dotted gray;' : ''}" ${ol ? `title="chosen from ${ol+1} possible tokens"` : ''}>${text}${ol ? `<sub style="color:gray; font-size: smaller;">${ol+1}</sub>` : ''}</span>`;
+          if(status === "Output") {
+            promptInputEl.value += text;
+            promptInputEl.focus();
+            promptInputEl.selectionStart = promptTextLen;
+            promptInputEl.selectionEnd = promptInputEl.value.length;
+            setTimeout(() => {
+              promptInputEl.focus();
+            }, 0);
+          }
+        }
+      }
+      const samplingMethod = samplingSelectorEl.value;
+      const temperature = parseFloat(tempEl.value);
+      const topP = parseFloat(topPEl.value);
+      const repetativePenality = parseFloat(repPenaltyEl.value);
+      const show_other_tokens = true;
+      let result = await session.predictText(promptText, numTokensToGenerate, streamingCallback, abortSignal, samplingMethod, temperature, topP, repetativePenality, show_other_tokens).catch((err) => {
+        errorMessageEl.innerHTML = err;
+        console.error(err);
+      });
+      
+      console.log(result);
+			
+      generateButtonEl.disabled = false;
+      generateButtonEl.innerHTML = "Generate";
+      generateButtonEl.onclick = generate;
+      generateButtonEl.style.color = "";
+    };
+    generateButtonEl.onclick = generate;</script>

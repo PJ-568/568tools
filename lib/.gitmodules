@@ -1,0 +1,57 @@
+[submodule "tools/rust-course"]
+	path = tools/rust-course
+	url = https://github.com/sunface/rust-course.git
+	branch = gh-pages
+[submodule "tools/rusty-book"]
+	path = tools/rusty-book
+	url = https://github.com/rustlang-cn/rusty-book.git
+	branch = gh-pages
+[submodule "tools/keyboard-mouse-tester"]
+	path = tools/keyboard-mouse-tester
+	url = https://github.com/shawon9324/keyboard-mouse-tester-webApp.git
+	branch = main
+[submodule "tools/ide"]
+	path = tools/ide
+	url = https://github.com/judge0/ide.git
+	branch = master
+[submodule "tools/mind-map"]
+	path = tools/mind-map
+	url = https://github.com/wanglin2/mind-map.git
+	branch = main
+[submodule "tools/webp2jpg-online"]
+	path = tools/webp2jpg-online
+	url = https://github.com/renzhezhilu/webp2jpg-online.git
+[submodule "tools/Universal-LPC-Spritesheet-Character-Generator"]
+	path = tools/Universal-LPC-Spritesheet-Character-Generator
+	url = https://github.com/sanderfrenken/Universal-LPC-Spritesheet-Character-Generator.git
+	branch = master
+[submodule "tools/Black_screen"]
+	path = tools/Black_screen
+	url = https://github.com/PJ-568/Black_screen.git
+	branch = min
+[submodule "tools/Base64"]
+	path = tools/Base64
+	url = https://github.com/SFantasy/Base64.git
+	branch = gh-pages
+[submodule "tools/Base64_converter"]
+	path = tools/Base64_converter
+	url = https://github.com/rossy/base64.git
+	branch = gh-pages
+[submodule "tools/Hamud_Book"]
+	path = tools/Hamud_Book
+	url = https://github.com/Hamud-Lang/Hamud_Book.git
+	branch = gh-pages
+[submodule "tools/dwv"]
+	path = tools/dwv
+	url = https://github.com/ivmartel/dwv.git
+	branch = gh-pages
+[submodule "tools/FactsAboutNuc-pollutedWater"]
+	path = tools/FactsAboutNuc-pollutedWater
+	url = https://github.com/SaveSeaFromNuc-pollutedWater/FactsAboutNuc-pollutedWater.git
+	branch = release
+[submodule "tools/rwkv-v4-web"]
+	path = tools/rwkv-v4-web
+	url = https://github.com/josephrocca/rwkv-v4-web.git
+[submodule "tools/github-directory-downloader"]
+	path = tools/github-directory-downloader
+	url = https://github.com/Momo707577045/github-directory-downloader
