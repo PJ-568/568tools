@@ -30,7 +30,12 @@ jobs:
         run: |
           echo '复制 tree/assets/* 到 .：'
           cp -v -u -r /home/runner/tree/assets/* .
-          
+
+      - name: Delete 冗
+        run: |
+          rm -r lib/tools/dwv/doc/
+          rm -r lib/tools/webp2jpg-online/doc/
+
       - name: HTML/CSS/JS Minifier
         uses: docker://devatherock/minify-js:2.0.0
         with:
