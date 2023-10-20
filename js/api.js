@@ -17,6 +17,11 @@ var classify = [{
 		"hot": 1,
 		"img": ""
 	}, {
+		"name": "568_RWKV",
+		"url": "https://Chat.pj568.eu.org/",
+		"hot": 0,
+		"img": ""
+	}, {
 		"name": "CloseAI.pj568.eu.org",
 		"url": "https://CloseAI.pj568.eu.org/",
 		"hot": 0,
