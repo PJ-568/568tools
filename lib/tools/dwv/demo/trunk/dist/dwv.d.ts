@@ -20,9 +20,9 @@ export declare function addTagsToDictionary(group: string, tags: object): void;
  * // create the dwv app
  * const app = new dwv.App();
  * // initialise
- * const viewConfig0 = new ViewConfig('layerGroup0');
+ * const viewConfig0 = new dwv.ViewConfig('layerGroup0');
  * const viewConfigs = {'*': [viewConfig0]};
- * const options = new AppOptions(viewConfigs);
+ * const options = new dwv.AppOptions(viewConfigs);
  * app.init(options);
  * // load dicom data
  * app.loadURLs([
@@ -121,6 +121,12 @@ export declare class App {
      */
     getActiveLayerGroup(): LayerGroup;
     /**
+     * Set the active layer group.
+     *
+     * @param {number} index The layer group index.
+     */
+    setActiveLayerGroup(index: number): void;
+    /**
      * Get the view layers associated to a data id.
      * The layer are available after the first loaded item.
      *
@@ -172,9 +178,9 @@ export declare class App {
      * // create the dwv app
      * const app = new dwv.App();
      * // initialise
-     * const viewConfig0 = new ViewConfig('layerGroup0');
+     * const viewConfig0 = new dwv.ViewConfig('layerGroup0');
      * const viewConfigs = {'*': [viewConfig0]};
-     * const options = new AppOptions(viewConfigs);
+     * const options = new dwv.AppOptions(viewConfigs);
      * options.viewOnFirstLoadItem = false;
      * app.init(options);
      * // render button
@@ -229,8 +235,8 @@ export declare class App {
      * @fires App#loadprogress
      * @fires App#loaditem
      * @fires App#loadend
-     * @fires App#loaderror
-     * @fires App#loadabort
+     * @fires App#error
+     * @fires App#abort
      * @function
      */
     loadFiles: (files: File[]) => void;
@@ -246,8 +252,8 @@ export declare class App {
      * @fires App#loadprogress
      * @fires App#loaditem
      * @fires App#loadend
-     * @fires App#loaderror
-     * @fires App#loadabort
+     * @fires App#error
+     * @fires App#abort
      * @function
      */
     loadURLs: (urls: string[], options?: object) => void;
@@ -268,8 +274,8 @@ export declare class App {
      * @fires App#loadprogress
      * @fires App#loaditem
      * @fires App#loadend
-     * @fires App#loaderror
-     * @fires App#loadabort
+     * @fires App#error
+     * @fires App#abort
      * @function
      */
     loadImageObject: (data: any[]) => void;
@@ -292,6 +298,26 @@ export declare class App {
      * @param {boolean} flag True to enable smoothing.
      */
     setImageSmoothing(flag: boolean): void;
+    /**
+     * Get the layer group configuration from a data id.
+     *
+     * @param {string} dataId The data id.
+     * @param {boolean} [excludeStarConfig] Exclude the star config
+     *  (default to false).
+     * @returns {ViewConfig[]} The list of associated configs.
+     */
+    getViewConfigs(dataId: string, excludeStarConfig?: boolean): ViewConfig[];
+    /**
+     * Get the layer group configuration for a data id and group
+     * div id.
+     *
+     * @param {string} dataId The data id.
+     * @param {string} groupDivId The layer group div id.
+     * @param {boolean} [excludeStarConfig] Exclude the star config
+     *  (default to false).
+     * @returns {ViewConfig|undefined} The associated config.
+     */
+    getViewConfig(dataId: string, groupDivId: string, excludeStarConfig?: boolean): ViewConfig | undefined;
     /**
      * Get the data view config.
      * Carefull, returns a reference, do not modify without resetting.
@@ -325,7 +351,7 @@ export declare class App {
      */
     removeDataViewConfig(dataId: string, config: ViewConfig): void;
     /**
-     * Update a data view config.
+     * Update an existing data view config.
      * Removes and re-creates the layer if found.
      *
      * @param {string} dataId The data id.
@@ -563,6 +589,12 @@ export declare function buildMultipart(parts: any[], boundary: string): Uint8Arr
  */
 export declare class ColourMap {
     /**
+     * @param {number[]} red Red component.
+     * @param {number[]} green Green component.
+     * @param {number[]} blue Blue component.
+     */
+    constructor(red: number[], green: number[], blue: number[]);
+    /**
      * Red component: 256 values in the [0, 255] range.
      *
      * @type {number[]}
@@ -675,6 +707,10 @@ export declare class DataElement {
     items: any[];
 }
 
+declare type DataElements = {
+    [x: string]: DataElement;
+};
+
 /**
  * Decoder scripts to be passed to web workers for image decoding.
  */
@@ -774,18 +810,24 @@ export declare class DicomParser {
  * DICOM writer.
  *
  * @example
+ * // add link to html
+ * const link = document.createElement("a");
+ * link.appendChild(document.createTextNode("download"));
+ * const div = document.getElementById("dwv");
+ * div.appendChild(link);
  * // XMLHttpRequest onload callback
  * const onload = function (event) {
- *   const parser = new DicomParser();
+ *   const parser = new dwv.DicomParser();
  *   parser.parse(event.target.response);
- *   // create writer with parser data elements
- *   const writer = new DicomWriter(parser.getDicomElements());
- *   // create modified buffer and put it in a Blol
- *   const blob = new Blob([writer.getBuffer()], {type: 'application/dicom'});
- *   // example download link
- *   const element = document.getElementById("download");
- *   element.href = URL.createObjectURL(blob);
- *   element.download = "anonym.dcm";
+ *   // create writer
+ *   const writer = new dwv.DicomWriter();
+ *   // get buffer using default rules
+ *   const dicomBuffer = writer.getBuffer(parser.getDicomElements());
+ *   // create blob
+ *   const blob = new Blob([dicomBuffer], {type: 'application/dicom'});
+ *   // add blob to download link
+ *   link.href = URL.createObjectURL(blob);
+ *   link.download = "anonym.dcm";
  * };
  * // DICOM file request
  * const request = new XMLHttpRequest();
@@ -840,6 +882,140 @@ export declare class DicomWriter {
         [x: string]: DataElement;
     }): ArrayBuffer;
     #private;
+}
+
+/**
+ * Draw controller.
+ */
+export declare class DrawController {
+    /**
+     * @param {DrawLayer} drawLayer The draw layer.
+     */
+    constructor(drawLayer: DrawLayer);
+    /**
+     * Get the current position group.
+     *
+     * @returns {Konva.Group|undefined} The Konva.Group.
+     */
+    getCurrentPosGroup(): Konva.Group | undefined;
+    /**
+     * Reset: clear the layers array.
+     */
+    reset(): void;
+    /**
+     * Get a Konva group using its id.
+     *
+     * @param {string} id The group id.
+     * @returns {object|undefined} The Konva group.
+     */
+    getGroup(id: string): object | undefined;
+    /**
+     * Activate the current draw layer.
+     *
+     * @param {Index} index The current position.
+     * @param {number} scrollIndex The scroll index.
+     */
+    activateDrawLayer(index: Index, scrollIndex: number): void;
+    /**
+     * Get a list of drawing display details.
+     *
+     * @returns {DrawDetails[]} A list of draw details.
+     */
+    getDrawDisplayDetails(): DrawDetails[];
+    /**
+     * Get a list of drawing store details. Used in state.
+     *
+     * @returns {object} A list of draw details including id, text, quant...
+     * TODO Unify with getDrawDisplayDetails?
+     */
+    getDrawStoreDetails(): object;
+    /**
+     * Set the drawings on the current stage.
+     *
+     * @param {Array} drawings An array of drawings.
+     * @param {DrawDetails[]} drawingsDetails An array of drawings details.
+     * @param {object} cmdCallback The DrawCommand callback.
+     * @param {object} exeCallback The callback to call once the
+     *   DrawCommand has been executed.
+     */
+    setDrawings(drawings: any[], drawingsDetails: DrawDetails[], cmdCallback: object, exeCallback: object): void;
+    /**
+     * Update a drawing from its details.
+     *
+     * @param {DrawDetails} drawDetails Details of the drawing to update.
+     */
+    updateDraw(drawDetails: DrawDetails): void;
+    /**
+     * Delete a Draw from the stage.
+     *
+     * @param {Konva.Group} group The group to delete.
+     * @param {object} cmdCallback The DeleteCommand callback.
+     * @param {object} exeCallback The callback to call once the
+     *  DeleteCommand has been executed.
+     */
+    deleteDrawGroup(group: Konva.Group, cmdCallback: object, exeCallback: object): void;
+    /**
+     * Delete a Draw from the stage.
+     *
+     * @param {string} id The id of the group to delete.
+     * @param {Function} cmdCallback The DeleteCommand callback.
+     * @param {Function} exeCallback The callback to call once the
+     *  DeleteCommand has been executed.
+     * @returns {boolean} False if the group cannot be found.
+     */
+    deleteDraw(id: string, cmdCallback: Function, exeCallback: Function): boolean;
+    /**
+     * Delete all Draws from the stage.
+     *
+     * @param {Function} cmdCallback The DeleteCommand callback.
+     * @param {Function} exeCallback The callback to call once the
+     *  DeleteCommand has been executed.
+     */
+    deleteDraws(cmdCallback: Function, exeCallback: Function): void;
+    /**
+     * Get the total number of draws
+     * (at all positions).
+     *
+     * @returns {number} The total number of draws.
+     */
+    getNumberOfDraws(): number;
+    #private;
+}
+
+/**
+ * Draw details.
+ */
+export declare class DrawDetails {
+    /**
+     * The draw ID.
+     *
+     * @type {number}
+     */
+    id: number;
+    /**
+     * The draw position: an Index converted to string.
+     *
+     * @type {string}
+     */
+    position: string;
+    /**
+     * The draw type.
+     *
+     * @type {string}
+     */
+    type: string;
+    /**
+     * The draw color: for example 'green', '#00ff00' or 'rgb(0,255,0)'.
+     *
+     * @type {string}
+     */
+    color: string;
+    /**
+     * The draw meta.
+     *
+     * @type {DrawMeta}
+     */
+    meta: DrawMeta;
 }
 
 /**
@@ -914,6 +1090,14 @@ export declare class DrawLayer {
      */
     addFlipOffsetY(): void;
     /**
+     * Flip the scale along the layer X axis.
+     */
+    flipScaleX(): void;
+    /**
+     * Flip the scale along the layer Y axis.
+     */
+    flipScaleY(): void;
+    /**
      * Flip the scale along the layer Z axis.
      */
     flipScaleZ(): void;
@@ -984,7 +1168,7 @@ export declare class DrawLayer {
      * @param {string} id The id of the group.
      * @returns {boolean} False if the group cannot be found.
      */
-    toogleGroupVisibility(id: string): boolean;
+    toggleGroupVisibility(id: string): boolean;
     /**
      * Delete a Draw from the stage.
      *
@@ -1000,6 +1184,13 @@ export declare class DrawLayer {
      *  DeleteCommand has been executed.
      */
     deleteDraws(exeCallback: object): void;
+    /**
+     * Get the total number of draws of this layer
+     * (at all positions).
+     *
+     * @returns {number|undefined} The total number of draws.
+     */
+    getNumberOfDraws(): number | undefined;
     /**
      * Enable and listen to container interaction events.
      */
@@ -1033,6 +1224,25 @@ export declare class DrawLayer {
      */
     removeEventListener(type: string, callback: Function): void;
     #private;
+}
+
+/**
+ * Draw meta data.
+ */
+export declare class DrawMeta {
+    /**
+     * Draw quantification.
+     *
+     * @type {object}
+     */
+    quantification: object;
+    /**
+     * Draw text expression. Can contain variables surrounded with '{}' that will
+     * be extracted from the quantification object.
+     *
+     * @type {string}
+     */
+    textExpr: string;
 }
 
 /**
@@ -1087,9 +1297,9 @@ export declare class Geometry {
     /**
      * Get the object origins.
      *
-     * @returns {Array} The object origins.
+     * @returns {Point3D[]} The object origins.
      */
-    getOrigins(): any[];
+    getOrigins(): Point3D[];
     /**
      * Check if a point is in the origin list.
      *
@@ -1182,10 +1392,10 @@ export declare class Geometry {
      * Check that a index is within bounds.
      *
      * @param {Index} index The index to check.
-     * @param {Array} [dirs] Optional list of directions to check.
+     * @param {number[]} [dirs] Optional list of directions to check.
      * @returns {boolean} True if the given coordinates are within bounds.
      */
-    isIndexInBounds(index: Index, dirs?: any[]): boolean;
+    isIndexInBounds(index: Index, dirs?: number[]): boolean;
     /**
      * Convert an index into world coordinates.
      *
@@ -1218,6 +1428,13 @@ export declare class Geometry {
 }
 
 /**
+ * Get the default DICOM seg tags as an object.
+ *
+ * @returns {object} The default tags.
+ */
+export declare function getDefaultDicomSegJson(): object;
+
+/**
  * List of DICOM data elements indexed via a 8 character string formed from
  * the group and element numbers.
  *
@@ -1245,6 +1462,26 @@ export declare function getElementsFromJSONTags(jsonTags: {
 }): {
     [x: string]: DataElement;
 };
+
+/**
+ * Get the indices that form a ellpise.
+ *
+ * @param {Index} center The ellipse center.
+ * @param {Array} radius The 2 ellipse radiuses.
+ * @param {Array} dir The 2 ellipse directions.
+ * @returns {Array} The indices of the ellipse.
+ */
+export declare function getEllipseIndices(center: Index, radius: any[], dir: any[]): any[];
+
+/**
+ * Get the layer details from a mouse event.
+ *
+ * @param {object} event The event to get the layer div id from. Expecting
+ * an event origininating from a canvas inside a layer HTML div
+ * with the 'layer' class and id generated with `getLayerDivId`.
+ * @returns {object} The layer details as {groupDivId, layerId}.
+ */
+export declare function getLayerDetailsFromEvent(event: object): object;
 
 /**
  * Get the name of an image orientation patient.
@@ -1784,6 +2021,15 @@ export declare class Index {
 }
 
 /**
+ * CIE LAB value (L: [0, 100], a: [-128, 127], b: [-128, 127]) to
+ *   unsigned int CIE LAB ([0, 65535]).
+ *
+ * @param {object} triplet CIE XYZ triplet as {x,y,z} with CIE LAB range.
+ * @returns {object} CIE LAB triplet as {l,a,b} with unsigned range.
+ */
+export declare function labToUintLab(triplet: object): object;
+
+/**
  * Layer group.
  *
  * Display position: {x,y}
@@ -1858,6 +2104,12 @@ export declare class LayerGroup {
      * @returns {number} The number of layers.
      */
     getNumberOfLayers(): number;
+    /**
+     * Get the number of view layers handled by this class.
+     *
+     * @returns {number} The number of layers.
+     */
+    getNumberOfViewLayers(): number;
     /**
      * Get the active image layer.
      *
@@ -2062,21 +2314,38 @@ export declare const luts: {
 };
 
 /**
+ * Mask {@link Image} factory.
+ */
+export declare class MaskFactory {
+    checkElements(_dicomElements: any): void;
+    /**
+     * Get an {@link Image} object from the read DICOM file.
+     *
+     * @param {DataElements} dataElements The DICOM tags.
+     * @param {Uint8Array | Int8Array |
+         *   Uint16Array | Int16Array |
+         *   Uint32Array | Int32Array} pixelBuffer The pixel buffer.
+     * @returns {Image} A new Image.
+     */
+    create(dataElements: DataElements, pixelBuffer: Uint8Array | Int8Array | Uint16Array | Int16Array | Uint32Array | Int32Array): Image_2;
+}
+
+/**
  * Immutable 3x3 Matrix.
  */
 export declare class Matrix33 {
     /**
-     * @param {Array} values row-major ordered 9 values.
+     * @param {number[]} values row-major ordered 9 values.
      */
-    constructor(values: any[]);
+    constructor(values: number[]);
     /**
      * Get a value of the matrix.
      *
      * @param {number} row The row at wich to get the value.
      * @param {number} col The column at wich to get the value.
-     * @returns {number} The value at the position.
+     * @returns {number|undefined} The value at the position.
      */
-    get(row: number, col: number): number;
+    get(row: number, col: number): number | undefined;
     /**
      * Get the inverse of this matrix.
      *
@@ -2115,10 +2384,10 @@ export declare class Matrix33 {
     /**
      * Multiply this matrix by a 3D array.
      *
-     * @param {Array} array3D The input 3D array.
-     * @returns {Array} The result 3D array.
+     * @param {number[]} array3D The input 3D array.
+     * @returns {number[]} The result 3D array.
      */
-    multiplyArray3D(array3D: any[]): any[];
+    multiplyArray3D(array3D: number[]): number[];
     /**
      * Multiply this matrix by a 3D vector.
      *
@@ -2671,6 +2940,14 @@ export declare class Spacing {
 }
 
 /**
+ * Convert sRGB to CIE LAB (standard illuminant D65).
+ *
+ * @param {object} triplet sRGB triplet as {r,g,b}.
+ * @returns {object} CIE LAB triplet as {l,a,b}.
+ */
+export declare function srgbToCielab(triplet: object): object;
+
+/**
  * Immutable tag.
  */
 export declare class Tag {
@@ -2850,6 +3127,16 @@ export declare class ToolConfig {
 }
 
 /**
+ * List of client provided tools to be added to
+ * the default ones.
+ *
+ * @type {Object<string, any>}
+ */
+export declare const toolList: {
+    [x: string]: any;
+};
+
+/**
  * Immutable 3D vector.
  */
 export declare class Vector3D {
@@ -2930,9 +3217,9 @@ export declare class Vector3D {
  *   const dicomParser = new dwv.DicomParser();
  *   dicomParser.parse(event.target.response);
  *   // create the image object
- *   const image = createImage(dicomParser.getDicomElements());
+ *   const image = dwv.createImage(dicomParser.getDicomElements());
  *   // create the view
- *   const view = createView(dicomParser.getDicomElements(), image);
+ *   const view = dwv.createView(dicomParser.getDicomElements(), image);
  *   // setup canvas
  *   const canvas = document.createElement('canvas');
  *   canvas.width = 256;
@@ -3044,12 +3331,6 @@ export declare class View {
      */
     setWindowPresets(presets: object): void;
     /**
-     * Set the default colour map.
-     *
-     * @param {ColourMap} map The colour map.
-     */
-    setDefaultColourMap(map: ColourMap): void;
-    /**
      * Add window presets to the existing ones.
      *
      * @param {object} presets The window presets.
@@ -3064,16 +3345,16 @@ export declare class View {
     /**
      * Get the colour map of the image.
      *
-     * @returns {ColourMap} The colour map of the image.
+     * @returns {string} The colour map name.
      */
-    getColourMap(): ColourMap;
+    getColourMap(): string;
     /**
      * Set the colour map of the image.
      *
-     * @param {ColourMap} map The colour map of the image.
-     * @fires View#colourchange
+     * @param {string} name The colour map name.
+     * @fires View#colourmapchange
      */
-    setColourMap(map: ColourMap): void;
+    setColourMap(name: string): void;
     /**
      * Get the current position.
      *
@@ -3094,12 +3375,12 @@ export declare class View {
      */
     canSetPosition(position: Point): boolean;
     /**
-     * Get the origin at a given position.
+     * Get the first origin or at a given position.
      *
-     * @param {Point} position The position.
-     * @returns {Point} The origin.
+     * @param {Point} [position] Optional position.
+     * @returns {Point3D} The origin.
      */
-    getOrigin(position: Point): Point;
+    getOrigin(position?: Point): Point3D;
     /**
      * Set the current position.
      *
@@ -3241,17 +3522,29 @@ export declare class ViewConfig {
      */
     orientation: string | undefined;
     /**
-     * Optional view colour map.
+     * Optional view colour map name.
      *
-     * @type {ColourMap|undefined}
+     * @type {string|undefined}
      */
-    colourMap: ColourMap | undefined;
+    colourMap: string | undefined;
     /**
      * Optional layer opacity; in [0, 1] range.
      *
      * @type {number|undefined}
      */
     opacity: number | undefined;
+    /**
+     * Optional layer window center.
+     *
+     * @type {number|undefined}
+     */
+    windowCenter: number | undefined;
+    /**
+     * Optional layer window width.
+     *
+     * @type {number|undefined}
+     */
+    windowWidth: number | undefined;
 }
 
 /**
@@ -3365,12 +3658,12 @@ export declare class ViewController {
      */
     getCurrentScrollIndexValue(): object;
     /**
-     * Get the origin at a given posittion.
+     * Get the first origin or at a given position.
      *
-     * @param {Point} position The input position.
-     * @returns {Point} The origin.
+     * @param {Point} [position] Opitonal position.
+     * @returns {Point3D} The origin.
      */
-    getOrigin(position: Point): Point;
+    getOrigin(position?: Point): Point3D;
     /**
      * Get the current scroll position value.
      *
@@ -3381,10 +3674,10 @@ export declare class ViewController {
      * Generate display image data to be given to a canvas.
      *
      * @param {ImageData} array The array to fill in.
-     * @param {Index} index Optional index at which to generate,
+     * @param {Index} [index] Optional index at which to generate,
      *   otherwise generates at current index.
      */
-    generateImageData(array: ImageData, index: Index): void;
+    generateImageData(array: ImageData, index?: Index): void;
     /**
      * Set the associated image.
      *
@@ -3585,15 +3878,15 @@ export declare class ViewController {
     /**
      * Get the colour map.
      *
-     * @returns {ColourMap} The colour map.
+     * @returns {string} The colour map name.
      */
-    getColourMap(): ColourMap;
+    getColourMap(): string;
     /**
      * Set the colour map.
      *
-     * @param {ColourMap} colourMap The colour map.
+     * @param {string} name The colour map name.
      */
-    setColourMap(colourMap: ColourMap): void;
+    setColourMap(name: string): void;
     /**
      * @callback alphaFn@callback alphaFn
      * @param {object} value The pixel value.
@@ -3606,12 +3899,6 @@ export declare class ViewController {
      * @param {alphaFn} func The function.
      */
     setViewAlphaFunction(func: (value: object, index: object) => number): void;
-    /**
-     * Set the colour map from a name.
-     *
-     * @param {string} name The name of the colour map to set.
-     */
-    setColourMapFromName(name: string): void;
     /**
      * Add an event listener to this class.
      *
@@ -3724,6 +4011,14 @@ export declare class ViewLayer {
      */
     addFlipOffsetY(): void;
     /**
+     * Flip the scale along the layer X axis.
+     */
+    flipScaleX(): void;
+    /**
+     * Flip the scale along the layer Y axis.
+     */
+    flipScaleY(): void;
+    /**
      * Flip the scale along the layer Z axis.
      */
     flipScaleZ(): void;
@@ -3777,7 +4072,8 @@ export declare class ViewLayer {
      *
      * @param {number} x The X position.
      * @param {number} y The Y position.
-     * @returns {object} The display position as {x,y}.
+     * @returns {object} The display position as {x,y}, can be individually
+     *   undefined if out of bounds.
      */
     planePosToDisplay(x: number, y: number): object;
     /**
@@ -3966,17 +4262,21 @@ export declare class WindowLut {
  */
 export declare class WriterRule {
     /**
+     * @param {string} action The rule action.
+     */
+    constructor(action: string);
+    /**
      * Rule action: `copy`, `remove`, `clear` or `replace`.
      *
      * @type {string}
      */
     action: string;
     /**
-     * Value to use for replace action.
+     * Optional value to use for replace action.
      *
-     * @type {any}
+     * @type {any|undefined}
      */
-    value: any;
+    value: any | undefined;
 }
 
 export { }
