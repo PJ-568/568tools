@@ -40,6 +40,8 @@ jobs:
         uses: docker://devatherock/minify-js:3.0.0
         with:
           add_suffix: false
+          inclusions: |-
+            !./lib/**
 
       - name: Generate the sitemap
         id: sitemap
