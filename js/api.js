@@ -3,42 +3,42 @@ var classify = [{
 	"name": "568服务",
 	"list": [{
 		"name": "PJ568的博客",
-		"url": "https://PJ568.eu.org/",
+		"url": "//PJ568.eu.org/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "568Tools&nbsp;在线工具箱",
-		"url": "https://Tools.PJ568.eu.org/",
+		"url": "//Tools.PJ568.eu.org/",
 		"hot": 1,
 		"img": ""
 	}, {
 		"name": "转转雀&nbsp;-&nbsp;Github&nbsp;文件加速",
-		"url": "https://Proxy.PJ568.eu.org/",
+		"url": "//Proxy.PJ568.eu.org/",
 		"hot": 1,
 		"img": ""
 	}, {
 		"name": "568_RWKV",
-		"url": "https://Chat.pj568.eu.org/",
+		"url": "//Chat.pj568.eu.org/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "CloseAI.pj568.eu.org",
-		"url": "https://CloseAI.pj568.eu.org/",
+		"url": "//CloseAI.pj568.eu.org/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "哈姆语言之书",
-		"url": "https://Hamud.PJ568.eu.org/",
+		"url": "//Hamud.PJ568.eu.org/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "本站后台管理页面",
-		"url": "management",
+		"url": "https://dsh.pj568.eu.org/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "网站状态",
-		"url": "https://status.pj568.eu.org/",
+		"url": "//status.pj568.eu.org/",
 		"hot": 0,
 		"img": ""
 	}]
@@ -222,27 +222,27 @@ var classify = [{
 	"name": "公共库",
 	"list": [{
 		"name": "Staticfile CDN",
-		"url": "https://www.staticfile.org/",
+		"url": "//www.staticfile.org/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "cdnjs",
-		"url": "https://cdnjs.com/",
+		"url": "//cdnjs.com/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "jsDelivr",
-		"url": "https://www.jsdelivr.com/",
+		"url": "//www.jsdelivr.com/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "微软 CDN",
-		"url": "https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview",
+		"url": "//docs.microsoft.com/en-us/aspnet/ajax/cdn/overview",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "jQuery CDN",
-		"url": "https://releases.jquery.com/",
+		"url": "//releases.jquery.com/",
 		"hot": 0,
 		"img": ""
 	}]
@@ -251,17 +251,17 @@ var classify = [{
 	"name": "站外工具",
 	"list": [{
 		"name": "测试你在 Cloudflare 的声誉",
-		"url": "https://cf.qn.md/",
+		"url": "//cf.qn.md/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "反对核污染水排放",
-		"url": "https://Nuc.PJ568.eu.org/",
+		"url": "//Nuc.PJ568.eu.org/",
 		"hot": 1,
 		"img": ""
 	}, {
 		"name": "必应每日壁纸 API",
-		"url": "https://bing.shangzhenyang.com/",
+		"url": "//bing.shangzhenyang.com/",
 		"hot": 0,
 		"img": ""
 	}]
@@ -270,42 +270,42 @@ var classify = [{
 	"name": "站长平台",
 	"list": [{
 		"name": "必应站长平台",
-		"url": "https://www.bing.com/webmasters/home",
+		"url": "//www.bing.com/webmasters/home",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "百度站长平台",
-		"url": "https://ziyuan.baidu.com/site/index#/",
+		"url": "//ziyuan.baidu.com/site/index#/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "搜狗站长平台",
-		"url": "https://zhanzhang.sogou.com/index.php/dashboard/index",
+		"url": "//zhanzhang.sogou.com/index.php/dashboard/index",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "360 站长平台",
-		"url": "https://zhanzhang.so.com/sitetool/site_manage",
+		"url": "//zhanzhang.so.com/sitetool/site_manage",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "神马站长平台",
-		"url": "https://zhanzhang.sm.cn/open/detialPage",
+		"url": "//zhanzhang.sm.cn/open/detialPage",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "头条搜索站长平台",
-		"url": "https://zhanzhang.toutiao.com/page/inner/site/manage",
+		"url": "//zhanzhang.toutiao.com/page/inner/site/manage",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "Yandex 站长平台",
-		"url": "https://webmaster.yandex.com/",
+		"url": "//webmaster.yandex.com/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "谷歌站长平台",
-		"url": "https://search.google.com/search-console",
+		"url": "//search.google.com/search-console",
 		"hot": 0,
 		"img": ""
 	}]
