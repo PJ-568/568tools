@@ -3,42 +3,42 @@ var classify = [{
 	"name": "568服务",
 	"list": [{
 		"name": "PJ568的博客",
-		"url": "//PJ568.eu.org/",
+		"url": "//blog.PJ568.sbs/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "568Tools&nbsp;在线工具箱",
-		"url": "//Tools.PJ568.eu.org/",
+		"url": "//Tools.PJ568.sbs/",
 		"hot": 1,
 		"img": ""
 	}, {
 		"name": "转转雀&nbsp;-&nbsp;Github&nbsp;文件加速",
-		"url": "//Proxy.PJ568.eu.org/",
+		"url": "//xn--yfr044l.PJ568.sbs/",
 		"hot": 1,
 		"img": ""
 	}, {
 		"name": "568_RWKV",
-		"url": "//Chat.pj568.eu.org/",
+		"url": "//Chat.pj568.sbs/",
 		"hot": 0,
 		"img": ""
 	}, {
-		"name": "CloseAI.pj568.eu.org",
-		"url": "//CloseAI.pj568.eu.org/",
+		"name": "CloseAI.pj568.sbs",
+		"url": "//CloseAI.pj568.sbs/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "哈姆语言之书",
-		"url": "//Hamud.PJ568.eu.org/",
+		"url": "//Hamud.PJ568.sbs/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "本站后台管理页面",
-		"url": "https://dsh.pj568.eu.org/",
+		"url": "https://dsh.pj568.sbs/",
 		"hot": 0,
 		"img": ""
 	}, {
 		"name": "网站状态",
-		"url": "//status.pj568.eu.org/",
+		"url": "//status.pj568.sbs/",
 		"hot": 0,
 		"img": ""
 	}]
