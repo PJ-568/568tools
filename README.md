@@ -1,16 +1,16 @@
 <p align="center">
-    <img width="256" src='https://Tools.PJ568.eu.org/img/icon.svg'/>
+    <img width="256" src='https://Tools.PJ568.sbs/img/icon.svg'/>
 </p>
 
 > 🌏简体中文 | [English](./README_EN.md)
 
 > 🗃️[Github](https://github.com/PJ-568/568tools) | [Gitee](https://gitee.com/PJ-568/568tools) | [GitLab](https://gitlab.com/PJ-568/568tools/)
 
-# <img width="30" style="margin: -3px 5px;" src="https://Tools.PJ568.eu.org/img/icon.svg"/>568Tools 在线工具箱
+# <img width="30" style="margin: -3px 5px;" src="https://Tools.PJ568.sbs/img/icon.svg"/>568Tools 在线工具箱
 
-* <img width="15" src="https://Tools.PJ568.eu.org/img/icon.svg"/> 568Tools 在线工具箱是在线工具的集合。使用大部分工具无需注册、下载或上传到服务器。
+* <img width="15" src="https://Tools.PJ568.sbs/img/icon.svg"/> 568Tools 在线工具箱是在线工具的集合。使用大部分工具无需注册、下载或上传到服务器。
 
-<a style="font-size:14px;margin:10px 0.8%;border:2px solid #0277BD;border-radius:6px;background:#424242;width:200px;min-height:62px;line-height:20px;box-sizing:border-box;display:flex;align-items:center" href="https://Tools.PJ568.eu.org/"><img height="15" src="https://tools.PJ568.eu.org/img/icon.svg"/> 点击访问</a>
+<a style="font-size:14px;margin:10px 0.8%;border:2px solid #0277BD;border-radius:6px;background:#424242;width:200px;min-height:62px;line-height:20px;box-sizing:border-box;display:flex;align-items:center" href="https://Tools.PJ568.sbs/"><img height="15" src="https://tools.PJ568.sbs/img/icon.svg"/> 点击访问</a>
 
 ## 🪴项目活动
 
@@ -27,8 +27,8 @@
 
 ## 📖其他说明
 
-* `本项目和其使用的开源项目允许修改，但请保留原作者信息。确需去除，请联系作者，以免失去技术支持。`详情请参照[许可证](https://Tools.PJ568.eu.org/about/#1)。
-* 欢迎[提交页面或链接](https://Tools.pj568.eu.org/application)。
+* `本项目和其使用的开源项目允许修改，但请保留原作者信息。确需去除，请联系作者，以免失去技术支持。`详情请参照[许可证](https://Tools.PJ568.sbs/about/#1)。
+* 欢迎[提交页面或链接](https://Tools.pj568.sbs/application)。
 * 项目基于[fly63在线工具箱](https://github.com/mydearcc/tools)，向他们表示诚挚的感谢！
 * 出现 BUG 请提出 `Issue` ，我会修复。
 * 期待您的 `Commitment` 。
@@ -84,7 +84,7 @@
 
 ## 📄许可证
 
-本项目遵循 [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) 许可协议。如果想了解完整许可信息，请查阅 `LICENSE` 文件或访问[关于页面](https://Tools.PJ568.eu.org/about/#1)。
+本项目遵循 [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) 许可协议。如果想了解完整许可信息，请查阅 `LICENSE` 文件或访问[关于页面](https://Tools.PJ568.sbs/about/#1)。
 
 ### 🗃️附加许可证
 
