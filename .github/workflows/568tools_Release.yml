@@ -49,7 +49,7 @@ jobs:
         id: sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url-path: https://tools.pj568.eu.org/
+          base-url-path: https://tools.pj568.sbs/
 
       - name: Output sitemap stats
         run: |
@@ -72,7 +72,7 @@ jobs:
       #   run: |
       #     rm -r ./lib/
       #     git config --global user.name "PJ569-bot"
-      #     git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
+      #     git config --global user.email "LiuTian-PJ568@PJ568.sbs"
       #     git submodule update
       #     # git rm --cached lib
       #     # git submodule add -b tools https://github.com/PJ-568/568tools.git ./lib
@@ -81,4 +81,4 @@ jobs:
       #     git push
 
       - name: Ping Google
-        run: curl https://www.google.com/ping?sitemap=https://Tools.PJ568.eu.org/sitemap.xml
+        run: curl https://www.google.com/ping?sitemap=https://Tools.PJ568.sbs/sitemap.xml
