@@ -41,10 +41,10 @@ jobs:
           rm -r lib/tools/dwv/doc/
           rm -r lib/tools/webp2jpg-online/doc/
 
-      - name: HTML/CSS/JS Minifier
-        uses: docker://devatherock/minify-js:3.0.0
-        with:
-          add_suffix: false
+      # - name: HTML/CSS/JS Minifier
+      #   uses: docker://devatherock/minify-js:3.0.0
+      #   with:
+      #     add_suffix: false
 
       - name: Generate the sitemap
         id: sitemap
