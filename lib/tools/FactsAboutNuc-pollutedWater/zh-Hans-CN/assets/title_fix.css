@@ -1,1 +1,23 @@
-@media only screen and (max-width:520px){#menu-bar .icon-button,#menu-bar i{padding:0 5px}}@media only screen and (max-width:420px){#menu-bar .icon-button,#menu-bar i{padding:0 2px}}@media only screen and (max-width:450px){.menu-title{font-size:2rem}}@media only screen and (max-width:350px){.menu-title{font-size:1.5rem}}
+@media only screen and (max-width: 520px) {
+    #menu-bar i, #menu-bar .icon-button {
+        padding: 0 5px
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #menu-bar i, #menu-bar .icon-button {
+        padding: 0 2px
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .menu-title {
+        font-size: 2rem
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .menu-title {
+        font-size: 1.5rem
+    }
+}

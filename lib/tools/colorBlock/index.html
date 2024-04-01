@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" http-equiv="Cache-control" content="no-store" name="colorBlock粒子指令生成器"
+			content="快速在 MC 中创建各种数学几何粒子特效。">
+		<title>MC 指令生成器 | OCEAN</title>
+		<link rel="shortcut icon" href="img/colorblock_logo.png">
+		<div>
+			<!-- css -->
+			<link rel="stylesheet" href="css/style.css">
+			<link rel="stylesheet" href="css/unit/colorBoard.css">
+			<link rel="stylesheet" href="css/unit/setBox.css">
+			<link rel="stylesheet" href="css/unit/fuliye_canvas.css">
+			<link rel="stylesheet" href="css/unit/feedback.css">
+			<!-- jquery -->
+			<link rel="stylesheet" href="plug-in/jQuery/jquery-ui.min.css">
+			<script src="plug-in/jQuery/jQuery v3.6.0.min.js"></script>
+			<script src="plug-in/jQuery/jquery-ui.min.js"></script>
+		</div>
+	</head>
+
+	<body>
+		<div class="tools">
+			<img class="set" src="img/set1.png" alt="" title="设置">
+			<!-- <img class="feedback" src="img/feedback.png" alt="" title="反馈与建议"> -->
+		</div>
+		<div class="Navigation-bar">
+			<div class="logo-bar">
+				<h1>MC 指令生成器 | <a style="color: #0055ff;text-decoration: none;"
+						href="https://space.bilibili.com/693976733" title="作者空间">OCEAN</a></h1>
+			</div>
+			<div class="Navigation-bar-center">
+				<div class="moveCover"></div>
+				<button>指令生成器</button>
+				<button>资源</button>
+				<!-- <button>社区</button> -->
+			</div>
+		</div>
+		<div class="cmd_Generator" id="chunks">
+			<!-- Generator生成 -->
+			<div class="chunks-center">
+				<div class="left_box">
+					<button class="swith_cmd_Generator_way">JAVA 1.12.2原版</button>
+					<button class="swith_cmd_Generator_way">colorblock 命令</button>
+					<button class="swith_cmd_Generator_way">傅里叶级数</button>
+
+					<div class="slide_way">
+						<!-- JAVA 1.12.2 原版 -->
+						<fieldset class="slide_way_wrapper">
+							<br>
+							<table border="0">
+								<tr>
+									<td>粒子名称：</td>
+									<td>
+										<select id="cmdName_select" title="选择所需要展示的粒子">
+
+										</select>
+									</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr title="设置 xyz 偏移量">
+									<td>坐标：</td>
+									<td> <input type="text" class="axis" id="axis_x" placeholder="x" /></td>
+									<td> <input type="text" class="axis" id="axis_y" placeholder="y" /></td>
+									<td> <input type="text" class="axis" id="axis_z" placeholder="z" /></td>
+								</tr>
+								<tr title="设置向 xyz 移动向量">
+									<td>移动坐标：</td>
+									<td> <input type="text" class="axis" id="move_x" placeholder="vx" /></td>
+									<td> <input type="text" class="axis" id="move_y" placeholder="vy" /></td>
+									<td> <input type="text" class="axis" id="move_z" placeholder="vz" /></td>
+								</tr>
+								<tr>
+									<td>移动速度：</td>
+									<td> <input type="text" class="axis" id="spread_speed" placeholder="speed"
+											title="设置向 xyz 方向偏移的速度. 距离公式：[移动距离 = （移动速度 * 8） * 移动坐标]" /></td>
+								</tr>
+								<tr>
+									<td>粒子数量：</td>
+									<td> <input type="text" class="axis" id="particle_num" value="1"
+											title="一次性生成的粒子数量" /></td>
+								</tr>
+								<tr>
+									<td>可视距离：</td>
+									<td id="radio_vision_range">
+										<input type="radio" name="vision_range" placeholder="normal" checked='checked'
+											id="vision_range" /> 32格
+										<input type="radio" name="vision_range" placeholder="force" id="vision_range" />
+										256格
+									</td>
+								</tr>
+								<tr>
+									<td>生成指令：</td>
+									<td><button class="cmd_build" id="cmd_build"> 生成指令 </button></td>
+								</tr>
+
+							</table>
+							<br>
+							<p class="p">vx vy vz：移动向量（1 = 8 m(格)）</p>
+							<p class="p"> 无需将所有单元格都输入，为空的单元格将会启用默认值，您无需担心 </p><br>
+							<p class="p"> (无需装载任何 mod) </p><br>
+
+						</fieldset>
+						<!-- colorBlock 1.16.5 模组 -->
+						<fieldset class="slide_way_wrapper">
+							<!-- <legend> &nbsp;&nbsp; </legend> -->
+							<br>
+							<table>
+								<tr>
+									<td>模式：</td>
+									<td>
+										<select id="way">
+											<option value="normal"> 原版拓展 </option>
+											<option value="parameter"> 直角坐标式 </option>
+											<option value="polarparameter"> 极坐标式 </option>
+											<option value="conditional"> 条件式 </option>
+											<option value="image"> 图像打印 </option>
+											<option value="else"> 其他 </option>
+										</select>
+									</td>
+									<td></td>
+									<td>
+										<div class="text-container" title="切换您正在使用的游戏版本">
+											<button class="switch_particle_version"> ⇋ 版本JAVA 1.16.5</button>
+										</div>
+									</td>
+								</tr>
+							</table>
+
+							<table border="1" class="wayTable" id="normal_table">
+								<tr>
+									<td>粒子名称：</td>
+									<td>
+										<select class="cmdName_select" id="normal_cmdName_select" title="选择所需要展示的粒子">
+										</select>
+									</td>
+								</tr>
+								<tr title="设置在游戏中粒子的位置">
+									<td>坐标：</td>
+									<td> <input type="text" class="axis" id="normal_x" placeholder="x" /></td>
+									<td> <input type="text" class="axis" id="normal_y" placeholder="y" /></td>
+									<td> <input type="text" class="axis" id="normal_z" placeholder="z" /></td>
+								</tr>
+								<tr>
+									<td title="(红, 黄, 蓝, 不透明度)">粒子颜色(rgba)：</td>
+									<td> <input type="text" class="pColor" id="normal_PColor"
+											value="(255, 255, 255, 1)" />
+									</td>
+								</tr>
+								<tr>
+									<td>移动坐标：</td>
+									<td> <input type="text" class="axis" id="normal_vx" placeholder="vx" /></td>
+									<td> <input type="text" class="axis" id="normal_vy" placeholder="vy" /></td>
+									<td> <input type="text" class="axis" id="normal_vz" placeholder="vz" /></td>
+								</tr>
+								<tr>
+									<td>生成范围：</td>
+									<td> <input type="text" class="axis" id="normal_rx" placeholder="rx" /></td>
+									<td> <input type="text" class="axis" id="normal_ry" placeholder="ry" /></td>
+									<td> <input type="text" class="axis" id="normal_rz" placeholder="rz" /></td>
+								</tr>
+								<tr>
+									<td>数量：</td>
+									<td> <input type="text" class="axis" id="normal_count" placeholder="1" /></td>
+								</tr>
+								<tr>
+									<td>生命周期：</td>
+									<td> <input type="text" class="axis" id="normal_age" placeholder="0" /></td>
+								</tr>
+								<tr>
+									<td>速度表达式：</td>
+									<td colspan="3">
+										<input type="text" class="speed_expression" id="normal_speed_expression"
+											value="vy=0.1" />
+										<div class="hideExpression" id="speed_hideExpression">
+											<ul>
+												<li value="null">
+													<p>无速度</p>
+													<p>null</p>
+												</li>
+												<li value="vy=0.1">
+													<p>漂浮</p>
+													<p>vy=0.1</p>
+												</li>
+												<li value="(vx,vy,vz)=((random(),random(),random())-0.5)*t/100">
+													<p>随机移动</p>
+													<p>(vx,vy,vz)=((random(),random(),random())-0.5)*t/100</p>
+												</li>
+												<li value="cr=sin(t/7)/2+0.5;cg=sin(t/5)/2+0.5;cb=sin(t/3)/2+0.5">
+													<p>RGB变色</p>
+													<p>cr=sin(t/7)/2+0.5;cg=sin(t/5)/2+0.5;cb=sin(t/3)/2+0.5</p>
+												</li>
+												<li
+													value="a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))">
+													<p>旋转</p>
+													<p>a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))
+													</p>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>生成指令：</td>
+									<td><button class="cmd_build" id="parameter_cmdBuild" title="未输入单元将视为默认值"> 生成指令
+										</button>
+									</td>
+								</tr>
+							</table>
+
+							<table border="0" class="wayTable" id="parameter_table">
+								<tr>
+									<td>粒子名称：</td>
+									<td>
+										<select class="cmdName_select" id="parameter_cmdName_select" title="选择所需要展示的粒子">
+
+										</select>
+									</td>
+								</tr>
+								<tr title="设置在游戏中粒子的位置">
+									<td>坐标：</td>
+									<td> <input type="text" class="axis" id="parameter_x" placeholder="x" /></td>
+									<td> <input type="text" class="axis" id="parameter_y" placeholder="y" /></td>
+									<td> <input type="text" class="axis" id="parameter_z" placeholder="z" /></td>
+								</tr>
+								<tr>
+									<td title="(红, 黄, 蓝, 不透明度)">粒子颜色(rgba)：</td>
+									<td> <input type="text" class="pColor" id="parameter_pColor"
+											value="(255, 255, 255, 1)" />
+									</td>
+								</tr>
+								<tr>
+									<td>移动坐标：</td>
+									<td> <input type="text" class="axis" id="parameter_vx" placeholder="vx" /></td>
+									<td> <input type="text" class="axis" id="parameter_vy" placeholder="vy" /></td>
+									<td> <input type="text" class="axis" id="parameter_vz" placeholder="vz" /></td>
+								</tr>
+								<tr>
+									<td>定义域（t）：</td>
+									<td> <input type="text" class="axis" id="parameter_domain_begin"
+											placeholder="begin" />
+									</td>
+									<td> <input type="text" class="axis" id="parameter_domain_end" placeholder="end" />
+									</td>
+								</tr>
+								<tr>
+									<td>表达式：</td>
+									<td colspan="3"> <input type="text" class="expression" id="parameter_expression"
+											value="x=t;y=sin(t)" />
+										<div class="hideExpression" id="hideExpression">
+											<ul>
+												<li value="x=t;y=t">
+													<p>一次函数</p>
+													<p>x=t;y=t</p>
+												</li>
+												<li value="x=t;y=t^2">
+													<p>二次函数</p>
+													<p>x=t;y=t^2</p>
+												</li>
+												<li value="x=t;y=sin(t)">
+													<p>三角函数</p>
+													<p>x=t;y=sin(t)</p>
+												</li>
+											</ul>
+										</div>
+									</td>
+								<tr>
+									<td>间隔密度：</td>
+									<td> <input type="text" class="axis" id="parameter_step" placeholder="0.1" /></td>
+								</tr>
+								<tr>
+									<td>
+										生长动画：
+									</td>
+									<td id="radio_vision_range">
+										<div class="cpt_box" id="parameter_cpt_box">
+											<span class="row_status" id="parameter_row_status">关</span>
+										</div>
+									</td>
+									<td id="td_parameter_cpt">
+										<input type="text" class="cpt" id="parameter_cpt" placeholder="cpt" />
+									</td>
+								</tr>
+								<tr>
+									<td title="单位：tick，1s = 20t">存在时间(t)：</td>
+									<td> <input type="text" class="axis" id="parameter_age" placeholder="0" /></td>
+								</tr>
+								<tr>
+									<td>速度表达式：</td>
+									<td colspan="3"> <input type="text" class="speed_expression"
+											id="parameter_speed_expression" value="vy=0.1" />
+										<div class="hideExpression" id="speed_hideExpression">
+											<ul>
+												<li value="null">
+													<p>无速度</p>
+													<p>null</p>
+												</li>
+												<li value="vy=0.1">
+													<p>漂浮</p>
+													<p>vy=0.1</p>
+												</li>
+												<li value="(vx,vy,vz)=((random(),random(),random())-0.5)*t/100">
+													<p>随机移动</p>
+													<p>(vx,vy,vz)=((random(),random(),random())-0.5)*t/100</p>
+												</li>
+												<li value="cr=sin(t/7)/2+0.5;cg=sin(t/5)/2+0.5;cb=sin(t/3)/2+0.5">
+													<p>RGB变色</p>
+													<p>cr=sin(t/7)/2+0.5;cg=sin(t/5)/2+0.5;cb=sin(t/3)/2+0.5</p>
+												</li>
+												<li
+													value="a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))">
+													<p>旋转</p>
+													<p>a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))
+													</p>
+												</li>
+											</ul>
+										</div>
+									</td>
+								<tr>
+									<td>生成指令：</td>
+									<td><button class="cmd_build" id="parameter_cmdBuild" title="未输入单元将视为默认值"> 生成指令
+										</button>
+									</td>
+								</tr>
+							</table>
+
+							<table border="0" class="wayTable" id="polarparameter_table">
+								<tr>
+									<td>粒子名称：</td>
+									<td><select class="cmdName_select" id="polarparameter_cmdName_select"
+											title="选择所需要展示的粒子"></select></td>
+								</tr>
+								<tr title="设置在游戏中粒子的位置">
+									<td>坐标：</td>
+									<td> <input type="text" class="axis" id="polarparameter_x" placeholder="x" /></td>
+									<td> <input type="text" class="axis" id="polarparameter_y" placeholder="y" /></td>
+									<td> <input type="text" class="axis" id="polarparameter_z" placeholder="z" /></td>
+								</tr>
+								<tr>
+									<td title="(红, 黄, 蓝, 不透明度)">粒子颜色(rgba)：</td>
+									<td> <input type="text" class="pColor" id="polarparameter_pColor"
+											value="(255, 255, 255, 1)" />
+									</td>
+								</tr>
+								<tr>
+									<td>移动坐标：</td>
+									<td> <input type="text" class="axis" id="polarparameter_vx" placeholder="vx" /></td>
+									<td> <input type="text" class="axis" id="polarparameter_vy" placeholder="vy" /></td>
+									<td> <input type="text" class="axis" id="polarparameter_vz" placeholder="vz" /></td>
+								</tr>
+								<tr>
+									<td>定义域（t）：</td>
+									<td> <input type="text" class="axis" id="polarparameter_domain_begin"
+											placeholder="begin" /> </td>
+									<td> <input type="text" class="axis" id="polarparameter_domain_end"
+											placeholder="end" />
+									</td>
+								</tr>
+								<tr>
+									<td>表达式：</td>
+									<td colspan="3">
+										<input type="text" class="expression" id="polarparameter_expression"
+											value="s1,s2,dis=t*10,t*PI/20,1" />
+
+										<div class="hideExpression" id="hideExpression">
+											<ul>
+												<li value="dis=1;s1=0;s2=t">
+													<p>圆</p>
+													<p>dis=1;s1=0;s2=t</p>
+												</li>
+												<li value="s1,s2,dis=t*10,t*PI/20,1">
+													<p>球</p>
+													<p>s1,s2,dis=t*10,t*PI/20,1</p>
+												</li>
+												<li value="s1,s2,dis=t*10,t*PI/200,t%2+10">
+													<p>散点圈</p>
+													<p>s1,s2,dis=t*10,t*PI/200,t%2+10</p>
+												</li>
+											</ul>
+										</div>
+									</td>
+								<tr>
+									<td>间隔密度：</td>
+									<td> <input type="text" class="axis" id="polarparameter_step" placeholder="0.1" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										生长动画：
+									</td>
+									<td id="radio_vision_range">
+										<div class="cpt_box" id="polarparameter_cpt_box">
+											<span class="row_status" id="polarparameter_row_status">关</span>
+										</div>
+									</td>
+									<td id="td_polarparameter_cpt">
+										<input type="text" class="cpt" id="polarparameter_cpt" placeholder="cpt" />
+									</td>
+								</tr>
+								<tr>
+									<td title="单位：tick，1s = 20t">存在时间(t)：</td>
+									<td> <input type="text" class="axis" id="polarparameter_age" placeholder="0" /></td>
+								</tr>
+								<tr>
+									<td>速度表达式：</td>
+									<td colspan="3">
+										<input type="text" class="speed_expression" id="polarparameter_speed_expression"
+											value="vy=0.1" />
+										<div class="hideExpression" id="speed_hideExpression">
+											<ul>
+												<li value="null">
+													<p>无速度</p>
+													<p>null</p>
+												</li>
+												<li value="vy=0.1">
+													<p>漂浮</p>
+													<p>vy=0.1</p>
+												</li>
+												<li value="(vx,vy,vz)=((random(),random(),random())-0.5)*t/100">
+													<p>随机移动</p>
+													<p>(vx,vy,vz)=((random(),random(),random())-0.5)*t/100</p>
+												</li>
+												<li value="cr=sin(t/7)/2+0.5;cg=sin(t/5)/2+0.5;cb=sin(t/3)/2+0.5">
+													<p>RGB变色</p>
+													<p>cr=sin(t/7)/2+0.5;cg=sin(t/5)/2+0.5;cb=sin(t/3)/2+0.5</p>
+												</li>
+												<li
+													value="a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))">
+													<p>旋转</p>
+													<p>a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))
+													</p>
+												</li>
+											</ul>
+										</div>
+									</td>
+
+								</tr>
+								<tr>
+									<td>生成指令：</td>
+									<td><button class="cmd_build" id="polarparameter_cmdBuild" title="未输入单元将视为默认值"> 生成指令
+										</button>
+									</td>
+								</tr>
+							</table>
+
+							<table border="0" class="wayTable" id="conditional_table">
+								<tr>
+									<td>粒子名称：</td>
+									<td><select class="cmdName_select" id="conditional_cmdName_select"
+											title="选择所需要展示的粒子"></select></td>
+								</tr>
+								<tr title="设置在游戏中粒子的位置">
+									<td>坐标：</td>
+									<td> <input type="text" class="axis" id="conditional_x" placeholder="x" /></td>
+									<td> <input type="text" class="axis" id="conditional_y" placeholder="y" /></td>
+									<td> <input type="text" class="axis" id="conditional_z" placeholder="z" /></td>
+								</tr>
+								<tr>
+									<td title="(红, 黄, 蓝, 不透明度)">粒子颜色(rgba)：</td>
+									<td> <input type="text" class="pColor" id="conditional_pColor"
+											value="(255, 255, 255, 1)" />
+									</td>
+								</tr>
+								<tr>
+									<td>移动坐标：</td>
+									<td> <input type="text" class="axis" id="conditional_vx" placeholder="vx" /></td>
+									<td> <input type="text" class="axis" id="conditional_vy" placeholder="vy" /></td>
+									<td> <input type="text" class="axis" id="conditional_vz" placeholder="vz" /></td>
+								</tr>
+								<tr>
+									<td>生成范围：</td>
+									<td> <input type="text" class="axis" id="conditional_rx" placeholder="rx" /></td>
+									<td> <input type="text" class="axis" id="conditional_ry" placeholder="ry" /></td>
+									<td> <input type="text" class="axis" id="conditional_rz" placeholder="rz" /></td>
+								</tr>
+								<tr>
+									<td>表达式：</td>
+									<td colspan="3">
+										<input type="text" class="expression" id="conditional_expression"
+											value="s1,s2,dis=t*10,t*PI/20,1" list="conditional_expressions" />
+										<div class="hideExpression" id="hideExpression">
+											<ul>
+												<li
+													value="(abs(y)==0.5&!(abs(z)<0.5))|(abs(x)==0.5&(!(abs(z)<0.5)|!(abs(y)<0.5)))">
+													<p>正方体</p>
+													<p>(abs(y)==0.5&!(abs(z)
+														<0.5))|(abs(x)==0.5&(!(abs(z)<0.5)|!(abs(y)<0.5)))< /p>
+												</li>
+											</ul>
+										</div>
+									</td>
+								<tr>
+									<td>间隔密度：</td>
+									<td> <input type="text" class="axis" id="conditional_step" placeholder="0.1"
+											title="间隙值越小，粒子纹理更清晰" /></td>
+								</tr>
+								<tr>
+									<td title="单位：tick，1s = 20t">存在时间(t)：</td>
+									<td> <input type="text" class="axis" id="conditional_age" placeholder="0" /></td>
+								</tr>
+								<tr>
+									<td>速度表达式：</td>
+									<td colspan="3">
+										<input type="text" class="speed_expression" id="conditional_speed_expression"
+											value="vy=0.1" list="speed_expression" />
+										<div class="hideExpression" id="speed_hideExpression">
+											<ul>
+												<li value="null">
+													<p>无速度</p>
+													<p>null</p>
+												</li>
+												<li value="vy=0.1">
+													<p>漂浮</p>
+													<p>vy=0.1</p>
+												</li>
+												<li value="(vx,vy,vz)=((random(),random(),random())-0.5)*t/100">
+													<p>随机移动</p>
+													<p>(vx,vy,vz)=((random(),random(),random())-0.5)*t/100</p>
+												</li>
+												<li value="cr=sin(t/7)/2+0.5;cg=sin(t/5)/2+0.5;cb=sin(t/3)/2+0.5">
+													<p>RGB变色</p>
+													<p>cr=sin(t/7)/2+0.5;cg=sin(t/5)/2+0.5;cb=sin(t/3)/2+0.5</p>
+												</li>
+												<li
+													value="a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))">
+													<p>旋转</p>
+													<p>a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))
+													</p>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>生成指令：</td>
+									<td><button class="cmd_build" id="conditional_cmdBuild" title="未输入单元将视为默认值"> 生成指令
+										</button>
+									</td>
+								</tr>
+							</table>
+
+							<table border="0" class="wayTable" id="image_table">
+								<tr>
+									<td>粒子名称：</td>
+									<td><select class="cmdName_select" id="image_cmdName_select"
+											title="选择所需要展示的粒子"></select></td>
+								</tr>
+								<tr title="设置在游戏中粒子的位置">
+									<td>坐标：</td>
+									<td> <input type="text" class="axis" id="image_x" placeholder="x" /></td>
+									<td> <input type="text" class="axis" id="image_y" placeholder="y" /></td>
+									<td> <input type="text" class="axis" id="image_z" placeholder="z" /></td>
+								</tr>
+								<tr title="请将图片放在 particleImages 文件夹内（mod的同级文件夹），这很重要！">
+									<td>路径：</td>
+									<td> <input type="text" class="axis" id="image_path" placeholder="path"
+											title="图片名.后缀名" /></td>
+									<td> <img class="problem_account-for" src="img/problem.png" alt=""> </td>
+								</tr>
+								<!-- <tr>
+									<td colspan="4">
+										<p class="p">将图片放在 <span class="iamge_span">particleImages</span>
+											文件夹内（mod的同级文件夹），这很重要！</p>
+									</td>
+								</tr> -->
+								<tr>
+									<td>比例：</td>
+									<td> <input type="text" class="axis" id="image_scaling" placeholder="scaling"
+											title="比例越大，图像也清晰，同时也会带来更多的性能消耗." /></td>
+								</tr>
+								<tr>
+									<td>旋转</td>
+									<td> <input type="text" class="axis" id="image_rotateX" placeholder="rotateX" />
+									</td>
+									<td> <input type="text" class="axis" id="image_rotateY" placeholder="rotateY" />
+									</td>
+									<td> <input type="text" class="axis" id="image_rotateZ" placeholder="rotateZ" />
+									</td>
+								</tr>
+								<tr>
+									<td>空翻：</td>
+									<td>
+										<select class="select" id="image_flip_select">
+											<option value='not'>无</option>
+											<option value='horizontally'>水平</option>
+											<option value='vertical'>垂直</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>dpb：</td>
+									<td> <input type="text" class="axis" id="image_dpb" placeholder="dpb" /></td>
+								</tr>
+								<tr>
+									<td>移动坐标：</td>
+									<td> <input type="text" class="axis" id="image_vx" placeholder="vx" /></td>
+									<td> <input type="text" class="axis" id="image_vy" placeholder="vy" /></td>
+									<td> <input type="text" class="axis" id="image_vz" placeholder="vz" /></td>
+								</tr>
+								<tr>
+									<td>生命周期：</td>
+									<td> <input type="text" class="axis" id="image_age" placeholder="0" /></td>
+								</tr>
+								<tr>
+									<td>速度表达式：</td>
+									<td colspan="3">
+										<input type="text" class="speed_expression" id="image_speed_expression"
+											value="vy=0.1" list="image_speed_expressions" />
+										<div class="hideExpression" id="speed_hideExpression">
+											<ul>
+												<li value="null">
+													<p>无速度</p>
+													<p>null</p>
+												</li>
+												<li value="vy=0.1">
+													<p>漂浮</p>
+													<p>vy=0.1</p>
+												</li>
+												<li value="t=t-50;x=sin(t)*t/15;y=t/5">
+													<p>RGB变色</p>
+													<p>t=t-50;x=sin(t)*t/15;y=t/5</p>
+												</li>
+												<li value="(vx,vy,vz)=((random(),random(),random())-0.5)*t/100">
+													<p>随机移动</p>
+													<p>(vx,vy,vz)=((random(),random(),random())-0.5)*t/100</p>
+												</li>
+												<li
+													value="a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))">
+													<p>旋转</p>
+													<p>a=0.05;(vx,,vy,,vz)=(-sin(a),0,-cos(a),,0,1,0,,cos(a),0,-sin(a))*(x*2*sin(a),,0.1,,z*2*sin(a))
+													</p>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>生成指令：</td>
+									<td><button class="cmd_build" id="image_cmdBuild" title="未输入单元将视为默认值"> 生成指令
+										</button>
+									</td>
+								</tr>
+							</table>
+
+
+
+							<table border="1" class="wayTable" id="else_table">
+								<tr>
+									<td>清除粒子：</td>
+									<td colspan="3"> <input type="text" class="cmdIpt"
+											value="/particleex clearparticle"> </td>
+									<td> <button class="cmdIpt_copy">复制</button> </td>
+								</tr>
+								<tr>
+									<td>清除缓存：</td>
+									<td colspan="3"> <input type="text" class="cmdIpt" value="/particleex clearcache">
+									</td>
+									<td> <button class="cmdIpt_copy">复制</button> </td>
+								</tr>
+							</table>
+
+						</fieldset>
+
+						<fieldset class="slide_way_wrapper" id="fuliye_transform">
+							<br>
+							<table>
+								<tr>
+									<th>概述</th>
+									<th>转速（rev）</th>
+									<th>半径（r）</th>
+									<th>初始角（ir）</th>
+								</tr>
+								<tr>
+									<td>父：</td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="rev1"></td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="r1"></td>
+									<td><input type="number" class="axis" min="-100" max="100" placeholder="f1"></td>
+								</tr>
+								<tr>
+									<td>子1：</td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="rev2"></td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="r2"></td>
+									<td><input type="number" class="axis" min="-100" max="100" placeholder="f2"></td>
+								</tr>
+								<tr>
+									<td>子2：</td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="rev3"></td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="r3"></td>
+									<td><input type="number" class="axis" min="-100" max="100" placeholder="f3"></td>
+								</tr>
+								<tr>
+									<td>子3：</td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="rev4"></td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="r4"></td>
+									<td><input type="number" class="axis" min="-100" max="100" placeholder="f4"></td>
+								</tr>
+								<tr>
+									<td>子4：</td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="rev5"></td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="r5"></td>
+									<td><input type="number" class="axis" min="-100" max="100" placeholder="f5"></td>
+								</tr>
+								<tr>
+									<td>子5：</td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="rev6"></td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="r6"></td>
+									<td><input type="number" class="axis" min="-100" max="100" placeholder="f6"></td>
+								</tr>
+								<tr>
+									<td>子6：</td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="rev7"></td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="r7"></td>
+									<td><input type="number" class="axis" min="-100" max="100" placeholder="f7"></td>
+								</tr>
+								<tr>
+									<td>子7：</td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="rev8"></td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="r8"></td>
+									<td><input type="number" class="axis" min="-100" max="100" placeholder="f8"></td>
+								</tr>
+								<tr>
+									<td>子8：</td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="rev9"></td>
+									<td><input type="number" class="axis" min="-10" max="10" placeholder="r9"></td>
+									<td><input type="number" class="axis" min="-100" max="100" placeholder="f9"></td>
+								</tr>
+								<tr class="add_or_delete">
+									<td colspan="2"><button class="addRotor"> 添加旋转子 </button></td>
+									<td colspan="2"><button class="deleteRotor"> 删减旋转子 </button></td>
+								</tr>
+							</table>
+							<p class="prompt" id="Fourier_prompt"></p>
+						</fieldset>
+					</div>
+					<div class="doubt_box">
+						<h3>指令语法格式</h3>
+						<p>/particle [粒子名] x y z vx vy vz [扩散速度] [粒子数量] [可视距离]</p>
+						<p>未输入的单元格将启用系统默认值，您无需每一个都输入。</p>
+					</div>
+				</div>
+
+				<div class="right_box">
+					<br>
+					<fieldset class="output_cmd">
+						<legend> &nbsp;命令输出窗口 &nbsp; </legend>
+						<div class="output_destination">
+							
+						</div>
+						<div class="canvas">
+
+							<div id="x_axie"></div>
+							<div id="y_axie"></div>
+
+							<div class="dot"></div>
+
+							<button class="Fourier_copyBtn" id="Fourier_newCmd_copyBtn">1.16.5 - 复制</button>
+							<button class="Fourier_copyBtn" id="Fourier_oldCmd_copyBtn">1.12.2 - 复制</button>
+						</div>
+					</fieldset>
+					<p class="p">注：使用 colorBlock 指令前，请安装 <a href="resource/mods/colorBlock-1.16.5.jar">colorBlock</a>模组，否则无效</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="resource" id="chunks">
+			<div class="resource-center">
+				<div class="listUl_box">
+					<h3 class="directory_head">目录</h3>
+					<ul class="listUl">
+						<li>粒子名称</li>
+						<li>案例</li>
+						<li>自编教程 <span class="sonList_tag">＞</span></li>
+						<li>编程与 mc</li>
+						<li>下载</li>
+					</ul>
+					<button class="return" title="返回上级目录"> ＜ </button>
+					<ul class="sonList" id="tutorial_list">
+						<li>1. 搭建依赖环境</li>
+						<li>2. 尝试写第一个实例</li>
+						<li>3. 函数概念 </li>
+						<li>4. 运算符号</li>
+						<li>5. 函数生长动画</li>
+						<li>6. 彩色粒子</li>
+						<li>7. normal (原版拓展)</li>
+						<li>8. parameter (直角坐标)</li>
+						<li>9. polarparameter (极坐标)</li>
+						<li>10. iamge (打印图像)</li>
+						<li>11. clearparticle (防卡)</li>
+					</ul>
+				</div>
+				<div class="chunks-resource-box" id="particleName">
+					<br>
+					<p class="CRB1_title"><span class="CRB1_txt">JAVA 1.16.5</span> <input class="searchInput"
+							type="search" placeholder="搜索"></p>
+					<div class="chunks-resource-box-content">
+
+					</div>
+				</div>
+
+				<div class="chunks-resource-box" id="Case">
+					<div class="project">
+						<br>
+						<p class="CRB1_title">ColorBlock 1.16.5</p>
+					</div>
+				</div>
+
+				<div class="chunks-resource-box" id="tutorial">
+					<br>
+					<h3 class="CRB1_title"> ColorBlock 教程 </h3>
+					<h3 class="item"> video (视频) </h3>
+
+					<div> <!-- video -->
+						<div style="width: 100%;height: 170px;border: solid 1px transparent;">
+							<a href="https://www.bilibili.com/video/BV1984y1s79M/?spm_id_from=333.999.list.card_archive.click&vd_source=9b29eedb391582851567a1bb5a3949fa"
+								target="_blank">
+								<div class="card">
+									<img src="#" alt="img/tutorial/unit1.jpg">
+									<p>【我的世界】ColorBlock 教程——更好的粒子</p>
+									<p>2022-12-25</p>
+								</div>
+							</a>
+							<a href="https://www.bilibili.com/video/BV1Ue4y137o7/?spm_id_from=pageDriver" target="_blank">
+								<div class="card">
+									<img src="#" alt="img/tutorial/unit2.jpg">
+									<p>【我的世界】colorBlock 教程——赋予生命的粒子</p>
+									<p>2023-1-8</p>
+								</div>
+							</a>
+							<a href="https://www.bilibili.com/video/BV16u411h7nw/?spm_id_from=333.999.0.0"
+								target="_blank">
+								<div class="card">
+									<img src="#" alt="img/tutorial/unit3.jpg">
+									<p>【我的世界】colorBlock 教程——傅里叶级数</p>
+									<p>2023-6-13</p>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<h3 class="item"> word (文档) </h3>
+					<br>
+					<p>
+						colorBlock(色块) 是一个自定义度极高的我的世界JAVA版中的一款模组，它允许玩家自定义粒子的各种属性并进行穷举显示，且具备直角坐标式、极坐标式、条件式、图像打印等功能。
+						以下是如何让您在游戏中使用这款 mod 的教程。
+					</p>
+					<br>
+					<h2 id="unit">unit 1 搭建依赖环境（基础）</h2>
+					<div>
+						<h3>步骤：</h3>
+						<ul>
+							<li>1. 安装 JAVA版我的世界</li>
+							<li>2. 安装 JAVA 8</li>
+							<li>3. 安装 colorBlock 模组</li>
+						</ul>
+						
+						<p>第一步：安装 JAVA版我的世界。您可以使用免费的第三方启动器 <a href="https://mod.3dmgame.com/mod/194985">PCL2</a> 或 <a
+								href="https://hmcl.huangyuhui.net/">HMCL</a> 等来安装和配置您的游戏环境。 </p>
+						<p>第二步：安装 <a href="https://www.oracle.com/cn/java/technologies/downloads/">JAVA 8</a>。也许您已经在启动器中安装了
+							JAVA，并且能正常运行游戏，如果您在使用colorblock 指令并确保指令语法无误时出现报错日志，那很可能是因为您没有安装JAVA 8</p>
+						<p>第三步：安装 colorBlock 模组。colorblock 目前只有兼容两个版本，分别是：<a
+								href="resource/mods/colorBlock-1.16.5.jar">1.16.5 fabric</a> 和 <a
+								href="resource/mods/colorBlock-1.12.2.jar">1.12.2 forge</a>。</p>
+						
+						<p>您可能会遇到的问题：</p>
+						<br>
+						<img src="#" alt="img/teach/erorr.jpg">
+						<br>
+						<p>导致这种错误的可能性有：1.指令语法错误、2.未安装JAVA 8。</p>
+						解决方法：
+						<ul>
+							<li>1.检查指令是否能运行正确语法（指令格式）的指令，如果能正常执行，说明指令语法有误。</li>
+							<li>2.如果指令运行不了正确语法的指令，那么您需要去安装JAVA 8 即可。</li>
+						</ul>
+						
+					</div>
+
+					<h2 id="unit">unit 2 尝试写第一个案例（窥探门径）</h2>
+					<div> 
+						<h3>1.0 执行二次函数命令（quadratic function）</h3>
+						<p>获取命令方块</p>
+						<p class="code">/give @s command_block</p>
+						<p>执行二次函数命令（quadratic function）</p>
+						<p class="code code_black">/particleex parameter
+							<span class="code_blue">minecraft:end_rod</span>
+							<span class="code_yellow">~ ~1 ~ </span>
+							<span class="code_green">1 1 1 1 </span>
+							<span class="code_purple">0 0 0 </span>
+							<span class="code_orange">-10.0 </span>
+							<span class="code_blue">10.0 </span>
+							<span class="code_yellow">'x=t;y=t^2' </span>
+							<span class="code_green">0.1 </span>
+							<span class="code_purple">0 </span>
+							<span class="code_orange">null</span>
+						</p>
+						<p>效果图:</p>
+						<table>
+							<tr>
+								<td><img src="#" alt="img/teach/quadratic function.png"></td>
+								<td>
+									<div class="img_content">
+										<table>
+											<tr><th>参数</th><th>概述</th></tr>
+											<tr>
+												<td><bgCover>minecraft:end_rod：</bgCover></td>
+												<td>粒子名称</td>
+											</tr>
+											<tr>
+												<td><bgCover>~ ~1 ~ ：</bgCover></td>
+												<td>相对坐标</td>
+											</tr>
+											<tr>
+												<td><bgCover>1 1 1 1：</bgCover></td>
+												<td>颜色（rgba）</td>
+											</tr>
+											<tr>
+												<td><bgCover>0 0 0：</bgCover></td>
+												<td>速度（vx,vy,vz）</td>
+											</tr>
+											<tr>
+												<td><bgCover>-10.0 10.0：</bgCover></td>
+												<td>定义域（t:time）</td>
+											</tr>
+											<tr>
+												<td><bgCover>'x=t;y=t^2'：</bgCover></td>
+												<td>表达式</td>
+											</tr>
+											<tr>
+												<td><bgCover>0.1：</bgCover></td>
+												<td>间隔</td>
+											</tr>
+											<tr>
+												<td><bgCover>0：</bgCover></td>
+												<td>生命周期</td>
+											</tr>
+											<tr>
+												<td><bgCover>null：</bgCover></td>
+												<td>运动表达式</td>
+											</tr>
+										</table>
+										友情提示：输入指令时，按 <bgCover>TAB键</bgCover> 能有效提高书写效率。
+									</div>
+								</td>
+							</tr>
+						</table>
+						
+						<p>以上是colorblock(色块)的子命令 <bgCover>parameter</bgCover> 案例，
+							另有：clearcache（清除文件缓存）、clearparticle（清除粒子）、conditional（条件）、functionlist（函数列表）、group、image（图片打印）、imagematrix、normal（原版）、parameter（直角坐标）、polarparameter（极坐标）
+							等等。每一个子命令的语法和参数都有所不同。</p>
+						
+					</div>
+						
+					<h2 id="unit">unit 3 函数概念 </h2>
+					<div>
+						<p>
+							函数自变量是指在函数中独立变化的变量，它的取值不受其他变量的影响。在数学中，自变量通常用字母表示，如x。自变量的取值范围可以是实数集、整数集、有理数集等。
+						
+							函数因变量是指在函数中由自变量决定的变量，它的取值依赖于自变量的取值。在数学中，因变量通常用字母表示，如y。因变量的取值范围可以是实数集、整数集、有理数集等，取决于函数的定义域和值域。
+						
+							函数自变量与因变量之间存在一种映射关系，即每个自变量对应一个唯一的因变量。这种映射关系可以用函数的定义式或图像表示。函数的定义式可以将自变量和因变量之间的关系用数学公式表示出来，而函数的图像则是将自变量和因变量的取值用坐标系上的点表示出来，从而形成一条曲线或曲面。					
+						</p>
+						<p>
+							在 Minecraft 的 colorBlock 子命令中，只需要规定函数的<bgCover>定义域</bgCover>和函数的<bgCover>对应法则</bgCover>
+							即可构成一完整的函数，进而在游戏中生成图像。不仅如此，colorBlock 还支持参数方程运算，例如：定义域为[-2π, 2π] 且对应法则为
+							 “x=t;y=sin(t)” 的一个函数，其中自变量是 t (time)，参数用“；”号隔开，这种写法与数学中 y=sinx 不同。在数学中，
+							 我们通常喜欢将 x 作为自变量，而在一个三维立体空间中，自变量通常是 t (time 时间)。
+						</p>
+						<div class="center">
+							<img src="#" alt="img/teach/trigonometric function.jpg">
+						</div>
+					</div>
+					
+					<h2 id="unit">unit 4 运算符号</h2>
+					<div>
+						<p>条件表达式可用符号如下:</p>
+						<p>自变量: "x"， "y"， "z"， "s1"， "s2"， "dis"</p>
+						<p>逻辑运算符: "&"，" |"， " ! "</p>
+						<p>关系运算符: ">"，"<"，"=="， "!=" ，">="， "<="< /p>
+						<p>算数运算符: "+"，"一"， "*"，"/"，"^"，"%"</p>
+						<p>赋值运算符:"="</p>
+						<p>在表达式内可以使用各种函数来规定图像的形态：</p>
+						<table class="autoTable nth1_blue">
+							<tr><th>函数名</th>		<th>概述</th></tr>
+							<tr><td>abs()</td>		<td>返回一个数的绝对值</td></tr>
+							<tr><td>floor()</td>	<td>将一个数向下取整为最接近的整数</td></tr>
+							<tr><td>ceil()</td>		<td>将一个数向上取整为最接近的整数</td></tr>
+							<tr><td>round()</td>	<td>四舍五入到最接近的整数</td></tr>
+							<tr><td>min()</td>		<td>返回一组数字中的最小值</td></tr>
+							<tr><td>max()</td>		<td>返回一组数字中的最大值</td></tr>
+							<tr><td>pow()</td>		<td>计算一个数的幂</td></tr>
+							<tr><td>sqrt()</td>		<td>计算一个数的平方根</td></tr>
+							<tr><td>sin()</td>		<td>计算给定角度（弧度）的正弦值</td></tr>
+							<tr><td>cos()</td>		<td>计算给定角度（弧度）的余弦值</td></tr>
+							<tr><td>...</td>		<td>...</td></tr>
+						</table>
+					</div>
+					
+					<h2 id="unit">unit 5 函数生长动画</h2>
+					<div>
+						<h3>赋予函数生长动画效果</h3>
+						<div class="center">
+							<img src="#" alt="img/teach/quadratic function add tick.gif">
+						</div>
+						<p>在以此基础上在子命令parameter前加上 <bgCover>tick (刻度)</bgCover> 以及在生命周期参数后加上所加载的速度 10，这个值规定了一游戏刻加载 10 个粒子，即可加上动画效果。</p>
+						<p class="code">particleex <span class="code_blue">tick</span>parameter minecraft:end_rod~ ~1 ~ 1 1 1 1 0 0 0 -10.0 10.0 'x=t;y=t^2' 0.1 <span class="code_orange">10</span> 0 null</p>
+						
+					</div>
+					
+					<h2 id="unit">unit 6 彩色粒子</h2>
+					<div>
+						<p>
+							colorBlock 的粒子颜色采用 <blue>RGBA</blue> 四原色组成，每个字母分别代表<red>红</red>（Red）、<green>绿</green>（Green）、<blue>蓝</blue>（Blue）和 <alpha>透明度</alpha>（Alpha）。
+							在一般情况下，RGBA 的表示范围在 [0, 255] 之间，而在 colorBlock 中，这四个参数值表示的是 255/(除)R，255/G，255/B，255/A，这四个值的范围在 [0, 1] 之间。
+						</p>
+						<div class="center">
+							<img src="#" alt="img/teach/more color.jpg">
+						</div>
+						<h3>指令部分：</h3>
+						<p class="code">1. <span style="color: #ff55ff;">紫红</span>：particleex normal minecraft:end_rod ~ ~1 ~ <bgCover>.8 .2 .8 1</bgCover> 0 0 0 0 0 0 1 0 "vy=0.1" 1.0 null</p>
+						<p class="code">2. <span style="color: #55aaff;">锭蓝</span>：particleex normal minecraft:end_rod ~ ~1 ~ <bgCover>0 .4 1 1</bgCover> 0 0 0 0 0 0 1 0 "vy=0.1" 1.0 null</p>
+						<p class="code">3. <span style="color: #ff557f;">赤红</span>：particleex normal minecraft:end_rod ~ ~1 ~ <bgCover>1 0.3 0.5 1</bgCover> 0 0 0 0 0 0 1 0 "vy=0.1" 1.0 null</p>
+						<p class="code">4. <span style="color: #00aa00;">绿色</span>：particleex normal minecraft:end_rod ~ ~1 ~ <bgCover>0.1 1 0.1 1</bgCover> 0 0 0 0 0 0 1 0 "vy=0.1" 1.0 null</p>
+						<p class="code">5. <span style="color: #b8d5ff;">蓝白</span>：particleex normal minecraft:end_rod ~ ~1 ~ <bgCover>0.2 0.5 1 1</bgCover> 0 0 0 0 0 0 1 0 "vy=0.1" 1.0 null</p>
+						<p class="code">6. <span style="color: #999;">纯白</span>：particleex normal minecraft:end_rod ~ ~1 ~ <bgCover>1 1 1 1</bgCover> 0 0 0 0 0 0 1 0 "vy=0.1" 1.0 null</p>
+						
+						<p>
+							<yellow>注意</yellow>：不同光影的颜色呈现效果不同，甚至可能会与原本色有明显偏差。例如第 6 条指令效果，原本 1 1 1 1 是一种纯白色，
+							而使用 BSL+v7.1.02.2 光影却变成了金黄色。
+						</p>
+						
+						<p>
+							一般情况下，给定<blue> r、g、b </blue>各一个固定的值，就能映射一种颜色， 那么规定一个不断变化的函数来映射<blue>cr、cg、cb</blue>（cr、cg、cb 是 color + red/green/blue 的缩写） 的值，就可以实现很酷炫的颜色变换效果。
+						</p>
+						<h3> 粒子变色又可以分为两类： </h3>
+						<ul>
+							<li>表达式颜色渐变</li>
+							<li>速度表达式颜色渐变</li>
+						</ul>
+						<h3>1. 表达式颜色渐变</h3>
+						
+						<div class="center">
+							<img src="#" alt="img/teach/gradient color.jpg">
+						</div>
+						<p class="code">particleex <span class="code_blue">rgba</span> tickparameter minecraft:end_rod ~ ~1 ~ 0 0 0 -20.0 20.0 <span class="code_blue">"x,y,cr,cb=t,sin(t),sin(t/7)/5+0.2,sin(t/5)/3-0.6"</span> 0.1 10 0 "vy=0.0" 1.0 null</p>
+						<p>
+							在 <strong>表达式</strong> 中给 cr、cg、cb 设置一个不断变化的量，就会更改每一段<strong> 距离路径 </strong>上的颜色。
+						</p>
+						
+						<h3>2. 速度表达式颜色渐变</h3>
+						<div class="center">
+							<img src="#" alt="img/teach/gradient color1.gif">
+						</div>
+						<p class="code">particleex tickparameter minecraft:end_rod ~ ~1 ~ 1 1 1 1 0 0 0 0 30.0 "x=sin(t);y=t/5;z=cos(t)" 0.1 10 0 <purple>"cr=sin(t/7)/2+.5;cg=sin(t/4)/2+.5"</purple> </p>
+						<p>
+							在 <strong>速度表达式</strong> 中给 cr、cg、cb 设置一个不断变化的量，就会更改每一段<strong> 时间路径 </strong>上的颜色。
+						</p>
+						<p>
+							总结：<gradient>表达式颜色渐变</gradient> 更改每一段距离路径上的颜色；<gradient>速度表达式颜色渐变</gradient> 更改每一段时间路径上的颜色。
+						</p>
+					</div>
+					
+					<h2 id="unit">unit 7 normal (原版)</h2>
+					<div>
+						<h3>指令格式：</h3>
+						<p class="code">
+							/particleex normal<颗粒> <坐标> <颜色> <速度> <范围> <数量> [寿命] [速度表达式] [计算间隔] [组] 
+						</p>
+						<p>所谓原版，即是在原版 particle 指令上的拓展。normal 是 colorBlock mod 中的一个子命令，它在原版的基础上增加了 <blue>颜色</blue>、<blue>寿命</blue>、<blue>速度表达式</blue>、<blue>计算间隔</blue> 和 <blue>组</blue>。</p>
+						
+						<table class="autoTable nth1_blue">
+							<tr><th>参数名</th>		<th>概述</th></tr>
+							<tr><td>颗粒</td>		<td>自定义粒子类型</td></tr>
+							<tr><td>坐标</td>		<td>自定义粒子的显示位置</td></tr>
+							<tr><td>颜色</td>		<td>自定义粒子的颜色</td></tr>
+							<tr><td>速度</td>		<td>自定义粒子向任意方向移动的向量</td></tr>
+							<tr><td>范围</td>		<td>自定义粒子的生成范围</td></tr>
+							<tr><td>数量</td>		<td>自定义一次性产生的总数量粒子</td></tr>
+							<tr><td>寿命</td>		<td>自定义粒子的从召唤到凋零的生命周期的时长</td></tr>
+							<tr><td>速度表达式</td>	<td>自定义粒子如何去运动，速度表达式也可以看成一个速度函数，速度函数的图像即是整体的运动趋势</td></tr>
+							<tr><td>计算间隔</td>	<td>自定义计算间隔</td></tr>
+							<tr><td>组</td>			<td>...</td></tr>
+						</table>
+						<div class="slide_card">
+							<p class="title">效果案例</p>
+							<div class="slide_area">
+								
+							</div>
+						</div>
+					</div>
+					
+					<h2 id="unit">unit 8 parameter (直角坐标)</h2>
+					<div>
+						<p>
+							三维直角坐标系是由三条相互垂直的坐标轴组成的坐标系统。除了x轴和y轴，还有一条垂直于二者的z轴。这三条坐标轴的交点被称为原点，通常用O表示。
+							
+							在三维直角坐标系中，每个点都可以用一个有序数对(x, y, z)来表示，其中x表示点在x轴上的位置，y表示点在y轴上的位置，z表示点在z轴上的位置。x轴、y轴和z轴的正方向可以根据需要来确定，通常x轴向右为正方向，y轴向上为正方向，z轴向外为正方向。
+							
+							三维直角坐标系可以用来描述空间中的点、直线、平面、曲线等。通过在坐标系中的点之间的距离和角度关系，可以进行几何推导和计算。三维直角坐标系也被广泛应用于数学、物理、工程等领域中的问题求解和数据分析中。
+						</p>
+						<p>
+							在这里，我们主要使用 colorBlock 的 parameter 子命令在 Minecraft 中实现粒子效果。
+						</p>
+						<div class="center">
+							<img class="bigImg" src="#" alt="img/teach/Cartesian.jpg">
+						</div>
+						<p class="code">
+							/particleex parameter<颗粒> <坐标> <颜色> <速度> [begin] [end] <表达式> [计算间隔] [寿命] [速度表达式] [计算间隔] [组] 
+						</p>
+						<table class="autoTable nth1_blue">
+							<tr><th>参数名</th>		<th>概述</th></tr>
+							<tr><td>颗粒</td>		<td>自定义粒子类型</td></tr>
+							<tr><td>坐标</td>		<td>自定义粒子的显示位置</td></tr>
+							<tr><td>颜色</td>		<td>自定义粒子的颜色</td></tr>
+							<tr><td>速度</td>		<td>自定义粒子向任意方向移动的向量</td></tr>
+							<tr><td>begin 和 end</td><td>自定义粒子函数的定义域 [begin, end]， begin 应当小于 end</td></tr>
+							<tr><td>表达式</td>		<td>自定义直角坐标函数图像</td></tr>
+							<tr><td>计算间隔</td>	<td>自定义在函数中以一个固定的间隔量去逐步取每一个粒子</td></tr>
+							<tr><td>寿命</td>		<td>自定义粒子的从召唤到凋零的生命周期的时长</td></tr>
+							<tr><td>速度表达式</td>	<td>自定义粒子如何去运动，速度表达式也可以看成一个速度函数，速度函数的图像即是整体的运动趋势</td></tr>
+							<tr><td>计算间隔</td>	<td>自定义计算间隔</td></tr>
+							<tr><td>组</td>			<td>...</td></tr>
+						</table>
+						<div class="slide_card">
+							<p class="title">效果案例</p>
+							<div class="slide_area">
+								
+							</div>
+						</div>
+					</div>
+					
+					<h2 id="unit">unit 9 polarparameter (极坐标)</h2>
+					<div>
+						<p>
+							极坐标是一种表示平面上点位置的坐标系统。它使用两个数值来确定一个点的位置，一个是极径（r），表示点到原点的距离；另一个是极角（θ），表示点与某个固定方向的夹角。
+							
+							在极坐标系统中，原点为极点，固定方向为极轴。极径可以是正数、零或负数，负数表示点在极轴的反方向上。极角可以是任意实数，但通常限制在一个周期内，如[0, 2π)或[-π, π)。
+							
+							极坐标可以方便地描述圆形、螺旋等几何形状，也可以用于表示向量的方向和大小。与直角坐标系相比，极坐标系统在某些情况下更加直观和简洁。但在进行复杂计算和几何分析时，直角坐标系更为常用。
+							
+							极坐标与直角坐标之间可以相互转换。通过极坐标到直角坐标的转换公式，可以将极坐标表示的点转换为直角坐标表示的点。反之，通过直角坐标到极坐标的转换公式，可以将直角坐标表示的点转换为极坐标表示的点。
+						</p>
+						<div class="center">
+							<img class="bigImg" src="#" alt="img/teach/polar_coordinates.jpg">
+						</div>
+						<p class="code">
+							/particleex polarparameter<颗粒> <坐标> <颜色> <速度> [begin] [end] <表达式> [计算间隔] [寿命] [速度表达式] [计算间隔] [组] 
+						</p>
+						<table class="autoTable nth1_blue"> 
+							<tr><th>参数名</th>		<th>概述</th></tr>
+							<tr><td>颗粒</td>		<td>自定义粒子类型</td></tr>
+							<tr><td>坐标</td>		<td>自定义粒子的显示位置</td></tr>
+							<tr><td>颜色</td>		<td>自定义粒子的颜色</td></tr>
+							<tr><td>速度</td>		<td>自定义粒子向任意方向移动的向量</td></tr>
+							<tr><td>begin 和 end</td><td>自定义粒子函数的定义域 [begin, end]， begin 应当小于 end</td></tr>
+							<tr><td>表达式</td>		<td>自定义极坐标函数图像</td></tr>
+							<tr><td>计算间隔</td>	<td>自定义在函数中以一个固定的间隔量去逐步取每一个粒子</td></tr>
+							<tr><td>寿命</td>		<td>自定义粒子的从召唤到凋零的生命周期的时长</td></tr>
+							<tr><td>速度表达式</td>	<td>自定义粒子如何去运动，速度表达式也可以看成一个速度函数，速度函数的图像即是整体的运动趋势</td></tr>
+							<tr><td>计算间隔</td>	<td>自定义计算间隔</td></tr>
+							<tr><td>组</td>			<td>...</td></tr>
+						</table>
+						<div class="slide_card">
+							<p class="title">效果案例</p>
+							<div class="slide_area">
+								
+							</div>
+						</div>
+					</div>
+					
+					<h2 id="unit">unit 10 iamge (打印图像)</h2>
+					<div>
+						<p class="code">
+							particleex image <颗粒> <坐标> <路径> [比例] [x轴旋转] [y轴旋转] [z轴旋转] [翻转] [DPB] [速度] [寿命] [速度表达式] [计算间隔] [组]
+						</p>
+						<table class="autoTable nth1_blue">
+							<tr><th>参数名</th>		<th>概述</th></tr>
+							<tr><td>颗粒</td>		<td>自定义粒子类型</td></tr>
+							<tr><td>坐标</td>		<td>自定义粒子的显示位置</td></tr>
+							<tr><td>路径</td>		<td>链接到 mod 的同级目录的 particleImages 的目录下的图像文件名</td></tr>
+							<tr><td>比例</td>		<td>自定义粒子图像的大小比例，这个值的范围是 [0, 1]</td></tr>
+							<tr><td>x轴旋转</td>		<td>自定义粒子图像延x轴旋转的角度</td></tr>
+							<tr><td>y轴旋转</td>		<td>自定义粒子图像延y轴旋转的角度</td></tr>
+							<tr><td>z轴旋转</td>		<td>自定义粒子图像延z轴旋转的角度</td></tr>
+							<tr><td>DPB</td>		<td>自定义一格方块宽可容纳的粒子数</td></tr>
+							<tr><td>翻转</td>		<td>自定义粒子图像以90度为基本单位翻转</td></tr>
+							<tr><td>速度</td>		<td>自定义粒子向任意方向移动的向量</td></tr>
+							<tr><td>寿命</td>		<td>自定义粒子的从召唤到凋零的生命周期的时长</td></tr>
+							<tr><td>速度表达式</td>	<td>自定义粒子如何去运动，速度表达式也可以看成一个速度函数，速度函数的图像即是整体的运动趋势</td></tr>
+							<tr><td>计算间隔</td>	<td>自定义计算间隔</td></tr>
+							<tr><td>组</td>			<td>...</td></tr>
+						</table>
+						<br>
+						<div class="center">
+							<img src="#" alt="img/teach/three_link.jpg">
+						</div>
+						<p class="code">
+							particleex image minecraft:end_rod ~ ~1 ~ <blue>three_link.png</blue> 0.5 0 0 0 not 10.0 0 0 0 500 "vy=0" 1.0 null
+						</p>
+						<p>
+							<blue> 路径参数 </blue>相当重要！文件名需要的指令中的完全一致（包括后缀名）。
+						</p>
+						<div class="center">
+							<img class="bigImg" src="#" alt="img/teach/link_file.jpg">
+						</div>
+					</div>
+					
+					<h2 id="unit">unit 11 clearparticle (防卡)</h2>
+					<p>清除当前维度所有的粒子，达到减轻设备负载的目的。</p>
+					<p class="code">particleex clearparticle</p>
+					<h3> ----------------------------------------------------截至现在已更新内容---------------------------------------------------------- </h3>
+					<br><br>
+					
+					<p style="text-align: center;">如果您又疑问，欢迎加入我们的交流群与我们讨论。QQ群号：688569824</p>
+					
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					
+				</div>
+
+				<div class="chunks-resource-box">
+					<br>
+					<p class="CRB1_title"> function结合 </p>
+					<p class="text"> 敬请期待</p>
+					<hr>
+				</div>
+
+				<div class="chunks-resource-box" id="download">
+
+					<br>
+					<p class="CRB1_title"> 下载 </p>
+					
+					<hr>
+					<a href="resource/mods/colorBlock-1.12.2.jar">
+						<button><img class="download_to_mod" src="#" alt="">colorblock 1.12.2 <h3>下载</h3></button>
+					</a>
+					<a href="resource/mods/colorBlock-1.16.5.jar">
+						<button><img class="download_to_mod" src="#" alt="">colorblock 1.16.5 <h3>下载</h3></button>
+					</a>
+					<hr>
+					<h2 class="center top25px downline bigSize">光影</h2>
+					<div class="download_card">
+						<div class="download_card_img">
+						</div>
+						<h2>replay</h2>
+						<p>replay 是一款 JAVA 版的延伸摄影模组，它可以控制摄像机的移动、翻转视角等操作进行 mc 丝滑镜头航拍， 延时摄影、丝滑镜头，制作大型的高负载场景的创作者的福音！</p>
+
+						<a href="https://www.replaymod.com/" target="_blank" class="interlinkage">
+							官网：https://www.replaymod.com
+						</a>
+					</div>
+
+					<div class="download_card">
+						<div class="download_card_img">
+						</div>
+						<h2>BSL+v7.1.02.2</h2>
+						<p>BSL 光影，风格偏：唯美、柔和。它也是一个很好的粒子着色器，既保证的流畅的同时画质方面也丝毫不落。能够 配合与 colorBlock 一起使用，而且设备负载较低，渣机的福音。</p>
+
+						<a href="https://bitslablab.com/bslshaders/" target="_blank" class="interlinkage">
+							官网：https://bitslablab.com/bslshaders
+						</a>
+					</div>
+					<div class="download_card">
+						<div class="download_card_img">
+						</div>
+						<h2>SEUS - DAZZLING</h2>
+						<p>SEUS 魔改系列，风格偏：绚丽、耀眼。它不仅拥有出色的视觉效果，还有亮眼的粒子着色功能。可配合 colorBlock 发出任意色彩的光，能够使 MC 粒子变得十分璀璨夺目。</p>
+						<a href="https://www.sonicether.com/seus/" target="_blank" class="interlinkage">
+							官网：https://www.sonicether.com/seus
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<!-- <div class="community" id="chunks">
+			<iframe id="community_iframe" src="" width="100%" height="100%" frameborder="0"></iframe>
+		</div> -->
+		
+		<div class="blackboard"></div>
+
+		<div class="Messagebox">
+			<p id="copyText"></p>
+		</div>
+
+		<div class="Welcome">
+			<h2>向您问好</h2>
+			<p>欢迎使用 colorBlock (/≧▽≦)/~ </p>
+		</div>
+
+		<div class="particle_color_board">
+			<div class="particle_color_board_close" id="particle_color_board_close"> × </div>
+			<p class="column">选择粒子颜色</p>
+			<div class="btnColor" id="btnColor">
+
+			</div>
+
+			<div class="rbga_input_wrap">
+				<div class="rbga_input_float">
+					<p class="rbga_displayed" id="rbga_displayed_r">null</p>
+					<span class="rbga_span">R</span>
+				</div>
+				<div class="rbga_input_float">
+					<p class="rbga_displayed" id="rbga_displayed_g">null</p>
+					<span class="rbga_span">G</span>
+				</div>
+				<div class="rbga_input_float">
+					<p class="rbga_displayed" id="rbga_displayed_b">null</p>
+					<span class="rbga_span">B</span>
+				</div>
+			</div>
+
+			<div class="rbga_range_wrap">
+				<div class="rbga_range_span">A：</div>
+				<input type="range" class="range" value="100" id="alpha"><span id="alpha_show">100%</span>
+			</div>
+
+			<br>
+			<button class="particle_color_cancel" id="particle_color_cancel">取消</button>
+			<button class="particle_color_save" id="particle_color_save">确定</button>
+		</div>
+
+		<div class="setBox">
+			<div class="setBox-closeWin"> × </div>
+			<h2 class="setBox-title">设置</h2>
+			<ul>
+				<li>问候语显示
+					<button class="swith">
+						<div class="swith_round"></div>
+					</button>
+				</li>
+				<li>生成指令时同时复制指令
+					<button class="swith">
+						<div class="swith_round"></div>
+					</button>
+				</li>
+				</li>
+			</ul>
+
+
+			<h2 class="setBox-title"> 关于 </h2>
+
+			<ul>
+				<li>作者：Minecraft_OCEAN | <a class="setPath" href="https://space.bilibili.com/693976733">B站空间</a></li>
+				<li>技术支持：爱吃饺子的吴先生 | <a class="setPath" href="https://space.bilibili.com/492045885">B站空间</a></li>
+			</ul>
+			<div class="options">
+				<div class="option" id="day_and_night"> <!-- 夜间模式 --> </div>
+				<div class="option"> </div>
+				<div class="option"> </div>
+				<div class="option"> </div>
+			</div>
+		</div>
+
+		<!-- 预设参数 -->
+		<div class="preinstall">
+			<button class="closeWindow"> × </button>
+			<h3 class="title">预设参数</h3>
+			<table>
+				<tr>
+					<td>七芒星</td>
+					<td>|</td>
+					<td>
+						<p>转速：rev1:4,r1:7; rev2:-3,r2:-10;</p>
+					</td>
+					<td><button class="useParm">使用预设</button></td>
+				</tr>
+				<tr>
+					<td>四叶草</td>
+					<td>|</td>
+					<td>
+						<p>转速：rev1:4,r1:7; rev2:-3,r2:-10;</p>
+					</td>
+					<td><button class="useParm">使用预设</button></td>
+				</tr>
+				<tr>
+					<td>月食</td>
+					<td>|</td>
+					<td>
+						<p>转速：rev1:4,r1:7; rev2:-3,r2:-10;</p>
+					</td>
+					<td><button class="useParm">使用预设</button></td>
+				</tr>
+				<tr>
+					<td>花边</td>
+					<td>|</td>
+					<td>
+						<p>转速：rev1:4,r1:7; rev2:-3,r2:-10;</p>
+					</td>
+					<td><button class="useParm">使用预设</button></td>
+				</tr>
+			</table>
+			<br>
+			<p>您可以在以此预设的基础上修改并更快的绘制您需要的图形</p>
+		</div>
+
+		<!-- 反馈与建议收集 -->
+		<div class="feedback_Box autoClose">
+			<div class="column">反馈与建议 <button class="close" id="feedback_close"> × </button></div>
+			<div class="content">
+				<p>我很想听听您的意见，以便我可以改进自己。</p>
+				<form action="">
+					<input type="text" placeholder="姓名">
+					<input type="text" placeholder="邮箱">
+					<textarea name="feedback" id="feedback_text" cols="30" rows="10" placeholder="在这里输入详细内容"></textarea>
+					<button class="put-in" type="submit" value="提交">提交</button>
+				</form>
+			</div>
+		</div>
+		
+		
+	</body>
+
+	<div><!--  javascript -->
+		<script src="js/basic/superlative.js"></script>
+		<script src="js/cmd_Generator/particle_data.js"></script>
+		<script src="js/basic/function.js"></script>
+		<script src="js/index.js"></script>
+		<script src="js/cmd_Generator/1.12.2_normal.js"></script>
+		<script src="js/cmd_Generator/colorBlock/normal.js"></script>
+		<script src="js/cmd_Generator/color_board.js"></script>
+		<script src="js/basic/date.js"></script>
+		<script src="js/basic/set.js"></script>
+		<script src="js/basic/search.js"></script>
+		<script src="js/cmd_Generator/filiye_transform.js"></script>
+		<script src="js/cmd_Generator/command_output.js"></script>
+		<script src="js/basic/ready_UI.js"></script>
+		<script src="js/tutorial.js"></script>
+		<!-- group -->
+		<script src="js/group/copy_txt.js"></script>
+		<script src="js/group/focus_input_evet.js"></script>
+		
+		<!-- <script src="https://api.ecylt.top/mc/md/md.php"></script> -->
+	</div>
+</html>

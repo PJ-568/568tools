@@ -1,1 +1,12 @@
-#translate>.translateSelectLanguage{cursor:pointer;position:absolute;padding:.3rem;padding-left:.5rem;padding-right:.5rem;color:#555;background-color:#fff;border:2px solid #c9c9c9}@media screen and (max-width:980px){#translate>.translateSelectLanguage{left:1rem;top:1rem;font-size:.8rem;width:6rem}}@media screen and (min-width:980px){#translate>.translateSelectLanguage{left:2rem;top:2rem;font-size:1rem}}
+#translate>.translateSelectLanguage {
+    cursor:pointer;
+    position:absolute;
+    padding:0.3rem;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+    color: #555;
+	background-color: #fff;
+    border:2px solid #C9C9C9;
+}
+@media screen and (max-width: 980px){#translate>.translateSelectLanguage {left:1rem;top:1rem;font-size:.8rem;width:6rem}}
+@media screen and (min-width: 980px){#translate>.translateSelectLanguage {left:2rem;top:2rem;font-size:1rem}}

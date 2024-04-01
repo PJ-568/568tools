@@ -1,1 +1,576 @@
-<!doctype html><html lang=en><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=keywords content="m3u8 downloader for web"><meta name=description content="GitHub directory downloader for web, Momo's Blog, LuckyMomo"><title>GitHub directory downloader</title><style>body,html{margin:0;padding:0}body::-webkit-scrollbar{display:none}p{margin:0}[v-cloak]{display:none}#m-app{height:100%;width:100%;text-align:center;padding:10px 50px 80px;box-sizing:border-box}.m-p-action{margin:20px auto;max-width:1100px;width:100%;font-size:35px;text-align:center;font-weight:700}.m-p-github,.m-p-other{position:fixed;right:50px;bottom:70px;background-color:#eff3f6;background-image:linear-gradient(-180deg,#fafbfc,#eff3f6 90%);color:#24292e;border:1px solid rgba(27,31,35,.2);border-radius:3px;cursor:pointer;display:inline-block;font-size:14px;font-weight:600;line-height:20px;padding:6px 12px;z-index:99}.m-p-help{position:fixed;right:50px;top:50px;width:30px;height:30px;color:#666;z-index:2;line-height:30px;font-weight:bolder;border-radius:50%;border:1px solid rgba(27,31,35,.2);cursor:pointer;background-color:#eff3f6;background-image:linear-gradient(-180deg,#fafbfc,#eff3f6 90%)}.m-p-github:hover,.m-p-help,.m-p-other:hover{opacity:.9}.m-p-other{bottom:30px}.m-p-intro,.m-p-temp-url{padding-top:50px;padding-bottom:6px;width:100%;color:#999;text-align:left;font-style:italic;word-break:break-all}.m-p-intro{padding-top:0}.m-p-input-container{display:flex}.m-p-input-container input{flex:1;margin-bottom:30px;margin-right:12px;display:block;width:280px;padding:16px;font-size:24px;border-radius:4px;box-shadow:none;color:#444;border:1px solid #ccc}.m-p-input-container div{position:relative;display:inline-block;height:60px;line-height:60px;font-size:24px;color:#fff;cursor:pointer;border-radius:4px;border:1px solid #eee;background-color:#3d8ac7;opacity:1;transition:.3s all}.m-p-input-container div:last-child{margin-left:10px}.m-p-input-container div:hover{opacity:.9}.m-p-input-container div{width:200px}.m-p-input-container .disable{cursor:not-allowed;background-color:#ddd}.m-p-line{margin:20px 0 50px;vertical-align:top;width:100%;height:5px;border-bottom:dotted}.m-p-tips{width:100%;color:#999;text-align:left;font-style:italic;word-break:break-all}.m-p-tips p{width:100px;display:inline-block}.m-p-segment{text-align:left}.m-p-segment .item{position:relative;margin:10px 6px;width:100%;height:40px;color:#fff;line-height:40px;text-align:left;border-radius:4px;box-sizing:border-box;border:solid 1px #eee;background-color:#ddd;overflow:hidden}.m-p-segment .item .content,.m-p-segment .item .status{position:absolute;top:0;left:0;width:0;height:100%;transition:width .8s cubic-bezier(.165,.84,.44,1)}.m-p-segment .item .content{width:100%;z-index:2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.m-p-segment .item .content span{display:inline-block;width:40px;height:40px;text-align:center}.m-p-segment .finish .status{width:100%;background-color:#0acd76}.m-p-segment .error .status{cursor:pointer;width:100%;background-color:#dc5350}.m-p-cross,.m-p-final{display:inline-block;width:100%;height:50px;line-height:50px;font-size:20px;color:#fff;cursor:pointer;border-radius:4px;border:1px solid #eee;background-color:#3d8ac7;opacity:1;transition:.3s all}.m-p-final{margin-top:10px;text-decoration:none}.m-p-force,.m-p-retry{position:absolute;right:50px;display:inline-block;padding:6px 12px;font-size:18px;color:#fff;cursor:pointer;border-radius:4px;border:1px solid #eee;background-color:#3d8ac7;opacity:1;transition:.3s all}.m-p-retry{right:250px}.m-p-force:hover,.m-p-retry:hover{opacity:.9}.m-p-input-container input[disabled=disabled]{background-color:#f2f2f2;cursor:not-allowed}</style><section id=m-app v-cloak><section class="m-p-action g-box">{{tips}}</section><a class=m-p-help target=_blank href=https://segmentfault.com/a/1190000039143806>?</a> <a class=m-p-github target=_blank href=https://github.com/Momo707577045/github-directory-downloader>github</a> <a class=m-p-other target=_blank href=http://blog.luckly-mjw.cn/tool-show/index.html>其他实用工具</a><div class=m-p-temp-url>测试链接：https://github.com/Momo707577045/m3u8-downloader/tree/master/imgs</div><div class=m-p-intro>支持特定分支，特定 tags 下的文件夹或具体文件，解决 GitHub 只能下载整个项目的问题。直接拷贝当前页面链接至本页面，点击下载</div><section class=m-p-input-container><input v-model=url :disabled=downloading :readonly=downloading placeholder="请输入 GitHub 当前页面链接"><div v-if=!downloading @click=getFileList :class="{'disable':downloading}">解析下载</div></section><template v-if="fileInfoList.length > 0"><div class=m-p-line></div><div class=m-p-retry v-if="errorNum && downloadIndex >= fileInfoList.length" @click=retryAll>重新下载错误文件</div><div class=m-p-force v-if=finishNum @click=forceDownload>强制下载现有文件</div><div class=m-p-tips>碎片总量：{{ fileInfoList.length }}，已下载：{{ finishNum }}，错误：{{ errorNum }}，进度：{{ (finishNum / fileInfoList.length * 100).toFixed(2) }}%</div><div class=m-p-tips>若某视频碎片下载发生错误，将标记为红色，可点击相应图标进行重试</div><section class=m-p-segment><div class=item v-for="(item, index) in fileInfoList" :class=[item.status] @click=retry(index) :title=item.path><div class=status></div><div class=content><span>{{ index + 1 }}</span> {{ item.absoluteUrl }}</div></div></section></template></section><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?1f12b0865d866ae1b93514870d93ce89";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src=https://cdn.bootcss.com/vue/2.6.10/vue.min.js></script><script src=https://cdn.bootcdn.net/ajax/libs/jszip/3.5.0/jszip.js></script><script>new Vue({el:"#m-app",data:()=>({url:"",tips:"GitHub 「特定」文件夹或文件下载工具",downloading:!1,isBlob:!1,errorNum:0,finishNum:0,downloadIndex:0,fileInfoList:[],projectInfo:{ownerName:"",projectName:"",branchName:"",dirPath:""}}),created(){this.getSource(),window.addEventListener("keyup",this.onKeyup)},beforeDestroy(){window.removeEventListener("keyup",this.onKeyup)},methods:{getSource(){let{href:t}=location;t.indexOf("?source=")>-1&&(this.url=t.split("?source=")[1])},onKeyup(t){13===t.keyCode&&this.getFileList()},ajax(t){t=t||{};let e=new XMLHttpRequest;"file"===t.type&&(e.responseType="arraybuffer"),e.onreadystatechange=function(){if(4===e.readyState){let i=e.status;i>=200&&i<300?t.success&&t.success(e.response):t.fail&&t.fail(i)}},e.open("GET",t.url,!0),e.send(null)},checkBranchAndTags(t,e){if(!t)return void e();0===t.indexOf("blob/")?(this.isBlob=!0,t=t.replace("blob/","")):t=t.replace("tree/","");let i=[];this.ajax({url:`https://api.github.com/repos/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/branches`,success:o=>{i=[...i,...JSON.parse(o)],this.ajax({url:`https://api.github.com/repos/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/tags`,success:o=>{[...i,...JSON.parse(o),{name:"master"}].map(t=>t.name).some(e=>{console.log(e),0===t.indexOf(e)&&(this.projectInfo.branchName=e,this.projectInfo.dirPath=t.replace(e,"").replace("/","")+"/")}),console.log(this.projectInfo),e&&e(i)},fail:t=>this.alertError("链接不正确，请查看链接是否有效")})},fail:t=>this.alertError("链接不正确，请查看链接是否有效")})},getFileList(){if(!this.url)return void alert("请输入链接");if(this.downloading)return void alert("资源下载中，请稍后");this.downloading=!0,this.tips="git tree 文件下载中，请稍后",this.url=decodeURIComponent(this.url);const t=this.url.replace("https://github.com/","").trim().split("/");this.projectInfo.ownerName=t[0],this.projectInfo.projectName=t[1],this.projectInfo.branchName=t[3],this.checkBranchAndTags(t.slice(2).join("/"),()=>{this.isBlob?(this.fileInfoList=[{status:"",path:this.projectInfo.dirPath,absoluteUrl:`https://raw.githubusercontent.com/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/${this.projectInfo.branchName}/${this.projectInfo.dirPath}`}],this.downloadFile()):this.ajax({url:`https://api.github.com/repos/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/git/trees/${this.projectInfo.branchName}?recursive=1`,success:t=>{JSON.parse(t).tree.forEach(t=>{0===t.path.indexOf(this.projectInfo.dirPath)&&"tree"!==t.type&&(t.absoluteUrl=`https://raw.githubusercontent.com/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/${this.projectInfo.branchName}/${t.path}`,t.status="",this.fileInfoList.push(t))}),this.downloadFile()},fail:()=>{this.alertError("链接不正确，请查看链接是否有效")}})})},downloadFile(){this.tips="git 项目文件下载中，请稍后";let t=()=>{let e=this.downloadIndex;this.downloadIndex++,this.fileInfoList[e]&&!this.fileInfoList[e].status?this.ajax({url:this.fileInfoList[e].absoluteUrl,type:"file",success:i=>{this.dealFile(i,e,()=>{this.downloadIndex<this.fileInfoList.length&&t()})},fail:()=>{this.errorNum++,this.fileInfoList[e].status="error",this.downloadIndex<this.fileInfoList.length&&t()}}):this.downloadIndex<this.fileInfoList.length&&t()};for(let e=0;e<10;e++)t(e)},retry(t){"error"===this.fileInfoList[t].status&&(this.fileInfoList[t].status="",this.ajax({url:this.fileInfoList[t].absoluteUrl,type:"file",success:e=>{this.errorNum--,this.dealFile(e,t)},fail:()=>{this.fileInfoList[t].status="error"}}))},dealFile(t,e,i){this.fileInfoList[e].fileData=t,this.fileInfoList[e].status="finish",this.finishNum++,this.finishNum===this.fileInfoList.length&&this.downloadZip(),i&&i()},retryAll(){this.errorNum=0,this.downloadIndex=0,this.fileInfoList.forEach(t=>{"error"===t.status&&(t.status="")}),this.downloadFile()},forceDownload(){this.fileInfoList.length?this.downloadZip():alert("当前无已下载文件")},downloadZip(){this.tips="git 文件整合中，请留意浏览器下载";const t=new JSZip;this.fileInfoList.forEach(e=>"finish"===e.status&&t.file(e.path,e.fileData)),t.generateAsync({type:"blob"}).then(t=>{let e=document.createElement("a");e.download=[this.projectInfo.projectName,this.projectInfo.branchName,this.projectInfo.dirPath].join("/").replace(/\//g,"_")+".zip",e.href=URL.createObjectURL(t),e.style.display="none",document.body.appendChild(e),e.click(),e.remove()})},alertError(t){alert(t),this.downloading=!1,this.tips="GitHub 特定文件夹或文件下载工具"},copyToClipboard(t){if(!document.queryCommandSupported("copy"))return!1;let e=document.createElement("textarea");e.style.opacity="0",e.value=t,document.body.appendChild(e),e.select();const i=document.execCommand("copy");return document.body.removeChild(e),e=null,i}}})</script>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="m3u8 downloader for web">
+  <meta name="description" content="GitHub directory downloader for web, Momo's Blog, LuckyMomo">
+  <title>GitHub directory downloader</title>
+  <style>
+  /*全局设置*/
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body::-webkit-scrollbar { display: none}
+  p {
+    margin: 0;
+  }
+  [v-cloak] {
+    display: none;
+  }
+  #m-app {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 10px 50px 80px;
+    box-sizing: border-box;
+  }
+  .m-p-action {
+    margin: 20px auto;
+    max-width: 1100px;
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .m-p-other, .m-p-github {
+    position: fixed;
+    right: 50px;
+    bottom: 70px;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    color: #24292e;
+    border: 1px solid rgba(27, 31, 35, .2);
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 12px;
+    z-index: 99;
+  }
+  .m-p-help {
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    width: 30px;
+    height: 30px;
+    color: #666666;
+    z-index: 2;
+    line-height: 30px;
+    font-weight: bolder;
+    border-radius: 50%;
+    border: 1px solid rgba(27, 31, 35, .2);
+    cursor: pointer;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+  }
+  .m-p-github:hover, .m-p-other:hover, .m-p-help {
+    opacity: 0.9;
+  }
+  .m-p-other {
+    bottom: 30px;
+  }
+  /*顶部信息录入*/
+  .m-p-temp-url, .m-p-intro {
+    padding-top: 50px;
+    padding-bottom: 6px;
+    width: 100%;
+    color: #999999;
+    text-align: left;
+    font-style: italic;
+    word-break: break-all;
+  }
+  .m-p-intro {
+    padding-top: 0;
+  }
+  .m-p-input-container {
+    display: flex;
+  }
+  .m-p-input-container input {
+    flex: 1;
+    margin-bottom: 30px;
+    margin-right: 12px;
+    display: block;
+    width: 280px;
+    padding: 16px;
+    font-size: 24px;
+    border-radius: 4px;
+    box-shadow: none;
+    color: #444444;
+    border: 1px solid #cccccc;
+  }
+  .m-p-input-container div {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #eeeeee;
+    background-color: #3D8AC7;
+    opacity: 1;
+    transition: 0.3s all;
+  }
+  .m-p-input-container div:last-child {
+    margin-left: 10px;
+  }
+  .m-p-input-container div:hover {
+    opacity: 0.9;
+  }
+  .m-p-input-container div {
+    width: 200px;
+  }
+  .m-p-input-container .disable {
+    cursor: not-allowed;
+    background-color: #dddddd;
+  }
+  /*下载状态*/
+  .m-p-line {
+    margin: 20px 0 50px;
+    vertical-align: top;
+    width: 100%;
+    height: 5px;
+    border-bottom: dotted;
+  }
+  .m-p-tips {
+    width: 100%;
+    color: #999999;
+    text-align: left;
+    font-style: italic;
+    word-break: break-all;
+  }
+  .m-p-tips p {
+    width: 100px;
+    display: inline-block;
+  }
+  .m-p-segment {
+    text-align: left;
+  }
+  .m-p-segment .item {
+    position: relative;
+    margin: 10px 6px;
+    width: 100%;
+    height: 40px;
+    color: white;
+    line-height: 40px;
+    text-align: left;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: solid 1px #eeeeee;
+    background-color: #dddddd;
+    overflow: hidden;
+  }
+  .m-p-segment .item .status, .m-p-segment .item .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: width 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .m-p-segment .item .content {
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  .m-p-segment .item .content span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+  }
+  .m-p-segment .finish .status {
+    width: 100%;
+    background-color: #0ACD76;
+  }
+  .m-p-segment .error .status {
+    cursor: pointer;
+    width: 100%;
+    background-color: #DC5350;
+  }
+  .m-p-cross, .m-p-final {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #eeeeee;
+    background-color: #3D8AC7;
+    opacity: 1;
+    transition: 0.3s all;
+  }
+  .m-p-final {
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  .m-p-force, .m-p-retry {
+    position: absolute;
+    right: 50px;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #eeeeee;
+    background-color: #3D8AC7;
+    opacity: 1;
+    transition: 0.3s all;
+  }
+  .m-p-retry {
+    right: 250px;
+  }
+  .m-p-force:hover, .m-p-retry:hover {
+    opacity: 0.9;
+  }
+  .m-p-input-container input[disabled="disabled"]{
+    background-color: #f2f2f2;
+    cursor: not-allowed;
+  }
+
+  </style>
+</head>
+
+<body>
+<section id="m-app" v-cloak>
+  <!--顶部操作提示-->
+  <section class="m-p-action g-box">{{tips}}</section>
+  <a class="m-p-help" target="_blank" href="https://segmentfault.com/a/1190000039143806">?</a>
+  <a class="m-p-github" target="_blank" href="https://github.com/Momo707577045/github-directory-downloader">github</a>
+  <a class="m-p-other" target="_blank" href="http://blog.luckly-mjw.cn/tool-show/index.html">其他实用工具</a>
+
+  <!--文件载入-->
+  <div class="m-p-temp-url">测试链接：https://github.com/Momo707577045/m3u8-downloader/tree/master/imgs</div>
+  <div class="m-p-intro">支持特定分支，特定 tags 下的文件夹或具体文件，解决 GitHub 只能下载整个项目的问题。直接拷贝当前页面链接至本页面，点击下载</div>
+  <section class="m-p-input-container">
+    <input type="text" v-model="url" :disabled="downloading" :readonly="downloading" placeholder="请输入 GitHub 当前页面链接">
+    <div class="" v-if="!downloading" @click="getFileList" :class="{'disable':downloading}">解析下载</div>
+  </section>
+
+  <template v-if="fileInfoList.length > 0">
+    <div class="m-p-line"></div>
+    <div class="m-p-retry" v-if="errorNum && downloadIndex >= fileInfoList.length" @click="retryAll">重新下载错误文件</div>
+    <div class="m-p-force" v-if="finishNum" @click="forceDownload">强制下载现有文件</div>
+    <div class="m-p-tips">碎片总量：{{ fileInfoList.length }}，已下载：{{ finishNum }}，错误：{{ errorNum }}，进度：{{ (finishNum / fileInfoList.length * 100).toFixed(2) }}%</div>
+    <div class="m-p-tips">若某视频碎片下载发生错误，将标记为红色，可点击相应图标进行重试</div>
+    <section class="m-p-segment">
+      <div class="item" v-for="(item, index) in fileInfoList" :class="[item.status]" @click="retry(index)" :title="item.path">
+        <div class="status"></div>
+        <div class="content"><span>{{ index + 1 }}</span> {{ item.absoluteUrl }}</div>
+      </div>
+    </section>
+  </template>
+</section>
+</body>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1f12b0865d866ae1b93514870d93ce89";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--vue 前端框架-->
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+<!--js 生成压缩包-->
+<script src="https://cdn.bootcdn.net/ajax/libs/jszip/3.5.0/jszip.js"></script>
+
+<script>
+// script注入
+new Vue({
+  el: '#m-app',
+
+  data() {
+    return {
+      url: '', // 在线链接
+      tips: 'GitHub 「特定」文件夹或文件下载工具', // 顶部提示
+      downloading: false, // 是否下载中
+      isBlob: false, // 输入的链接是否是具体文件，而不是文件夹
+      errorNum: 0, // 错误数
+      finishNum: 0, // 已下载数
+      downloadIndex: 0, // 当前下载文件
+      fileInfoList: [], // 文件信息数组
+      projectInfo: { // 项目信息
+        ownerName: '',
+        projectName: '',
+        branchName: '',
+        dirPath: '',
+      }
+    }
+  },
+
+  created() {
+    this.getSource();
+    window.addEventListener('keyup', this.onKeyup)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('keyup', this.onKeyup)
+  },
+
+  methods: {
+    // 获取链接中携带的资源链接
+    getSource() {
+      let { href } = location
+      if (href.indexOf('?source=') > -1) {
+        this.url = href.split('?source=')[1]
+      }
+    },
+
+    // 退出弹窗
+    onKeyup(event) {
+      if (event.keyCode === 13) { // 键入ESC
+        this.getFileList()
+      }
+    },
+
+    // ajax 请求
+    ajax(options) {
+      options = options || {};
+      let xhr = new XMLHttpRequest();
+      if (options.type === 'file') {
+        xhr.responseType = 'arraybuffer';
+      }
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          let status = xhr.status;
+          if (status >= 200 && status < 300) {
+            options.success && options.success(xhr.response);
+          } else {
+            options.fail && options.fail(status);
+          }
+        }
+      };
+
+      xhr.open("GET", options.url, true);
+      xhr.send(null);
+    },
+
+    // 获取分支及标签
+    checkBranchAndTags(branchAndPath, callback) {
+      if (!branchAndPath) {
+        callback()
+        return
+      }
+      if (branchAndPath.indexOf('blob/') === 0) {
+        this.isBlob = true
+        branchAndPath = branchAndPath.replace('blob/', '') // 去除无用参数
+      } else {
+        branchAndPath = branchAndPath.replace('tree/', '') // 去除无用参数
+      }
+      let branchList = []
+      this.ajax({
+        url: `https://api.github.com/repos/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/branches`,
+        success: (treeStr) => {
+          branchList = [...branchList, ...JSON.parse(treeStr)]
+          this.ajax({
+            url: `https://api.github.com/repos/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/tags`,
+            success: (treeStr) => {
+              [...branchList, ...JSON.parse(treeStr), { name: 'master' }].map(item => item.name).some(branch => {
+                console.log(branch)
+                if (branchAndPath.indexOf(branch) === 0) { // 寻找匹配的分支与 tag
+                  this.projectInfo.branchName = branch
+                  this.projectInfo.dirPath = branchAndPath.replace(branch, '').replace('/', '') + '/' // 去除首个 '/'
+                }
+              })
+              console.log(this.projectInfo)
+              callback && callback(branchList)
+            },
+            fail: _ => this.alertError('链接不正确，请查看链接是否有效')
+          })
+        },
+        fail: _ => this.alertError('链接不正确，请查看链接是否有效')
+      })
+    },
+
+    // 获取 git tree
+    getFileList() {
+      if (!this.url) {
+        alert('请输入链接')
+        return
+      } else if (this.downloading) {
+        alert('资源下载中，请稍后')
+        return
+      }
+
+      this.downloading = true
+      this.tips = 'git tree 文件下载中，请稍后'
+      this.url = decodeURIComponent(this.url)
+      const pathParams = this.url.replace('https://github.com/', '').trim().split('/')
+      this.projectInfo.ownerName = pathParams[0]
+      this.projectInfo.projectName = pathParams[1]
+      this.projectInfo.branchName = pathParams[3]
+      this.checkBranchAndTags(pathParams.slice(2).join('/'), () => {
+        if (this.isBlob) { // 下载特定文件
+          this.fileInfoList = [{
+            status: '', // 待下载状态
+            path: this.projectInfo.dirPath,
+            absoluteUrl: `https://raw.githubusercontent.com/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/${this.projectInfo.branchName}/${this.projectInfo.dirPath}`,
+          }]
+          this.downloadFile()
+        } else { // 下载特定文件夹
+          this.ajax({
+            url: `https://api.github.com/repos/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/git/trees/${this.projectInfo.branchName}?recursive=1`,
+            success: (treeStr) => {
+              JSON.parse(treeStr).tree.forEach(item => {
+                if (item.path.indexOf(this.projectInfo.dirPath) === 0 && item.type !== 'tree') { //  // 过滤特定数组 不是树节点，只收集文件
+                  item.absoluteUrl = `https://raw.githubusercontent.com/${this.projectInfo.ownerName}/${this.projectInfo.projectName}/${this.projectInfo.branchName}/${item.path}`
+                  item.status = '' // 待下载状态
+                  this.fileInfoList.push(item) // 收集
+                }
+              })
+              this.downloadFile()
+            },
+            fail: () => {
+              this.alertError('链接不正确，请查看链接是否有效')
+            }
+          })
+        }
+      })
+    },
+
+    // 下载分片
+    downloadFile() {
+      this.tips = 'git 项目文件下载中，请稍后'
+      let download = () => {
+        let index = this.downloadIndex
+        this.downloadIndex++
+        if (this.fileInfoList[index] && !this.fileInfoList[index].status) {
+          this.ajax({
+            url: this.fileInfoList[index].absoluteUrl,
+            type: 'file',
+            success: (file) => {
+              this.dealFile(file, index, () => {
+                this.downloadIndex < this.fileInfoList.length && download()
+              })
+            },
+            fail: () => {
+              this.errorNum++
+              this.fileInfoList[index].status = 'error'
+              if (this.downloadIndex < this.fileInfoList.length) {
+                download()
+              }
+            }
+          })
+        } else if (this.downloadIndex < this.fileInfoList.length) { // 跳过已经成功的文件
+          download()
+        }
+      }
+
+      // 建立多少个 ajax 线程
+      for (let i = 0; i < 10; i++) {
+        download(i)
+      }
+    },
+
+    // 重新下载某个文件
+    retry(index) {
+      if (this.fileInfoList[index].status === 'error') {
+        this.fileInfoList[index].status = ''
+        this.ajax({
+          url: this.fileInfoList[index].absoluteUrl,
+          type: 'file',
+          success: (file) => {
+            this.errorNum--
+            this.dealFile(file, index)
+          },
+          fail: () => {
+            this.fileInfoList[index].status = 'error'
+          }
+        })
+      }
+    },
+
+    // 处理文件
+    dealFile(file, index, callback) {
+      this.fileInfoList[index].fileData = file
+      this.fileInfoList[index].status = 'finish'
+      this.finishNum++
+      this.finishNum === this.fileInfoList.length && this.downloadZip()
+      callback && callback()
+    },
+
+    // 重新下载所有错误文件
+    retryAll() {
+      this.errorNum = 0
+      this.downloadIndex = 0
+      this.fileInfoList.forEach((item) => { // 重置所有文件状态
+        if (item.status === 'error') {
+          item.status = ''
+        }
+      })
+      this.downloadFile()
+    },
+
+    // 强制下载现有文件
+    forceDownload() {
+      if (this.fileInfoList.length) {
+        this.downloadZip()
+      } else {
+        alert('当前无已下载文件')
+      }
+    },
+
+    // 下载整合后的 git 文件
+    downloadZip() {
+      this.tips = 'git 文件整合中，请留意浏览器下载'
+      const zip = new JSZip()
+      this.fileInfoList.forEach(item => item.status === 'finish' && zip.file(item.path, item.fileData))
+      zip.generateAsync({ type: 'blob' }).then((content) => {
+        let a = document.createElement('a')
+        a.download = `${[this.projectInfo.projectName, this.projectInfo.branchName, this.projectInfo.dirPath].join('/').replace(/\//g, '_')}.zip`
+        a.href = URL.createObjectURL(content)
+        a.style.display = 'none'
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+      })
+    },
+
+    // 发生错误，进行提示
+    alertError(tips) {
+      alert(tips)
+      this.downloading = false
+      this.tips = 'GitHub 特定文件夹或文件下载工具';
+    },
+
+    // 拷贝剪切板
+    copyToClipboard(content) {
+      if (!document.queryCommandSupported('copy')) {
+        return false
+      }
+
+      let $input = document.createElement('textarea')
+      $input.style.opacity = '0'
+      $input.value = content
+      document.body.appendChild($input)
+      $input.select()
+
+      const result = document.execCommand('copy')
+      document.body.removeChild($input)
+      $input = null
+
+      return result
+    },
+
+  }
+})
+// script注入
+</script>
+
+</html>

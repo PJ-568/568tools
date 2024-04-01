@@ -1,1 +1,144 @@
-<!doctype html><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=description content="Generate base64 encoded data URIs from files on your computer"><link rel=icon type=image/png href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAgMAAAAOFJJnAAAADFBMVEUAAAAtLS0tLS0tLS0PFSQuAAAABHRSTlMA+jaakgZ7swAAAJBJREFUGJWdz6ERwkAYROFHohCRlBCDvz5WsNxNJuIaYCYl0MTvkTQQDU2kj3QAIpMCYNU3s+rBf0sZ2s9KY1c6i6Nd6C16eyJZpDy/CYsoLXgRywSNQ7g+OOST8C3TXUPYrv1lg1IJ4ewSigFPaVxs49pvWHbEfp3GKOdnDCRbEKKzK4Ro7TuEYB6B1/pT5xcCqDaYG4+V+gAAAABJRU5ErkJggg=="><title>Data URI generator</title><style>body,html{height:100%}body{font:12px/14px Monaco,Consolas,monospace;background-color:#2d2d2d;color:#d3d0c8;margin:0;padding:4px 5px;box-sizing:border-box;word-break:break-all;overflow-wrap:break-word}a{color:#f2f0ec;text-decoration:none}a:hover{text-decoration:underline}.scheme{color:#f99157}.mediatype{color:#9c9}.base64{color:#c9c}.data{color:#69c}.equals{color:#747369}::selection{color:inherit;background-color:rgba(81,81,81,.996)}::-moz-selection{color:inherit;background-color:rgba(81,81,81,.996)}@media print{*{background:0 0!important;color:#000!important}}</style><span id=content>Please enable JavaScript to use this tool</span><script>!function(){"use strict";var e=document.getElementById("content");if("ondrop"in document.body&&window.FileReader&&"readAsDataURL"in new window.FileReader)e.innerHTML="Drop files here to generate a base64 data URI",document.body.addEventListener("dragover",(function(e){e.preventDefault(),e.dataTransfer.dropEffect="copy"}),!1),document.body.addEventListener("drop",(function(a){var t=a.dataTransfer.files[0],r=new FileReader;t&&(r.addEventListener("loadend",(function(){var a=(""+r.result).match(/^data:(.*?)(;base64)?(?:,(.*?)(=*))?$/);if(a){e.innerHTML="",e.appendChild(n("scheme","data:")),e.appendChild(n("mediatype",a[1]||"application/octet-stream")),a[2]?(e.appendChild(n("mediatype",";")),e.appendChild(n("base64","base64,"))):e.appendChild(n("mediatype",",")),a[3]&&(e.appendChild(n("data",a[3])),e.appendChild(n("equals",a[4])));var t=document.createRange();t.selectNodeContents(e);var o=window.getSelection();o.removeAllRanges(),o.addRange(t)}else e.innerHTML="Error reading file"}),!1),r.readAsDataURL(t),a.preventDefault())}),!1);else{var a=/Win/i.test(navigator.platform),t=a&&/*@cc_on!@*/!1;e.innerHTML='Your browser is outdated. To use this tool, please install the latest version of <a href="http://firefox.com" target="_blank">Mozilla Firefox</a>'+(a?", ":" or ")+'<a href="https://chrome.com" target="_blank">Google Chrome</a>'+(a?' or <a href="http://ie.microsoft.com" target="_blank">Internet Explorer</a>.':".")+(t?'<br><br>If you don\'t want to change your web browser, you can also use this tool with <a href="https://www.google.com/chromeframe" target="_blank">Google Chrome Frame</a>.':"")}function n(e,a){var t=document.createElement("span");return t.className=e,t.textContent=a,t}}()</script>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="Generate base64 encoded data URIs from files on your computer">
+	<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAgMAAAAOFJJnAAAADFBMVEUAAAAtLS0tLS0tLS0PFSQuAAAABHRSTlMA+jaakgZ7swAAAJBJREFUGJWdz6ERwkAYROFHohCRlBCDvz5WsNxNJuIaYCYl0MTvkTQQDU2kj3QAIpMCYNU3s+rBf0sZ2s9KY1c6i6Nd6C16eyJZpDy/CYsoLXgRywSNQ7g+OOST8C3TXUPYrv1lg1IJ4ewSigFPaVxs49pvWHbEfp3GKOdnDCRbEKKzK4Ro7TuEYB6B1/pT5xcCqDaYG4+V+gAAAABJRU5ErkJggg==">
+	<title>Data URI generator</title>
+	<style>
+html, body {
+	height: 100%;
+}
+
+body {
+	font: 12px/14px Monaco, Consolas, monospace;
+
+	background-color: #2d2d2d;
+	color: #d3d0c8;
+
+	margin: 0;
+	padding: 4px 5px;
+	box-sizing: border-box;
+
+	word-break: break-all;
+	overflow-wrap: break-word;
+}
+
+a {
+	color: #f2f0ec;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.scheme    { color: #f99157; }
+.mediatype { color: #99cc99; }
+.base64    { color: #cc99cc; }
+.data      { color: #6699cc; }
+.equals    { color: #747369; }
+
+::selection {
+	color: inherit;
+	background-color: rgba(81, 81, 81, 0.996);
+}
+
+::-moz-selection {
+	color: inherit;
+	background-color: rgba(81, 81, 81, 0.996);
+}
+
+@media print {
+	* {
+		background: transparent !important;
+		color: #000 !important;
+	}
+}
+	</style>
+</head>
+<body><span id="content">Please enable JavaScript to use this tool</span><script>
+(function() {
+	"use strict";
+
+	var content = document.getElementById("content");
+
+	if (!("ondrop" in document.body)
+	     || !window.FileReader
+	     || !("readAsDataURL" in new window.FileReader())) {
+
+		var win = /Win/i.test(navigator.platform),
+		    ie = win && /*@cc_on!@*/false;
+
+		content.innerHTML =
+			"Your browser is outdated. To use this tool, please install the latest version of " +
+			"<a href=\"http://firefox.com\" target=\"_blank\">Mozilla Firefox</a>" +
+			(win ? ", " : " or ") +
+			"<a href=\"https://chrome.com\" target=\"_blank\">Google Chrome</a>" +
+			(win ? " or <a href=\"http://ie.microsoft.com\" target=\"_blank\">Internet Explorer</a>."
+			     : ".") +
+			(ie ? "<br><br>If you don't want to change your web browser, you can also use this tool with " +
+			      "<a href=\"https://www.google.com/chromeframe\" target=\"_blank\">Google Chrome Frame</a>."
+			    : "");
+		return;
+	}
+
+	content.innerHTML = "Drop files here to generate a base64 data URI";
+
+	function createSpan(className, text) {
+		var span = document.createElement("span");
+		span.className = className;
+		span.textContent = text;
+
+		return span;
+	}
+
+	document.body.addEventListener("dragover", function(e) {
+		e.preventDefault();
+		e.dataTransfer.dropEffect = "copy";
+	}, false);
+
+	document.body.addEventListener("drop", function(e) {
+		var file = e.dataTransfer.files[0],
+		    reader = new FileReader();
+
+		if (!file) return;
+
+		reader.addEventListener("loadend", function() {
+			var result = ""+reader.result,
+			    uri = result.match(/^data:(.*?)(;base64)?(?:,(.*?)(=*))?$/);
+
+			if (!uri) {
+				content.innerHTML = "Error reading file";
+				return;
+			}
+
+			content.innerHTML = "";
+
+			content.appendChild(createSpan("scheme", "data:"));
+			content.appendChild(createSpan("mediatype", uri[1] || "application/octet-stream"));
+			if (uri[2]) {
+				content.appendChild(createSpan("mediatype", ";"));
+				content.appendChild(createSpan("base64", "base64,"));
+			} else
+				content.appendChild(createSpan("mediatype", ","));
+			if (uri[3]) {
+				content.appendChild(createSpan("data", uri[3]));
+				content.appendChild(createSpan("equals", uri[4]));
+			}
+
+			var range = document.createRange();
+			range.selectNodeContents(content);
+
+			var selection = window.getSelection();
+			selection.removeAllRanges();
+			selection.addRange(range);
+		}, false);
+
+		reader.readAsDataURL(file);
+		e.preventDefault();
+	}, false);
+})();
+	</script></body>
+</html>

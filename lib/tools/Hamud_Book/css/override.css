@@ -1,1 +1,7 @@
-.darkmode--activated img{isolation:isolate;mix-blend-mode:difference}.darkmode--activated .btn{isolation:isolate;mix-blend-mode:difference}.darkmode--activated select{background-color:#000;color:#e0e0e0}.darkmode--activated .hmd-loading{isolation:isolate;mix-blend-mode:difference}.darkmode--activated .alert{isolation:isolate;mix-blend-mode:difference}
+/* 深色模式相关 */
+/* .darkmode-layer, .darkmode-toggle{z-index:101} */
+.darkmode--activated img{isolation:isolate;mix-blend-mode:difference}
+.darkmode--activated .btn{isolation:isolate;mix-blend-mode:difference}
+.darkmode--activated select{background-color:#000;color:#E0E0E0}
+.darkmode--activated .hmd-loading{isolation:isolate;mix-blend-mode:difference}
+.darkmode--activated .alert{isolation:isolate;mix-blend-mode:difference}
