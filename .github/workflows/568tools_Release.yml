@@ -6,10 +6,10 @@ on:
     branches:
       - '**'
       - '!release'
-    paths:
-      - '!**.md'
-      - '!LICENSE'
-      - '!.github\workflows\**'
+    # paths:
+    #   - '!**.md'
+    #   - '!LICENSE'
+    #   - '!.github\workflows\**'
 
 jobs:
   Release:
